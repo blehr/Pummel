@@ -94,7 +94,7 @@
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bpl' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'bpl' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'bpl' ), 'Pummel', '<a href="http://brandonlehr.com" rel="designer">Brandon Lehr</a>' ); ?>
+				<?php printf( __( 'Theme: %1$s by %2$s', 'bpl' ), 'Pummel', '<a href="http://brandonlehr.com" rel="designer">Brandon Lehr</a>' ); ?>
 			</div><!-- .site-info -->
 		</div><!--.container-->
 	</footer><!-- #colophon -->
