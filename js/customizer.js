@@ -116,8 +116,5 @@
 			$( '.frontpage-middle-header' ).text( to );
 		});
 	});
-	
-	
-	
-	
+
 } )( jQuery );

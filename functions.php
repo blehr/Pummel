@@ -1,8 +1,8 @@
 <?php
 /**
- * brandon functions and definitions
+ * Pummel functions and definitions
  *
- * @package brandon
+ * @package Pummel
  */
 
 /**
@@ -287,4 +287,4 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+// require get_template_directory() . '/inc/jetpack.php';

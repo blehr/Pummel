@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package brandon
+ * @package Pummel
  */
 
 get_header(); ?>
@@ -112,13 +112,5 @@ get_header(); ?>
 			    </div>
 			    
 			</div>	
-
-
-
-
-
-
-		
-
 
 <?php get_footer(); ?>

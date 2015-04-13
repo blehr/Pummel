@@ -2,7 +2,7 @@
 /**
  * brandon Theme Customizer
  *
- * @package brandon
+ * @package Pummel
  */
 
 /**
@@ -193,9 +193,6 @@ function bpl_customize_register( $wp_customize ) {
 	
 	
 
-	
-	
-	
 	// Add Social Media Section
 	$wp_customize->add_section( 'social-media' , array(
 	    'title' => __( 'Social Media', 'bpl' ),
@@ -222,10 +219,7 @@ function bpl_customize_register( $wp_customize ) {
 	    'type'  => 'checkbox',
 	) ) );
 	
-	
-	
-	
-	
+
 	// Add Twitter Setting
 	$wp_customize->add_setting( 'twitter' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'twitter', array(
@@ -419,21 +413,4 @@ function bpl_customizer_output() {
 }
 
 add_action( 'wp_head', 'bpl_customizer_output');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

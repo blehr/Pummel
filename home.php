@@ -5,7 +5,7 @@
  * blog listing page
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package brandon
+ * @package Pummel
  */
 
 get_header(); ?>

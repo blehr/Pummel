@@ -4,7 +4,7 @@
  * 
  * The template for displaying Static Front Page.
  
- * @package brandon
+ * @package Pummel
  */
 
 get_header(); ?>
