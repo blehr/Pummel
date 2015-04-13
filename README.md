@@ -12,8 +12,10 @@ But wait, that’s not all…
 
 Head over to the theme customizer and check out the many options available. Change background, font, and accent colors, till you achieve that winning look you’ve been searching for.
 
-![Blog-Screenshot](/images/blog-screenshot.png)
-
 [Built off of _S](https://github.com/Automattic/_s) and [Bootstrap](getbootstrap.com).
 
+##FrontPage
 ![Screenshot](/images/full-screenshot.png)
+
+##Blog Page
+![Blog-Screenshot](/images/blog-screenshot.png)
