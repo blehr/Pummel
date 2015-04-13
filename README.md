@@ -12,6 +12,4 @@ But wait, that’s not all…
 
 Head over to the theme customizer and check out the many options available. Change background, font, and accent colors, till you achieve that winning look you’ve been searching for.
 
-[Built off of _S](https://github.com/Automattic/_s)
-
-[Bootstrap](getbootstrap.com)
+[Built off of _S](https://github.com/Automattic/_s) and [Bootstrap](getbootstrap.com).
