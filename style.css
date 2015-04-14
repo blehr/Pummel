@@ -45,11 +45,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 # Media Queries
-# Default Styles before Customizer
 --------------------------------------------------------------*/
-
-
-
 
 /*--------------------------------------------------------------
 # Typography
@@ -858,26 +854,6 @@ object {
 .gallery-caption {
 	display: block;
 }
-
-/*--------------------------------------------------------------
-# Default Styles before Customizer
---------------------------------------------------------------*/
-
-.site-header,
-.site-header a,
-.site-title a,
-.site-description {
-	color:  #e0e0e0;
-}
-.navbar-default .navbar-toggle .icon-bar {
-	background-color: #e0e0e0;
-}
-
-
-
-
-
-
 
 
 /*--------------------------------------------------------------
