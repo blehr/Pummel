@@ -25,7 +25,7 @@
 function bpl_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'bpl_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '#e0e0e0',
+		'default-text-color'     => 'e0e0e0',
 		
 		
 	
