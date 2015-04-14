@@ -369,38 +369,38 @@ function bpl_customizer_output() {
     <style type="text/css">
     
     .site-header {
-	    background-color: <?php echo get_theme_mod('bpl_header_color'); ?>;
+	    background-color: <?php echo get_theme_mod('bpl_header_color', '#3F51B5'); ?>;
     }
 	  
   	a {
-	    color: <?php echo get_theme_mod('bpl_link_color'); ?>;
+	    color: <?php echo get_theme_mod('bpl_link_color', '#3F51B5'); ?>;
 	}
 	
 	a:visited {
-	    color: <?php echo get_theme_mod('bpl_link_visited_color'); ?>;
+	    color: <?php echo get_theme_mod('bpl_link_visited_color', '#7986CB'); ?>;
 	}
 	
 	.site-content {
-		color: <?php echo get_theme_mod('bpl_body_text_color'); ?>;
+		color: <?php echo get_theme_mod('bpl_body_text_color', '#404040'); ?>;
 	}
 	  
    	.media-body {
-        border-left: 2px solid <?php echo get_theme_mod('bpl_comment_accent_color'); ?>;
-        border-bottom: 2px solid <?php echo get_theme_mod('bpl_comment_accent_color'); ?>;
+        border-left: 2px solid <?php echo get_theme_mod('bpl_comment_accent_color', '#3F51B5'); ?>;
+        border-bottom: 2px solid <?php echo get_theme_mod('bpl_comment_accent_color', '#3F51B5'); ?>;
 	}
 	 
  	.site-footer .widget {
-	   border-left: 2px solid <?php echo get_theme_mod('bpl_footer_widget_accent_color'); ?>;
-	   border-bottom: 2px solid <?php echo get_theme_mod('bpl_footer_widget_accent_color'); ?>;
+	   border-left: 2px solid <?php echo get_theme_mod('bpl_footer_widget_accent_color', '#3F51B5'); ?>;
+	   border-bottom: 2px solid <?php echo get_theme_mod('bpl_footer_widget_accent_color', '#3F51B5'); ?>;
 	}
 	
 	.frontpage-middle-widgets {
-		background-color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_background_color'); ?>;
+		background-color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_background_color', '#3F51B5'); ?>;
 	}
 	
 	.frontpage-middle-widgets,
 	.frontpage-middle-widgets a {
-		color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_text_color'); ?>;
+		color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_text_color', '#C5CAE9'); ?>;
 	}
 
 	<?php if( get_theme_mod('bpl_custom_css') != '' ) {

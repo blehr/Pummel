@@ -53,7 +53,7 @@ get_header(); ?>
 			<div  class="frontpage-middle-widgets" >
 				<div class="container frontpage-middle">
 					
-					<h2 class="text-center frontpage-middle-header"><?php echo get_theme_mod('bpl_frontpage_middle_header'); ?></h2>
+					<h2 class="text-center frontpage-middle-header"><?php echo get_theme_mod('bpl_frontpage_middle_header', 'There Be Widgets Below!'); ?></h2>
 				    <div class="row">
 				        <div class="col-sm-4">
 					     
