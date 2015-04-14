@@ -53,6 +53,7 @@ function bpl_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
+	
 	// if ( HEADER_TEXTCOLOR == $header_text_color ) {
 	// 	return;
 	// }
@@ -77,10 +78,10 @@ function bpl_header_style() {
 		.site-header a,
 		.site-title a,
 		.site-description {
-			color: #<?php echo esc_attr( $header_text_color, 'e0e0e0' ); ?>;
+			color: #<?php echo esc_attr( $header_text_color); ?>;
 		}
 		.navbar-default .navbar-toggle .icon-bar {
-			background-color: #<?php echo esc_attr( $header_text_color, 'e0e0e0' ); ?>;
+			background-color: #<?php echo esc_attr( $header_text_color); ?>;
 		}
 	<?php endif; ?>
 	</style>
