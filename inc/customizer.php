@@ -309,7 +309,7 @@ function bpl_customize_register( $wp_customize ) {
   $wp_customize->add_setting(
       'bpl_frontpage_middle_header',
       array(   
-      		'default'         => 'There Be Widgets below- Better Get Ye to the Customizer',	
+      		'default'         => 'There Be Widgets Below',	
 	        'sanitize_callback' => 'sanitize_text',
 	         'transport'         => 'postMessage'
       )
