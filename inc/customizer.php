@@ -368,7 +368,8 @@ function bpl_customizer_output() {
     
     <style type="text/css">
     
-    .site-header {
+    .site-header,
+    .dropdown-menu{
 	    background-color: <?php echo get_theme_mod('bpl_header_color', '#3F51B5'); ?>;
     }
 	  

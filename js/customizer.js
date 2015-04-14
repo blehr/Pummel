@@ -46,7 +46,7 @@
 	
 	wp.customize( 'bpl_header_color', function( value )  {
 		value.bind( function( to ) {
-			$( '.site-header' ).css( {
+			$( '.site-header, .dropdown-menu' ).css( {
 				'background-color': to
 			});
 		});
