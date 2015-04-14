@@ -77,10 +77,10 @@ function bpl_header_style() {
 		.site-header a,
 		.site-title a,
 		.site-description {
-			color: #<?php echo esc_attr( $header_text_color, '#e0e0e0' ); ?>;
+			color: #<?php echo esc_attr( $header_text_color, 'e0e0e0' ); ?>;
 		}
 		.navbar-default .navbar-toggle .icon-bar {
-			background-color: #<?php echo esc_attr( $header_text_color, '#e0e0e0' ); ?>;
+			background-color: #<?php echo esc_attr( $header_text_color, 'e0e0e0' ); ?>;
 		}
 	<?php endif; ?>
 	</style>
