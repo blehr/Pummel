@@ -863,50 +863,15 @@ object {
 # Default Styles before Customizer
 --------------------------------------------------------------*/
 
-/*.site-header,*/
-/*.site-header a,*/
-/*.site-title a,*/
-/*.site-description {*/
-/*	color: #e0e0e0;*/
-/*}*/
-/*.navbar-default .navbar-toggle .icon-bar {*/
-/*	background-color: #e0e0e0;*/
-/*}*/
-
-/*.site-header {*/
-/*	background-color: #3F51B5;*/
-/*}*/
-
-/*a {*/
-/*	color: #3F51B5;*/
-/*}*/
-
-/*a:visited {*/
-/*	color: #7986CB;*/
-/*}*/
-
-/*.site-content {*/
-/*	color: #404040;*/
-/*}*/
-
-/*.media-body {*/
-/*    border-left: 2px solid #3F51B5;*/
-/*    border-bottom: 2px solid #3F51B5;*/
-/*}*/
-
-/*.site-footer .widget {*/
-/*   border-left: 2px solid #3F51B5;*/
-/*   border-bottom: 2px solid #3F51B5;*/
-/*}*/
-
-/*.frontpage-middle-widgets {*/
-/*	background-color: #3F51B5;*/
-/*}*/
-
-/*.frontpage-middle-widgets,*/
-/*.frontpage-middle-widgets a {*/
-/*	color: #C5CAE9;*/
-/*}*/
+.site-header,
+.site-header a,
+.site-title a,
+.site-description {
+	color:  #e0e0e0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #e0e0e0;
+}
 
 
 
