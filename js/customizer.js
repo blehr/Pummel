@@ -52,6 +52,17 @@
 		});
 	});
 	
+	wp.customize( 'bpl_header_menu_color', function( value )  {
+		value.bind( function( to ) {
+			$( '.navbar-default .navbar-brand, .navbar-default a' ).css( {
+				'color': to
+			});
+		$('.icon-bar').css({
+					'background-color': to
+			});
+		});
+	});
+	
 	wp.customize( 'bpl_link_color', function( value )  {
 		value.bind( function( to ) {
 			$( '.site-content a, .site-footer a' ).css( {
@@ -118,3 +129,4 @@
 	});
 
 } )( jQuery );
+

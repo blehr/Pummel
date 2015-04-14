@@ -40,6 +40,27 @@ function bpl_customize_register( $wp_customize ) {
 		) ) 
 	);
 	
+	//header menu and social icon text color
+	$wp_customize->add_setting(
+      'bpl_header_menu_color',
+      array(
+          'default'          => '#e0e0e0',
+          'transport'         => 'postMessage',
+          'sanitize_callback' => 'sanitize_text' 
+       )
+    );
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'bpl_header_menu_color', 
+		array(
+			'label'      => __( 'Header Menu and Social Icon Color', 'bpl' ),
+			'section'    => 'colors',
+			'settings'   => 'bpl_header_menu_color',
+			'wp-head-callback'       => 'bpl_customizer_output',
+		) ) 
+	);
+	
 	
 	//link color
 	$wp_customize->add_setting(
@@ -329,14 +350,15 @@ function bpl_customize_register( $wp_customize ) {
 
 	$wp_customize->get_control( 'bpl_header_color' )->priority = 10; 
 	$wp_customize->get_control( 'header_textcolor' )->priority = 20; 
-	$wp_customize->get_control( 'background_color' )->priority = 30; 
-	$wp_customize->get_control( 'bpl_body_text_color' )	->priority = 40; 
-	$wp_customize->get_control( 'bpl_link_color' )	->priority = 50;
-	$wp_customize->get_control( 'bpl_link_visited_color' )	->priority = 60;
-	$wp_customize->get_control( 'bpl_frontpage_middle_widgets_background_color' )->priority = 70; 
-	$wp_customize->get_control( 'bpl_frontpage_middle_widgets_text_color' )->priority = 80; 
-	$wp_customize->get_control( 'bpl_comment_accent_color' )->priority = 90; 
-	$wp_customize->get_control( 'bpl_footer_widget_accent_color' )->priority = 100;
+	$wp_customize->get_control( 'bpl_header_menu_color' )->priority = 30; 
+	$wp_customize->get_control( 'background_color' )->priority = 40; 
+	$wp_customize->get_control( 'bpl_body_text_color' )	->priority = 50; 
+	$wp_customize->get_control( 'bpl_link_color' )	->priority = 60;
+	$wp_customize->get_control( 'bpl_link_visited_color' )	->priority = 70;
+	$wp_customize->get_control( 'bpl_frontpage_middle_widgets_background_color' )->priority = 80; 
+	$wp_customize->get_control( 'bpl_frontpage_middle_widgets_text_color' )->priority = 90; 
+	$wp_customize->get_control( 'bpl_comment_accent_color' )->priority = 100; 
+	$wp_customize->get_control( 'bpl_footer_widget_accent_color' )->priority = 110;
 
 }
 add_action( 'customize_register', 'bpl_customize_register' );
@@ -368,6 +390,15 @@ function bpl_customizer_output() {
     
     <style type="text/css">
     
+    .navbar-default,
+    .navbar-default .navbar-brand {
+	  color: <?php echo get_theme_mod('bpl_header_menu_color', '#e0e0e0'); ?>;
+	}
+	
+	.navbar-default .navbar-toggle .icon-bar {
+			background-color: #<?php echo esc_attr( 'bpl_header_menu_color', '#e0e0e0'); ?>;
+		}
+	    
     .site-header,
     .dropdown-menu{
 	    background-color: <?php echo get_theme_mod('bpl_header_color', '#3F51B5'); ?>;

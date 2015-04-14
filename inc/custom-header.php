@@ -70,16 +70,6 @@ function bpl_header_style() {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-		
-		.site-header,
-		.site-header a,
-		.site-title a,
-		.site-description {
-			color: #<?php echo esc_attr( HEADER_TEXTCOLOR ); ?>;
-		}
-		.navbar-default .navbar-toggle .icon-bar {
-			background-color: #<?php echo esc_attr( HEADER_TEXTCOLOR ); ?>;
-		}
 
 	<?php
 		// If the user has set a custom color for the text use that
