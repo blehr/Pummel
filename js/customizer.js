@@ -128,7 +128,7 @@
 			});
 		});
 	});
-	//middle front page h text
+	//middle front page header text
 	wp.customize( 'bpl_frontpage_middle_header', function( value )  {
 		value.bind( function( to ) {
 			$( '.frontpage-middle-header' ).text( to );
