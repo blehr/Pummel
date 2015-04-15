@@ -16,7 +16,24 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->get_section( 'colors' )->priority = 20;
 	
-
+	// Add Display Social Links in Header Setting
+	$wp_customize->add_setting(
+		'bpl_title_center',
+		array(
+			'default' => 0,
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_text'
+			)
+		);
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bpl_title_center', array(
+	    'label' => __( 'Center Title and Description', 'bpl' ),
+	    'section' => 'title_tagline',
+	    'settings' => 'bpl_title_center',
+	    'type'  => 'checkbox',
+			)
+		)
+	);
+	
 	
 	//header color
 	$wp_customize->add_setting(
@@ -231,7 +248,7 @@ function bpl_customize_register( $wp_customize ) {
 	    'type'  => 'checkbox',
 	) ) );
 	
-	// Add Display Social Links in Header Setting
+	// Add Display Social Links in Footer Setting
 	$wp_customize->add_setting( 'bpl_display_social_footer' , array( 'default' => 1, 'sanitize_callback' => 'sanitize_text'  ));
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bpl_display_social_footer', array(
 	    'label' => __( 'Display Social Links in Footer', 'bpl' ),
@@ -396,8 +413,8 @@ function bpl_customizer_output() {
 	}
 	
 	.navbar-default .navbar-toggle .icon-bar {
-			background-color: #<?php echo esc_attr( 'bpl_header_menu_color', '#e0e0e0'); ?>;
-		}
+		background-color: <?php echo get_theme_mod( 'bpl_header_menu_color', '#e0e0e0'); ?>;
+	}
 	    
     .site-header,
     .dropdown-menu{

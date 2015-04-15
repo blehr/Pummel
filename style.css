@@ -384,6 +384,12 @@ a:active {
 .navbar {
 	border-bottom: none;
 	border: none;
+	margin-bottom: 0;
+}
+
+.navbar .nav {
+	padding-top: 10px;
+	padding-bottom: 15px;
 }
 
 .navbar-default .navbar-nav>.active>a,
@@ -454,8 +460,6 @@ a:active {
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
   color: inherit;
 }
-
-
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.open>a:hover,

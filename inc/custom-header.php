@@ -53,12 +53,7 @@ function bpl_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	
-	// if ( HEADER_TEXTCOLOR == $header_text_color ) {
-	// 	return;
-	// }
 
-	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
 	<?php
@@ -75,15 +70,12 @@ function bpl_header_style() {
 		// If the user has set a custom color for the text use that
 		else :
 	?>
-		.site-header,
-		.site-header a,
+	
 		.site-title a,
 		.site-description {
 			color: #<?php echo esc_attr( $header_text_color); ?>;
 		}
-		.navbar-default .navbar-toggle .icon-bar {
-			background-color: #<?php echo esc_attr( $header_text_color); ?>;
-		}
+		
 	<?php endif; ?>
 	</style>
 	<?php
