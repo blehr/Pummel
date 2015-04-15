@@ -33,8 +33,7 @@ function bpl_customize_register( $wp_customize ) {
 			)
 		)
 	);
-	
-	
+
 	//header color
 	$wp_customize->add_setting(
       'bpl_header_color',
@@ -122,7 +121,7 @@ function bpl_customize_register( $wp_customize ) {
 	);
 	
 
-		//Frontpage middle widget background color
+	//Frontpage middle widget background color
 	$wp_customize->add_setting(
       'bpl_frontpage_middle_widgets_background_color',
       array(
@@ -240,7 +239,7 @@ function bpl_customize_register( $wp_customize ) {
 	
 	
 	// Add Display Social Links in Header Setting
-	$wp_customize->add_setting( 'bpl_display_social_header' , array( 'default' => 1, 'sanitize_callback' => 'sanitize_text'  ));
+	$wp_customize->add_setting( 'bpl_display_social_header' , array( 'default' => 0, 'sanitize_callback' => 'sanitize_text'  ));
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bpl_display_social_header', array(
 	    'label' => __( 'Display Social Links in Header', 'bpl' ),
 	    'section' => 'social-media',
@@ -249,7 +248,7 @@ function bpl_customize_register( $wp_customize ) {
 	) ) );
 	
 	// Add Display Social Links in Footer Setting
-	$wp_customize->add_setting( 'bpl_display_social_footer' , array( 'default' => 1, 'sanitize_callback' => 'sanitize_text'  ));
+	$wp_customize->add_setting( 'bpl_display_social_footer' , array( 'default' => 0, 'sanitize_callback' => 'sanitize_text'  ));
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bpl_display_social_footer', array(
 	    'label' => __( 'Display Social Links in Footer', 'bpl' ),
 	    'section' => 'social-media',
