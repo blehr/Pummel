@@ -20,7 +20,7 @@
 </head>
 
 <body <?php body_class(); ?> >
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed site <?php if (is_front_page()){echo 'front-page';}; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'bpl' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">

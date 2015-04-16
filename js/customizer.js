@@ -104,6 +104,16 @@
 		});
 	});
 	
+	//Frontpage text background color
+	wp.customize( 'bpl_frontpage_text_background_color', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-container, .frontpage-third').css( {
+				'background-color': to,
+				'opacity' : '.8'
+			});
+		});
+	});
+	
 	//comment accent color
 	wp.customize( 'bpl_comment_accent_color', function( value )  {
 		value.bind( function( to ) {

@@ -527,6 +527,27 @@ function bpl_customize_register( $wp_customize ) {
 			'wp-head-callback'       => 'bpl_customizer_output',
 		) ) 
 	);
+	
+	//Front page text background color
+	$wp_customize->add_setting(
+      'bpl_frontpage_text_background_color',
+      array(
+          'default'          => '#e0e0e0',
+          'transport'         => 'postMessage',
+          'sanitize_callback' => 'sanitize_text' 
+       )
+    );
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'bpl_frontpage_text_background_color', 
+		array(
+			'label'      => __( 'FrontPage Text Background Color', 'bpl' ),
+			'section'    => 'frontpage_background',
+			'settings'   => 'bpl_frontpage_text_background_color',
+			'wp-head-callback'       => 'bpl_customizer_output',
+		) ) 
+	);
    
 			
 
@@ -618,17 +639,19 @@ function bpl_customizer_output() {
 	}
 	
 	<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
-		body.home {
+		.front-page {
 			background: url(<?php echo get_theme_mod( 'bpl_frontpage_background_image' ); ?>) no-repeat fixed center center;
 			background-size: cover;
 		}
 		
 		.frontpage-container,
 		.frontpage-third {
-			background-color: rgba(238, 238, 238, .7);
+			background-color: <?php echo get_theme_mod('bpl_frontpage_text_background_color', '#e0e0e0'); ?>;
 			color: <?php echo get_theme_mod('bpl_frontpage_text_color', '#404040'); ?>;
+			opacity: .8;
+			border-radius: 5px;
 		}
-	    	
+	    
     <?php endif; ?>
 	
 

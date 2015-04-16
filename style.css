@@ -690,7 +690,11 @@ a:active {
 .frontpage-container {
 	width: 95%;
 	max-width: 800px;
-	margin: auto;
+	margin: 25px auto 50px;
+}
+
+.frontpage-third {
+	margin-top: 50px;
 }
 
 
