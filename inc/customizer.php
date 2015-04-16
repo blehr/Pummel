@@ -474,6 +474,61 @@ function bpl_customize_register( $wp_customize ) {
 			    'type'  => 'checkbox',
 			    'priority' => 2,
 			) ) );
+			
+	
+	
+	// Section for frontpage background image 	
+	$wp_customize->add_section(
+		'frontpage_background' ,
+		array(
+			'title'      => __('Frontpage Background Image','bpl'), 
+			'priority'   => 50    
+		) );  
+	
+	
+	// Setting for frontpage background image
+	$wp_customize->add_setting(
+		'bpl_frontpage_background_image',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'bpl_frontpage_background_image',
+           array(
+               'label'      => __( 'Upload an image for the Frontpage Background', 'bpl' ),
+               'section'    => 'frontpage_background',
+               'settings'   => 'bpl_frontpage_background_image',
+               'context'    => 'frontpage_background' 
+           )
+       )
+   );
+   
+   	//Front page text color
+	$wp_customize->add_setting(
+      'bpl_frontpage_text_color',
+      array(
+          'default'          => '#404040',
+          'transport'         => 'postMessage',
+          'sanitize_callback' => 'sanitize_text' 
+       )
+    );
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'bpl_frontpage_text_color', 
+		array(
+			'label'      => __( 'FrontPage Text Color', 'bpl' ),
+			'section'    => 'frontpage_background',
+			'settings'   => 'bpl_frontpage_text_color',
+			'wp-head-callback'       => 'bpl_customizer_output',
+		) ) 
+	);
+   
+			
 
 	$wp_customize->get_control( 'bpl_header_color' )->priority = 10; 
 	$wp_customize->get_control( 'header_textcolor' )->priority = 20; 
@@ -561,6 +616,21 @@ function bpl_customizer_output() {
 	.frontpage-middle-widgets a {
 		color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_text_color', '#C5CAE9'); ?>;
 	}
+	
+	<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
+		body.home {
+			background: url(<?php echo get_theme_mod( 'bpl_frontpage_background_image' ); ?>) no-repeat fixed center center;
+			background-size: cover;
+		}
+		
+		.frontpage-container,
+		.frontpage-third {
+			background-color: rgba(238, 238, 238, .7);
+			color: <?php echo get_theme_mod('bpl_frontpage_text_color', '#404040'); ?>;
+		}
+	    	
+    <?php endif; ?>
+	
 
 	<?php if( get_theme_mod('bpl_custom_css') != '' ) {
         echo get_theme_mod('bpl_custom_css');

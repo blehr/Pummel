@@ -94,6 +94,16 @@
 			});
 		});
 	});
+	
+	//Frontpage text color
+	wp.customize( 'bpl_frontpage_text_color', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-container, .frontpage-third').css( {
+				'color': to
+			});
+		});
+	});
+	
 	//comment accent color
 	wp.customize( 'bpl_comment_accent_color', function( value )  {
 		value.bind( function( to ) {
