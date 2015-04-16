@@ -25,14 +25,15 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		
-		
-		<?php //begin for custom header image  ?>
-		<?php if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-		</a>
-		<?php endif; // End header image check. ?>
-		
+		<!--Check if header image should be above or below the menu-->
+		<?php if (get_theme_mod('bpl_display_image_below_menu') == ''): ?>
+			<?php //begin for custom header image  ?>
+			<?php if ( get_header_image() ) : ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+			</a>
+			<?php endif; // End header image check. ?>
+		<?php endif; ?>	
 		
 		<nav class="navbar navbar-default" role="navigation">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -91,11 +92,7 @@
 			            <?php endif; ?>
 			            
 		            <?php endif; ?>
-		            
-		            
-		            
-		            
-		            
+
 		        </div>
 		
 		        <?php
@@ -121,6 +118,15 @@
 			</div><!-- .site-branding -->
 		</div>
 
+		<!--Header image display below menu-->
+		<?php if (get_theme_mod('bpl_display_image_below_menu') == 1): ?>
+			<?php //begin for custom header image  ?>
+			<?php if ( get_header_image() ) : ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+			</a>
+			<?php endif; // End header image check. ?>
+		<?php endif; ?>
 	
 	</header><!-- #masthead -->
 	

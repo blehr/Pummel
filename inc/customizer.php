@@ -25,7 +25,11 @@ function bpl_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_text'
 			)
 		);
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bpl_title_center', array(
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_title_center',
+			array(
 	    'label' => __( 'Center Title and Description', 'bpl' ),
 	    'section' => 'title_tagline',
 	    'settings' => 'bpl_title_center',
@@ -239,85 +243,172 @@ function bpl_customize_register( $wp_customize ) {
 	
 	
 	// Add Display Social Links in Header Setting
-	$wp_customize->add_setting( 'bpl_display_social_header' , array( 'default' => 0, 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bpl_display_social_header', array(
-	    'label' => __( 'Display Social Links in Header', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'bpl_display_social_header',
-	    'type'  => 'checkbox',
-	) ) );
+	$wp_customize->add_setting(
+		'bpl_display_social_header',
+		array(
+			'default' => 0,
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_display_social_header',
+			array(
+			    'label' => __( 'Display Social Links in Header', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'bpl_display_social_header',
+			    'type'  => 'checkbox',
+			) ) );
 	
 	// Add Display Social Links in Footer Setting
-	$wp_customize->add_setting( 'bpl_display_social_footer' , array( 'default' => 0, 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'bpl_display_social_footer', array(
-	    'label' => __( 'Display Social Links in Footer', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'bpl_display_social_footer',
-	    'type'  => 'checkbox',
-	) ) );
+	$wp_customize->add_setting(
+		'bpl_display_social_footer',
+		array(
+			'default' => 0,
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_display_social_footer',
+			array(
+			    'label' => __( 'Display Social Links in Footer', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'bpl_display_social_footer',
+			    'type'  => 'checkbox',
+			) ) );
 	
 
 	// Add Twitter Setting
-	$wp_customize->add_setting( 'twitter' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'twitter', array(
-	    'label' => __( 'Twitter', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'twitter',
-	) ) );
+	$wp_customize->add_setting(
+		'twitter' ,
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize, 'twitter',
+			array(
+			    'label' => __( 'Twitter', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'twitter',
+			) ) );
 	
 	// Add Google Plus Setting
-	$wp_customize->add_setting( 'google_plus' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'google_plus', array(
-	    'label' => __( 'Google Plus', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'google_plus',
-	) ) );
+	$wp_customize->add_setting(
+		'google_plus',
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'google_plus',
+			array(
+			    'label' => __( 'Google Plus', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'google_plus',
+			) ) );
 	
 	// Add Facebook Setting
-	$wp_customize->add_setting( 'facebook' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook', array(
-	    'label' => __( 'Facebook', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'facebook',
-	) ) );
+	$wp_customize->add_setting(
+		'facebook' ,
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'facebook',
+			array(
+			    'label' => __( 'Facebook', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'facebook',
+			) ) );
 	
 	// Add Github Setting
-	$wp_customize->add_setting( 'github' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'github', array(
-	    'label' => __( 'Github', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'github',
-	) ) );
+	$wp_customize->add_setting(
+		'github' ,
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'github',
+			array(
+			    'label' => __( 'Github', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'github',
+			) ) );
 	
 	// Add LinkedIn Setting
-	$wp_customize->add_setting( 'linkedin' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'linkedin', array(
-	    'label' => __( 'Linkedin', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'linkedin',
-	) ) );
+	$wp_customize->add_setting(
+		'linkedin' ,
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'linkedin',
+			array(
+			    'label' => __( 'Linkedin', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'linkedin',
+			) ) );
 	
 	// Add Instagram Setting
-	$wp_customize->add_setting( 'instagram' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'instagram', array(
-	    'label' => __( 'Instagram', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'instagram',
-	) ) );
+	$wp_customize->add_setting(
+		'instagram' ,
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'instagram',
+			array(
+			    'label' => __( 'Instagram', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'instagram',
+			) ) );
 	
 	// Add Pinterest Setting
-	$wp_customize->add_setting( 'pinterest' , array( 'default' => '', 'sanitize_callback' => 'sanitize_text'  ));
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'pinterest', array(
-	    'label' => __( 'Pinterest', 'bpl' ),
-	    'section' => 'social-media',
-	    'settings' => 'pinterest',
-	) ) );
+	$wp_customize->add_setting(
+		'pinterest' ,
+		array(
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text'
+			));
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'pinterest',
+			array(
+			    'label' => __( 'Pinterest', 'bpl' ),
+			    'section' => 'social-media',
+			    'settings' => 'pinterest',
+			) ) );
 	
 	// Add Custom CSS Textfield
-  $wp_customize->add_section( 'custom_css_field' , array(
-    'title'      => __('Custom CSS','bpl'), 
-    'priority'   => 40    
-  ) );  
+  $wp_customize->add_section(
+  	'custom_css_field' ,
+  	array(
+	    'title'      => __('Custom CSS','bpl'), 
+	    'priority'   => 40    
+	  ) );  
   $wp_customize->add_setting(
       'bpl_custom_css',
       array(          
@@ -363,6 +454,26 @@ function bpl_customize_register( $wp_customize ) {
             )
         )
    );
+   
+   	// Add Display Social Links in Header Setting
+	$wp_customize->add_setting(
+		'bpl_display_image_below_menu',
+		array(
+			'default' => 0,
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_display_image_below_menu',
+			array(
+			    'label' => __( 'Display Header Image Below Menu', 'bpl' ),
+			    'section' => 'header_image',
+			    'settings' => 'bpl_display_image_below_menu',
+			    'type'  => 'checkbox',
+			    'priority' => 2,
+			) ) );
 
 	$wp_customize->get_control( 'bpl_header_color' )->priority = 10; 
 	$wp_customize->get_control( 'header_textcolor' )->priority = 20; 
