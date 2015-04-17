@@ -14,6 +14,29 @@ Head over to the theme customizer and check out the many options available. Chan
 
 [Built off of _S](https://github.com/Automattic/_s) and [Bootstrap](getbootstrap.com).
 
+##Customize
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_all.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20site_title.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20social.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20header_image.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20background-image.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20colors.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20frontpage-middle.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20frontpage-background.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20widgets.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20custom_css.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20static_front.png)
+
 ##FrontPage
 ![Screenshot](/images/full-screenshot.png)
 
