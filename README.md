@@ -18,51 +18,52 @@ Head over to the theme customizer and check out the many options available. Chan
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_all.png)
 ***
 
-###Option to center Title and Tagline
+####Option to center Title and Tagline
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20site_title.png)
 ***
 
-###Add social icons to the header, the footer, or both
+####Add social icons to the header, the footer, or both
+
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20social.png)
 ***
 
-Display header image above or below the menu
+####Display header image above or below the menu
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20header_image.png)
 ***
 
-Add a background image to the entire site
+####Add a background image to the entire site
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20background-image.png)
 ***
 
-Color everything
+####Color everything
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20colors.png)
 ***
 
-Customizing the Front Page
+####Customizing the Front Page
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20frontpage-middle.png)
 ***
 
-Add a background image just for the Front Page
+####Add a background image just for the Front Page
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20frontpage-background.png)
 ***
 
-Edit widgets easily - Quick access to front page widgets
+####Edit widgets easily - Quick access to front page widgets
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20widgets.png)
 ***
 
-Don't like something? Add your own custom css!
+####Don't like something? Add your own custom css!
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20custom_css.png)
 ***
 
-This theme is optimised to be used with a static front page
+####This theme is optimised to be used with a static front page
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20static_front.png)
 ***
