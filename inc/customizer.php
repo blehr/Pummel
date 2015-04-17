@@ -16,7 +16,7 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->get_section( 'colors' )->priority = 20;
 	
-	// Add Display Social Links in Header Setting
+	// Add center title Setting
 	$wp_customize->add_setting(
 		'bpl_title_center',
 		array(
@@ -30,7 +30,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_title_center',
 			array(
-			    'label' => __( 'Center Title and Description', 'bpl' ),
+			    'label' => __( 'Center Title and Tagline', 'bpl' ),
 			    'section' => 'title_tagline',
 			    'settings' => 'bpl_title_center',
 			    'type'  => 'checkbox',
