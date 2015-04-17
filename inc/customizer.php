@@ -30,13 +30,13 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_title_center',
 			array(
-	    'label' => __( 'Center Title and Description', 'bpl' ),
-	    'section' => 'title_tagline',
-	    'settings' => 'bpl_title_center',
-	    'type'  => 'checkbox',
-			)
-		)
-	);
+			    'label' => __( 'Center Title and Description', 'bpl' ),
+			    'section' => 'title_tagline',
+			    'settings' => 'bpl_title_center',
+			    'type'  => 'checkbox',
+					)
+				)
+			);
 
 	//header color
 	$wp_customize->add_setting(
@@ -44,7 +44,6 @@ function bpl_customize_register( $wp_customize ) {
       array(
           'default'          => '#3F51B5',
           'transport'         => 'postMessage',
-          'priority'			=> 5,
           'sanitize_callback' => 'sanitize_text' 
        )
     );
@@ -74,7 +73,7 @@ function bpl_customize_register( $wp_customize ) {
 		$wp_customize, 
 		'bpl_header_menu_color', 
 		array(
-			'label'      => __( 'Header Menu and Social Icon Color', 'bpl' ),
+			'label'      => __( 'Menu and Social Icon Color', 'bpl' ),
 			'section'    => 'colors',
 			'settings'   => 'bpl_header_menu_color',
 			'wp-head-callback'       => 'bpl_customizer_output',
@@ -139,8 +138,8 @@ function bpl_customize_register( $wp_customize ) {
 		$wp_customize, 
 		'bpl_frontpage_middle_widgets_background_color', 
 		array(
-			'label'      => __( 'Frontpage Middle Widgets Area Background Color', 'bpl' ),
-			'section'    => 'colors',
+			'label'      => __( 'Background Color', 'bpl' ),
+			'section'    => 'frontpage_middle',
 			'settings'   => 'bpl_frontpage_middle_widgets_background_color',
 			'wp-head-callback'       => 'bpl_customizer_output',
 		) ) 
@@ -161,8 +160,8 @@ function bpl_customize_register( $wp_customize ) {
 		$wp_customize, 
 		'bpl_frontpage_middle_widgets_text_color', 
 		array(
-			'label'      => __( 'Frontpage Middle Widgets Text and Link Color', 'bpl' ),
-			'section'    => 'colors',
+			'label'      => __( 'Text and Link Color', 'bpl' ),
+			'section'    => 'frontpage_middle',
 			'settings'   => 'bpl_frontpage_middle_widgets_text_color',
 			'wp-head-callback'       => 'bpl_customizer_output',
 		) ) 
@@ -237,7 +236,6 @@ function bpl_customize_register( $wp_customize ) {
 	// Add Social Media Section
 	$wp_customize->add_section( 'social-media' , array(
 	    'title' => __( 'Social Media', 'bpl' ),
-	    'priority' => 22,
 	    'description' => __( 'Enter the URL to your account for each service for the icon to appear in the header.', 'bpl' )
 	) );
 	
@@ -407,7 +405,6 @@ function bpl_customize_register( $wp_customize ) {
   	'custom_css_field' ,
   	array(
 	    'title'      => __('Custom CSS','bpl'), 
-	    'priority'   => 40    
 	  ) );  
   $wp_customize->add_setting(
       'bpl_custom_css',
@@ -431,8 +428,7 @@ function bpl_customize_register( $wp_customize ) {
    
    	// Add Front page middle header Text
   $wp_customize->add_section( 'frontpage_middle' , array(
-    'title'      => __('Frontpage Middle Section','bpl'), 
-    'priority'   => 30    
+    'title'      => __('Front Page Middle','bpl'), 
   ) );  
   $wp_customize->add_setting(
       'bpl_frontpage_middle_header',
@@ -455,7 +451,7 @@ function bpl_customize_register( $wp_customize ) {
         )
    );
    
-   	// Add Display Social Links in Header Setting
+   	// Add Display header image below menu Setting
 	$wp_customize->add_setting(
 		'bpl_display_image_below_menu',
 		array(
@@ -481,8 +477,7 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'frontpage_background' ,
 		array(
-			'title'      => __('Frontpage Background Image','bpl'), 
-			'priority'   => 50    
+			'title'      => __('Front Page Background Image','bpl'), 
 		) );  
 	
 	
@@ -499,7 +494,7 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_background_image',
            array(
-               'label'      => __( 'Upload an image for the Frontpage Background', 'bpl' ),
+               'label'      => __( 'Upload an image for the Front Page Background', 'bpl' ),
                'section'    => 'frontpage_background',
                'settings'   => 'bpl_frontpage_background_image',
                'context'    => 'frontpage_background' 
@@ -521,7 +516,7 @@ function bpl_customize_register( $wp_customize ) {
 		$wp_customize, 
 		'bpl_frontpage_text_color', 
 		array(
-			'label'      => __( 'FrontPage Text Color', 'bpl' ),
+			'label'      => __( 'Front Page Text Color', 'bpl' ),
 			'section'    => 'frontpage_background',
 			'settings'   => 'bpl_frontpage_text_color',
 			'wp-head-callback'       => 'bpl_customizer_output',
@@ -542,15 +537,37 @@ function bpl_customize_register( $wp_customize ) {
 		$wp_customize, 
 		'bpl_frontpage_text_background_color', 
 		array(
-			'label'      => __( 'FrontPage Text Background Color', 'bpl' ),
+			'label'      => __( 'Front Page Text Background Color', 'bpl' ),
 			'section'    => 'frontpage_background',
 			'settings'   => 'bpl_frontpage_text_background_color',
 			'wp-head-callback'       => 'bpl_customizer_output',
 		) ) 
 	);
    
-			
-
+     // Create custom panels
+	 $wp_customize->add_panel( 'frontpage_options', array(
+	      'priority' => 60,
+	      'theme_supports' => '',
+	      'title' => __( 'Front Page Options', 'bpl' ),
+	      'description' => __( 'Style Options for Static Front Page', 'bpl' ),
+	 ) );
+	 
+	$wp_customize->get_section( 'background_image' )->title = 'Site Background Image';
+	 
+	// Assign sections to panels
+  	$wp_customize->get_section('frontpage_middle')->panel = 'frontpage_options';
+  	$wp_customize->get_section('frontpage_background')->panel = 'frontpage_options';
+	
+	//section priority
+	$wp_customize->get_section( 'title_tagline' )->priority = 10;
+	$wp_customize->get_section( 'social-media' )->priority = 20;
+	$wp_customize->get_section( 'header_image' )->priority = 30;
+	$wp_customize->get_section( 'background_image' )->priority = 40;
+	$wp_customize->get_section( 'colors' )->priority = 50;
+	$wp_customize->get_section( 'nav' )->priority = 290;
+	$wp_customize->get_section( 'static_front_page' )->priority = 300;
+	
+	//control priority
 	$wp_customize->get_control( 'bpl_header_color' )->priority = 10; 
 	$wp_customize->get_control( 'header_textcolor' )->priority = 20; 
 	$wp_customize->get_control( 'bpl_header_menu_color' )->priority = 30; 

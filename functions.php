@@ -113,16 +113,16 @@ function create_widget( $name, $id, $description ) {
 
 
 
-create_widget( 'Front Top Middle Left', 'front-top-middle-left', 'Displays on the left side of the frontpage top middle row' );
-create_widget( 'Front Top Middle Center', 'front-top-middle-center', 'Displays on the center of the frontpage top middle row' );
-create_widget( 'Front Top Middle Right', 'front-top-middle-right', 'Displays on the right side of the frontpage top middle row' );
+create_widget( 'Front Middle Top Left', 'front-top-middle-left', 'Displays on the left side of the frontpage top middle row' );
+create_widget( 'Front Middle Top Center', 'front-top-middle-center', 'Displays on the center of the frontpage top middle row' );
+create_widget( 'Front Middle Top Right', 'front-top-middle-right', 'Displays on the right side of the frontpage top middle row' );
 
-create_widget( 'Front Bottom Middle Left', 'front-bottom-middle-left', 'Displays on the left side bottom of the frontpage bottom middle row' );
-create_widget( 'Front Bottom Middle Center', 'front-bottom-middle-center', 'Displays on the center bottom of the frontpage bottom middle row' );
-create_widget( 'Front Bottom Middle Right', 'front-bottom-middle-right', 'Displays on the right side bottom of the frontpage bottom middle row' );
+create_widget( 'Front Middle Bottom Left', 'front-bottom-middle-left', 'Displays on the left side bottom of the frontpage bottom middle row' );
+create_widget( 'Front Middle Bottom Center', 'front-bottom-middle-center', 'Displays on the center bottom of the frontpage bottom middle row' );
+create_widget( 'Front Middle Bottom Right', 'front-bottom-middle-right', 'Displays on the right side bottom of the frontpage bottom middle row' );
 
-create_widget( 'Front-Third Left', 'front-third-left', 'Displays on the left side of the frontpage bottom row' );
-create_widget( 'Front-Third Right', 'front-third-right', 'Displays on the right side of the frontpage bottom row' );
+create_widget( 'Front Third Left', 'front-third-left', 'Displays on the left side of the frontpage bottom row' );
+create_widget( 'Front Third Right', 'front-third-right', 'Displays on the right side of the frontpage bottom row' );
 
 create_widget( 'Footer Left', 'footer-left', 'Displays on the left of the Footer' );
 create_widget( 'Footer Center', 'footer-center', 'Displays in the center of the Footer' );
