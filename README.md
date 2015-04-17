@@ -18,13 +18,12 @@ Head over to the theme customizer and check out the many options available. Chan
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_all.png)
 ***
 
-Option to center Title and Tagline
+###Option to center Title and Tagline
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20site_title.png)
 ***
 
-Add social icons to the header, the footer, or both
-
+###Add social icons to the header, the footer, or both
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20social.png)
 ***
 
