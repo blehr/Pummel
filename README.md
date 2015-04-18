@@ -69,7 +69,7 @@ Head over to the theme customizer and check out the many options available. Chan
 ***
 
 ##FrontPage
-![Screenshot](/images/full-screenshot.png)
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage.png)
 ***
 ##Blog Page
-![Blog-Screenshot](/images/blog-screenshot.png)
+![Blog-Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-blog.png)
