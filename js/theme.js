@@ -1,5 +1,5 @@
 jQuery( document ).ready( function( $ ) {
-
+    
     $( 'input.search-field' ).addClass( 'form-control' );
 
     // here for each comment reply link of wordpress

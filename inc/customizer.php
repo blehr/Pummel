@@ -15,6 +15,7 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->get_section( 'colors' )->priority = 20;
+
 	
 	// Add center title Setting
 	$wp_customize->add_setting(
@@ -502,6 +503,116 @@ function bpl_customize_register( $wp_customize ) {
        )
    );
    
+   // Setting for frontpage background image repeat
+   	$wp_customize->add_setting(
+		'bpl_frontpage_background_repeat',
+		array(
+			'default' => 'repeat',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+           $wp_customize,
+           'bpl_frontpage_background_repeat',
+           array(
+               'label'      => __( 'Background Repeat', 'bpl' ),
+               'section'    => 'frontpage_background',
+               'settings'   => 'bpl_frontpage_background_repeat',
+               'type'       => 'radio',
+			   'choices'    => array(
+					'no-repeat'  => 'No Repeat',
+					'repeat'	 => 'Tile',
+					'repeat-y'   => 'Tile Horizontally',
+					'repeat-x'	 => 'Tile Vertically',
+					
+				),
+           )
+       )
+   );
+   
+   // Setting for frontpage background image position X
+   	$wp_customize->add_setting(
+		'bpl_frontpage_background_position_x',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+           $wp_customize,
+           'bpl_frontpage_background_position_x',
+           array(
+               'label'    => __( 'Background Position X', 'bpl' ),
+               'section'  => 'frontpage_background',
+               'settings' => 'bpl_frontpage_background_position_x',
+               'type'     => 'radio',
+			   'choices'  => array(
+					'left'   => 'Left',
+					'center' => 'Center',
+					'right'  => 'Right',
+
+				),
+           )
+       )
+   );
+   
+   // Setting for frontpage background image position Y
+   	$wp_customize->add_setting(
+		'bpl_frontpage_background_position_y',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+           $wp_customize,
+           'bpl_frontpage_background_position_y',
+           array(
+               'label'    => __( 'Background Position Y', 'bpl' ),
+               'section'  => 'frontpage_background',
+               'settings' => 'bpl_frontpage_background_position_y',
+               'type'     => 'radio',
+			   'choices'  => array(
+					'top'   => 'Top',
+					'center' => 'Center',
+					'bottom'  => 'Bottom',
+
+				),
+           )
+       )
+   );
+   
+   // Setting for frontpage background image attachment
+   	$wp_customize->add_setting(
+		'bpl_frontpage_background_attachment',
+		array(
+			'default' => 'fixed',
+			'sanitize_callback' => 'sanitize_text'
+			));
+			
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+           $wp_customize,
+           'bpl_frontpage_background_attachment',
+           array(
+               'label'    => __( 'Background Attatchment', 'bpl' ),
+               'section'  => 'frontpage_background',
+               'settings' => 'bpl_frontpage_background_attachment',
+               'type'     => 'radio',
+			   'choices'  => array(
+					'scroll' => 'Scroll',
+					'fixed'  => 'Fixed',
+
+				),
+           )
+       )
+   );
+   
+   
+   
    	//Front page text color
 	$wp_customize->add_setting(
       'bpl_frontpage_text_color',
@@ -656,9 +767,12 @@ function bpl_customizer_output() {
 	}
 	
 	<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
+	
 		.front-page {
-			background: url(<?php echo get_theme_mod( 'bpl_frontpage_background_image' ); ?>) no-repeat fixed center center;
-			background-size: cover;
+			background: url(<?php echo get_theme_mod( 'bpl_frontpage_background_image' ); ?>);
+			background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_background_repeat', 'repeat' ); ?>;
+			background-position: <?php echo get_theme_mod( 'bpl_frontpage_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_background_position_x', 'center' ); ?>;
+			background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_background_attachment', 'fixed' ); ?>;
 		}
 		
 		.frontpage-container,
@@ -668,7 +782,7 @@ function bpl_customizer_output() {
 			opacity: .8;
 			border-radius: 5px;
 		}
-	    
+		
     <?php endif; ?>
 	
 

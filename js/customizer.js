@@ -65,8 +65,8 @@
 			$( '.navbar-default .navbar-brand, .navbar-default a' ).css( {
 				'color': to
 			});
-		$('.icon-bar').css({
-					'background-color': to
+			$('.icon-bar').css({
+				'background-color': to
 			});
 		});
 	});

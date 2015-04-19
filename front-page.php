@@ -14,7 +14,7 @@ get_header(); ?>
 	</div><!--close row-->
 </div><!--.container from header-->
 	<div class="container  frontpage-container">
-		<div class="row">
+		<div class="row frontpage-row">
 			<div id="primary" class="content-area col-xs-12">
 				<main id="main" class="site-main" role="main">
 					
@@ -49,7 +49,6 @@ get_header(); ?>
 			</div><!-- #primary -->		
 		</div>
 	</div>
-	
 			<div  class="frontpage-middle-widgets" >
 				<div class="container frontpage-middle">
 					
