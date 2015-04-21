@@ -5,6 +5,7 @@
  */
 
 ( function( $ ) {
+	
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -95,21 +96,48 @@
 		});
 	});
 	
+	//frontpage background image
+	wp.customize( 'bpl_frontpage_background_image', function( value )  {
+		value.bind( function( to ) {
+			$( '.front-page-background').css( {
+				'background-image': 'url(' + to + ')'
+			});
+		});
+	});
+	
+	//frontpage background image repeat
+	wp.customize( 'bpl_frontpage_background_repeat', function( value )  {
+		value.bind( function( to ) {
+			$( '.front-page-background').css( {
+				'background-repeat': to 
+			});
+		});
+	});
+	
+	//frontpage background image attachment
+	wp.customize( 'bpl_frontpage_background_attachment', function( value )  {
+		value.bind( function( to ) {
+			$( '.front-page-background').css( {
+				'background-attachment': to 
+			});
+		});
+	});
+	
+	//frontpage background image cover
+	wp.customize( 'bpl_frontpage_background_cover', function( value )  {
+		value.bind( function( to ) {
+			$( '.front-page-background').css( {
+				'background-size': to 
+			});
+		});
+	});
+	
+
 	//Frontpage text color
 	wp.customize( 'bpl_frontpage_text_color', function( value )  {
 		value.bind( function( to ) {
 			$( '.frontpage-container, .frontpage-third').css( {
 				'color': to
-			});
-		});
-	});
-	
-	//Frontpage text background color
-	wp.customize( 'bpl_frontpage_text_background_color', function( value )  {
-		value.bind( function( to ) {
-			$( '.frontpage-container, .frontpage-third').css( {
-				'background-color': to,
-				'opacity' : '.8'
 			});
 		});
 	});

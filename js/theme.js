@@ -1,5 +1,12 @@
 jQuery( document ).ready( function( $ ) {
     
+    var bg = $("body");
+    $(window).resize("resizeBackground");
+    function resizeBackground() {
+        bg.height($(window).height() + 60);
+    }
+    resizeBackground();
+    
     $( 'input.search-field' ).addClass( 'form-control' );
 
     // here for each comment reply link of wordpress

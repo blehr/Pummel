@@ -24,11 +24,11 @@
 	
 	<?php //Remove .custom-background from body.home if applying a frontpage background image ?>
 		<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
-	    <script>
+		<script>
 			( function( $ ) {
 				if ( $('body.home').hasClass('custom-background') ) {
 					$('body.home').removeClass('custom-background');
-					$('body.home').addClass('front-page');
+					$('body.home').addClass('front-page-background'); 
 				}
 			} )( jQuery );
 		</script>
@@ -146,6 +146,7 @@
 	
 
 	<div id="content" class="site-content">
+		<?php if (! is_front_page() ) : ?>
 		<div class="container content-container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -153,5 +154,6 @@
 				</div>
 			</div>
 			<div class="row">
+		<?php endif; ?>
 			
 		
