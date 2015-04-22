@@ -50,7 +50,8 @@ Head over to the theme customizer and check out the many options available. Chan
 
 ####Add a background image just for the Front Page
 
-![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20frontpage-background.png)
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage-background-custom-top.png)
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage-background-custom-bottom.png)
 ***
 
 ####Edit widgets easily - Quick access to front page widgets
@@ -68,8 +69,13 @@ Head over to the theme customizer and check out the many options available. Chan
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20static_front.png)
 ***
 
-##FrontPage
+##Front Page
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage.png)
 ***
+
+##Front Page
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage-background.png)
+***
+
 ##Blog Page
 ![Blog-Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-blog.png)
