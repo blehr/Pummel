@@ -1,3 +1,5 @@
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-pummel-top-image.png)
+
 #Pummel,
 
 A kick butt, take no prisoners, sort of theme, that will get your point across!
@@ -52,6 +54,8 @@ Head over to the theme customizer and check out the many options available. Chan
 
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage-background-custom-top.png)
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage-background-custom-bottom.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-fist-frontpage.png)
 ***
 
 ####Edit widgets easily - Quick access to front page widgets
@@ -73,9 +77,13 @@ Head over to the theme customizer and check out the many options available. Chan
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage.png)
 ***
 
-##Front Page
+##Front Page with background image
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-frontpage-background.png)
 ***
 
 ##Blog Page
 ![Blog-Screenshot](https://dl.dropboxusercontent.com/u/21809793/screenshot-blog.png)
+***
+
+##Mobile
+![Blog-Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_2015-04-21-23-33-13~2.jpg)
