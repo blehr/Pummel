@@ -163,6 +163,13 @@ function bpl_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bpl_scripts' );
 
+/** 
+* editor style
+**/
+// function bpl_add_editor_styles() {
+//     add_editor_style( 'editor-style.css' );
+// }
+// add_action( 'admin_init', 'bpl_add_editor_styles' );
 
 
 

@@ -17,6 +17,12 @@
 
 	<div class="entry-content">
 		
+		<?php if ( has_post_thumbnail() ) : ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail('thumbnail', array('class' => 'list-thumbnail')); ?>
+			</a>
+		<?php endif; ?>
+		
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(

@@ -806,6 +806,13 @@ object {
 	display: block;
 }
 
+.list-thumbnail {
+	float: left;
+	margin-top: 6px;
+	margin-right: 10px;
+	margin-bottom: 24px;
+}
+
 
 /*--------------------------------------------------------------
 ## Captions
