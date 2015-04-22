@@ -137,10 +137,16 @@ big {
 .site-title,
 .page-title,
 .widget-title,
-.frontpage-middle-header {
+.frontpage-middle-header,
+.entry-title {
   letter-spacing: inherit;
   font-weight: normal;
   font-family: 'Playfair Display', sans-serif;
+}
+
+.site-title,
+.entry-title {
+	font-weight: bold;
 }
 
 /*--------------------------------------------------------------
