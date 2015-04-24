@@ -56,7 +56,6 @@ html {
 	font-size: 1rem;
 }
 
-
 body,
 button,
 input,
@@ -67,6 +66,32 @@ textarea {
 	font-size: 1em;
 	line-height: 1.5;
 	font-family: 'Open Sans', sans-serif;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"] {
+	background-color: transparent;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+textarea,
+textarea.form-control {
+	background: transparent;
+}
+
+textarea:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+textarea.form-control:focus,
+input[type="email"]:focus,
+input[type="url"]:focus {
+	background-color: #FFF;
 }
 
 h1,
@@ -145,9 +170,19 @@ big {
 }
 
 .site-title,
-.entry-title {
-	font-weight: bold;
+.entry-title,
+.page-title {
+	font-weight: 900;
 }
+
+.search-submit {
+  display: none;
+}
+
+.btn-default {
+	background-color: inherit;
+}
+
 
 /*--------------------------------------------------------------
 # Elements
@@ -476,9 +511,6 @@ a:active {
 }
 
 
-
-
-
 /*****************
    bread-crumbs
 ********************/
@@ -516,7 +548,7 @@ a:active {
 
 .site-footer {
 	background-color: #222222;
-	padding: 20px;
+	padding: 20px 0;
 	margin-top: 50px;
 }
 
@@ -542,8 +574,14 @@ a:active {
 # Widgets
 --------------------------------------------------------------*/
 .sidebar {
-	font-size: .95em;
+	font-size: .9em;
 	opacity: .9;
+	margin-top: 20px;
+}
+
+.sidebar-padder {
+  width: 90%;
+  margin-left: auto;
 }
 
 .widget {
@@ -581,6 +619,29 @@ a:active {
 	text-align: center;
 }
 
+.sidebar .widget {
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    display: block;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.sidebar .widget_search {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+}
+
+.search-field {
+	/*background: transparent;*/
+}
+
+.search-field:focus {
+	/*background: #fff;*/
+}
 
 /*--------------------------------------------------------------
 # Content
@@ -599,11 +660,9 @@ body {
 	float: none;
 }
 
-.sidebar-padder {
-  width: 90%;
-  margin-left: auto;
+.content-area {
+	margin-bottom: 75px;
 }
-
 
 
 
@@ -640,10 +699,6 @@ body {
 }
 
 
-.comment-meta {
-	font-size: .8em;
-}
-
 .entry-title a,
 .entry-title a:visited {
   color: #404040;
@@ -673,6 +728,7 @@ body {
 }
 .pager li>a {
 	font-size: .9em;
+	background-color: transparent;
 }
 
 .post-navigation .nav-next, 
@@ -735,6 +791,14 @@ body {
 	word-wrap: break-word;
 }
 
+.comment-content {
+	font-size: .9em;
+}
+
+.comment-meta {
+	font-size: .8em;
+}
+
 .bypostauthor {
 	display: block;
 }
@@ -754,6 +818,7 @@ body {
 .comment-content {
 	padding: 10px 15px;
 }
+
 .comment-content p {
 	margin-bottom: 0;
 }
@@ -763,10 +828,13 @@ body {
 	border-top: none;
 }
 
-
-
 .comment-body {
   margin-bottom: 30px;
+}
+
+.form-allowed-tags,
+.alert-info {
+	font-size: .9em;
 }
 
 /*--------------------------------------------------------------

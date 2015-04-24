@@ -843,7 +843,7 @@ function bpl_customizer_output() {
 	}
 
     .site-header,
-    .dropdown-menu{
+    .dropdown-menu {
 	    background-color: <?php echo get_theme_mod('bpl_header_color', '#3F51B5'); ?>;
     }
 
@@ -859,7 +859,7 @@ function bpl_customizer_output() {
 		color: <?php echo get_theme_mod('bpl_body_text_color', '#404040'); ?>;
 	}
 
-   	.media-body {
+   	.media-body-wrap {
         border-left: 2px solid <?php echo get_theme_mod('bpl_comment_accent_color', '#3F51B5'); ?>;
         border-bottom: 2px solid <?php echo get_theme_mod('bpl_comment_accent_color', '#3F51B5'); ?>;
 	}
@@ -909,4 +909,3 @@ function bpl_customizer_output() {
 }
 
 add_action( 'wp_head', 'bpl_customizer_output');
-

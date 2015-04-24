@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bpl' ),
+				printf( _nx( 'One <span class="fa fa-comment-o"></span> on &ldquo;%2$s&rdquo;', '%1$s <span class="fa fa-comments-o"></span> on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bpl' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h3>
@@ -78,7 +78,7 @@ if ( post_password_required() ) {
 	<?php comment_form( $args = array(
 			  'id_form'           => 'commentform',  // that's the wordpress default value! delete it or edit it ;)
 			  'id_submit'         => 'commentsubmit',
-			  'title_reply'       => __( 'Leave a Reply', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'title_reply'       => __( 'Something to Say?', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
 			  'title_reply_to'    => __( 'Leave a Reply to %s', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
 			  'cancel_reply_link' => __( 'Cancel Reply', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
 			  'label_submit'      => __( 'Post Comment', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
@@ -86,7 +86,7 @@ if ( post_password_required() ) {
 			  'comment_field' =>  '<p><textarea placeholder="Start typing..." id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
 
 			  'comment_notes_after' => '<p class="form-allowed-tags">' .
-				__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', '_tk' ) .
+				__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', '_bpl' ) .
 				'</p><div class="alert alert-info">' . allowed_tags() . '</div>'
 
 			  // So, that was the needed stuff to have bootstrap basic styles for the form elements and buttons

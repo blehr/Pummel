@@ -26,9 +26,9 @@
 		<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
 		<script>
 			( function( $ ) {
+				$('body.home').addClass('front-page-background'); 
 				if ( $('body.home').hasClass('custom-background') ) {
 					$('body.home').removeClass('custom-background');
-					$('body.home').addClass('front-page-background'); 
 				}
 			} )( jQuery );
 		</script>
