@@ -99,6 +99,9 @@
 	//frontpage background image
 	wp.customize( 'bpl_frontpage_background_image', function( value )  {
 		value.bind( function( to ) {
+			if ( !$('body.home').hasClass('front-page-background')){
+				$('body.home').addClass('front-page-background');
+			}
 			$( '.front-page-background').css( {
 				'background-image': 'url(' + to + ')'
 			});

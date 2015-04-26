@@ -898,7 +898,6 @@ function bpl_customizer_output() {
 
     <?php endif; ?>
 
-
 	<?php if( get_theme_mod('bpl_custom_css') != '' ) {
         echo get_theme_mod('bpl_custom_css');
   	} ?>
