@@ -7,6 +7,10 @@ jQuery( document ).ready( function( $ ) {
     }
     resizeBackground();
     
+    $('textarea, textarea.form-control, input[type="search"], input[type="text"], input[type="email"], input[type="url"]')
+        .focus(function() { $(this).css("background-color", "#fff") })
+        .blur(function() { if ($(this)[0].value == '') { $(this).css("background-color", "transparent") } });
+    
     $( 'input.search-field' ).addClass( 'form-control' );
 
     // here for each comment reply link of wordpress

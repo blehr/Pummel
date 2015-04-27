@@ -61,7 +61,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #000;
 	font-size: 16px;
 	font-size: 1em;
 	line-height: 1.5;
@@ -85,15 +85,6 @@ textarea.form-control {
 	background: transparent;
 }
 
-textarea:focus,
-textarea.ninja-forms-fields:focus,
-input[type="search"]:focus,
-input[type="text"]:focus,
-textarea.form-control:focus,
-input[type="email"]:focus,
-input[type="url"]:focus {
-	background-color: #FFF;
-}
 
 h1,
 h2,
