@@ -627,12 +627,11 @@ a:active {
 	padding: 0;
 }
 
-.search-field {
-	/*background: transparent;*/
-}
-
-.search-field:focus {
-	/*background: #fff;*/
+/*contact form 7 responsive*/
+.wpcf7-text,
+.wpcf7-email,
+.wpcf7-textarea {
+	width: 100%
 }
 
 /*--------------------------------------------------------------
@@ -655,7 +654,6 @@ body {
 .content-area {
 	margin-bottom: 75px;
 }
-
 
 
 /*--------------------------------------------------------------
@@ -728,20 +726,45 @@ body {
 	width: inherit;
 }
 
+.frontpage-middle .widget-title,
+.frontpage-third .widget-title {
+	margin-bottom: 1.5em;
+}
 
 .frontpage-middle-widgets {
 	width: 100%;
+}
+
+.frontpage-middle .row:first-of-type {
+	padding-top: 40px;
+	padding-bottom: 0;
+}
+
+.frontpage-middle .row {
+	padding-bottom: 50px;
+}
+
+.frontpage-third .row {
+	padding: 50px 0;
 }
 
 .frontpage-middle-widgets a {
 	text-decoration: underline;
 }
 
+.frontpage-middle-widgets .widget,
+.frontpage-third .widget {
+	margin-bottom: 3em;
+}
+
 .frontpage-middle,
 .frontpage-third {
 	width: 95%;
 	margin: auto;
-	
+}
+
+.frontpage-third .row {
+	padding:35px 0;
 }
 
 .content-container {
@@ -766,6 +789,15 @@ body {
 	padding-top: 25px;
 	padding-bottom: 50px;
 }
+
+#frontpage-bkg .site-main {
+	padding: 50px 10px 10px;
+}
+
+#frontpage-bkg .content-area {
+	margin-bottom: 0;
+}
+
 
 
 /*--------------------------------------------------------------
