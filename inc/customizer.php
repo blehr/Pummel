@@ -1383,7 +1383,7 @@ function bpl_customizer_output() {
 	<?php endif; ?>
 	
 	.frontpage-third {
-		color: <?php echo get_theme_mod('bpl_frontpage_bottom_text_color', '#404040'); ?>
+		color: <?php echo get_theme_mod('bpl_frontpage_bottom_text_color', '#404040'); ?>;
 		
 		<?php if(get_theme_mod('bpl_show_front_bottom_text_background') != 0): ?>
 		
