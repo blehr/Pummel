@@ -541,7 +541,6 @@ a:active {
 .site-footer {
 	background-color: #222222;
 	padding: 20px 0;
-	margin-top: 50px;
 }
 
 .social-footer-link {
@@ -731,10 +730,6 @@ body {
 	margin-bottom: 1.5em;
 }
 
-.frontpage-middle-widgets {
-	width: 100%;
-}
-
 .frontpage-middle .row:first-of-type {
 	padding-top: 40px;
 	padding-bottom: 0;
@@ -742,10 +737,6 @@ body {
 
 .frontpage-middle .row {
 	padding-bottom: 50px;
-}
-
-.frontpage-third .row {
-	padding: 50px 0;
 }
 
 .frontpage-middle-widgets a {
@@ -779,12 +770,16 @@ body {
 	margin: auto;
 }
 
-.frontpage-third {
-	margin-top: 50px;
+.frontpage-middle-widgets { /* middle background */
+	width: 100%;
+	padding: 50px 0 0;
 }
 
+.frontpage-third-widgets { /* third background */
+	padding: 50px 0;
+}
 
-#frontpage-bkg {
+#frontpage-bkg { /*page content background*/
 	width: 100%;
 	padding-top: 25px;
 	padding-bottom: 50px;

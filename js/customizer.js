@@ -185,6 +185,103 @@
 			$( '.frontpage-middle-header' ).text( to );
 		});
 	});
+	
+	///////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+
+	//frontpage Top background image
+	wp.customize( 'bpl_frontpage_top_background_image', function( value )  {
+		value.bind( function( to ) {
+			$( '#frontpage-bkg').css( {
+				'background-image': 'url(' + to + ')'
+			});
+		});
+	});
+	
+	//frontpage Top background image repeat
+	wp.customize( 'bpl_frontpage_top_background_repeat', function( value )  {
+		value.bind( function( to ) {
+			$( '#frontpage-bkg').css( {
+				'background-repeat': to 
+			});
+		});
+	});
+	
+	//frontpage TOP background image cover
+	wp.customize( 'bpl_frontpage_top_background_cover', function( value )  {
+		value.bind( function( to ) {
+			$( '#frontpage-bkg').css( {
+				'background-size': to 
+			});
+		});
+	});
+	
+	//Frontpage TOP text color
+	wp.customize( 'bpl_frontpage_top_text_color', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-container').css( {
+				'color': to
+			});
+		});
+	});
+	
+	//Frontpage TOP text color
+	wp.customize( 'bpl_frontpage_top_background_color', function( value )  {
+		value.bind( function( to ) {
+			$( '#frontpage-bkg').css( {
+				'background-color': to
+			});
+		});
+	});
+
+	///////////////////////////////////////////////////
+	//////////////////////////////////////////////////
+
+	//frontpage bottom background image
+	wp.customize( 'bpl_frontpage_bottom_background_image', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-third-widgets').css( {
+				'background-image': 'url(' + to + ')'
+			});
+		});
+	});
+	
+	//frontpage bottom background image repeat
+	wp.customize( 'bpl_frontpage_bottom_background_repeat', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-third-widgets').css( {
+				'background-repeat': to 
+			});
+		});
+	});
+	
+	//frontpage bottom background image cover
+	wp.customize( 'bpl_frontpage_bottom_background_cover', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-third-widgets').css( {
+				'background-size': to 
+			});
+		});
+	});
+	
+	//Frontpage bottom text color
+	wp.customize( 'bpl_frontpage_bottom_text_color', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-third').css( {
+				'color': to
+			});
+		});
+	});
+	
+	//Frontpage bottom text color
+	wp.customize( 'bpl_frontpage_bottom_background_color', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-third-widgets').css( {
+				'background-color': to
+			});
+		});
+	});
+
 
 } )( jQuery );
 

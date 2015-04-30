@@ -9,7 +9,7 @@ jQuery( document ).ready( function( $ ) {
     resizeBackground();
     
     //animate frontpage middle images
-    $('.frontpage-middle .widget').addClass('animatedParent animateOnce').attr( "data-appear-top-offset", "-100" );
+    $('.frontpage-middle .widget').addClass('animatedParent animateOnce').attr( "data-appear-top-offset", "-50" );
     
     $('.frontpage-middle .widget img').addClass('animated fadeInDown');//lightSpeedInRight
     

@@ -148,8 +148,7 @@ function bpl_customize_register( $wp_customize ) {
 			)
 		)
 	);
-
-
+	
 	//Frontpage middle widget text color
 	$wp_customize->add_setting(
         'bpl_frontpage_middle_widgets_text_color',
@@ -171,8 +170,7 @@ function bpl_customize_register( $wp_customize ) {
 			)
 		)
 	);
-
-
+	
 	//Comment Accent color
 	$wp_customize->add_setting(
         'bpl_comment_accent_color',
@@ -698,31 +696,65 @@ function bpl_customize_register( $wp_customize ) {
 		)
 	);
 
-   	//Front page text color
-	$wp_customize->add_setting(
-       'bpl_frontpage_text_color',
+
+//////////////////////////////////////////////////////////
+////frontpage top section////////////////////////////////
+	
+	// Add Front page top section
+    $wp_customize->add_section(
+    	'frontpage_top' ,
     	array(
-            'default'           => '#404040',
+    		'title'  => __('Front Page Top','bpl'),
+		 )
+    );
+	
+	//Frontpage Top background color
+	$wp_customize->add_setting(
+        'bpl_frontpage_top_background_color',
+        array(
+            'default'           => '#FFF',
             'transport'         => 'postMessage',
             'sanitize_callback' => 'sanitize_text'
-        )
+       )
     );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bpl_frontpage_text_color',
+			'bpl_frontpage_top_background_color',
+			array(
+				'label'      		=> __( 'Background Color', 'bpl' ),
+				'section'    		=> 'frontpage_top',
+				'settings'   		=> 'bpl_frontpage_top_background_color',
+				'wp-head-callback'  => 'bpl_customizer_output',
+			)
+		)
+	);
+	
+	//Frontpage Top text color
+	$wp_customize->add_setting(
+        'bpl_frontpage_top_text_color',
+        array(
+            'default'           => '#404040',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'sanitize_text'
+       )
+    );
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bpl_frontpage_top_text_color',
 			array(
 				'label'      		=> __( 'Text Color', 'bpl' ),
-				'section'    		=> 'frontpage_background',
-				'settings'   		=> 'bpl_frontpage_text_color',
+				'section'    		=> 'frontpage_top',
+				'settings'   		=> 'bpl_frontpage_top_text_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
 			)
 		)
 	);
 
-	//Front page text background color
+	//Front page top text background color
 	$wp_customize->add_setting(
-        'bpl_frontpage_text_background_color',
+        'bpl_frontpage_top_text_background_color',
         array(
             'default'           => '#e0e0e0',
         	'sanitize_callback' => 'sanitize_text'
@@ -731,20 +763,41 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bpl_frontpage_text_background_color',
+			'bpl_frontpage_top_text_background_color',
 			array(
 				'label'      		=> __( 'Text Background Color', 'bpl' ),
-				'section'    		=> 'frontpage_background',
-				'settings'   		=> 'bpl_frontpage_text_background_color',
+				'section'    		=> 'frontpage_top',
+				'settings'   		=> 'bpl_frontpage_top_text_background_color',
 				'wp-head-callback'	=> 'bpl_customizer_output',
 			)
 		)
 	);
 
+	// Display text background
+	$wp_customize->add_setting(
+		'bpl_show_front_top_text_background',
+		array(
+			'default' 			=> 0,
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_show_front_top_text_background',
+			array(
+			    'label' 	=> __( 'Show Text Background', 'bpl' ),
+			    'section' 	=> 'frontpage_top',
+			    'settings' 	=> 'bpl_show_front_top_text_background',
+			    'type'  	=> 'checkbox',
+			)
+		)
+	);
 
 	//Front page text background opacity
 	$wp_customize->add_setting(
-        'bpl_frontpage_text_background_opacity',
+        'bpl_frontpage_top_text_background_opacity',
         array(
             'default'           => '.8',
             'sanitize_callback' => 'sanitize_text'
@@ -752,10 +805,279 @@ function bpl_customize_register( $wp_customize ) {
     );
 
 	$wp_customize->add_control(
-		'bpl_frontpage_text_background_opacity',
+		'bpl_frontpage_top_text_background_opacity',
 		array(
 		    'type'        		=> 'range',
-		    'section'     		=> 'frontpage_background',
+		    'section'     		=> 'frontpage_top',
+		    'label'       		=>  __( 'Text Background Opacity', 'bpl' ),
+		    'wp-head-callback' 	=> 'bpl_customizer_output',
+		    'input_attrs' 		=> array(
+		        'min'   => .0,
+		        'max'   => 1,
+		        'step'  => .1,
+		    ),
+		)
+
+	);
+	
+	//frontpage top background image
+	$wp_customize->add_setting(
+		'bpl_frontpage_top_background_image',
+		array(
+			'default' 			=> '',
+			'sanitize_callback' => 'sanitize_text',
+			'transport' 		=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'bpl_frontpage_top_background_image',
+           array(
+                'label'      		=> __( 'Upload an image for the Front Page Top Background', 'bpl' ),
+                'section'    		=> 'frontpage_top',
+      			'settings'   		=> 'bpl_frontpage_top_background_image',
+                'context'			=> 'frontpage_top_background',
+            	'wp-head-callback' 	=> 'bpl_customizer_output'
+            )
+        )
+    );
+
+   // Setting for frontpage top background image repeat
+   	$wp_customize->add_setting(
+		'bpl_frontpage_top_background_repeat',
+		array(
+			'default' 			=> 'repeat',
+			'sanitize_callback' => 'sanitize_text',
+			'transport' 		=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+            $wp_customize,
+            'bpl_frontpage_top_background_repeat',
+            array(
+                'label'      		=> __( 'Background Repeat', 'bpl' ),
+                'section'    		=> 'frontpage_top',
+                'settings'   		=> 'bpl_frontpage_top_background_repeat',
+                'wp-head-callback'  => 'bpl_customizer_output',
+                'type'       		=> 'radio',
+			    'choices'    		=> array(
+					'no-repeat'  => 'No Repeat',
+					'repeat'	 => 'Tile',
+					'repeat-y'   => 'Tile Horizontally',
+					'repeat-x'	 => 'Tile Vertically',
+
+				 ),
+            )
+        )
+    );
+
+
+   // Setting for frontpage top background image position X
+   	$wp_customize->add_setting(
+		'bpl_frontpage_top_background_position_x',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+           $wp_customize,
+           'bpl_frontpage_top_background_position_x',
+            array(
+                'label'    			=> __( 'Background Position X', 'bpl' ),
+                'section'  			=> 'frontpage_top',
+                'settings' 			=> 'bpl_frontpage_top_background_position_x',
+                'wp-head-callback'	=> 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  		=> array(
+				 	 'left'   	=> 'Left',
+					 'center' 	=> 'Center',
+					 'right'	=> 'Right',
+
+				),
+            )
+        )
+    );
+
+   // Setting for frontpage top background image position Y
+   	$wp_customize->add_setting(
+		'bpl_frontpage_top_background_position_y',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'bpl_frontpage_top_background_position_y',
+            array(
+                'label'    			=> __( 'Background Position Y', 'bpl' ),
+                'section'  			=> 'frontpage_top',
+                'settings' 			=> 'bpl_frontpage_top_background_position_y',
+                'wp-head-callback'  => 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  			=> array(
+					'top'		=> 'Top',
+					'center' 	=> 'Center',
+					'bottom'	=> 'Bottom',
+
+				),
+            )
+        )
+    );
+
+   	// Setting for frontpage top background image cover
+	$wp_customize->add_setting(
+		'bpl_frontpage_top_background_cover',
+		array(
+			'default' 			=> 'auto',
+			'sanitize_callback' => 'sanitize_text',
+			'transport'			=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_frontpage_top_background_cover',
+			array(
+			    'label' 			=> __( 'Fit Entire Image Within Top Div', 'bpl' ),
+			    'description' 		=> __( '(background-size: cover)', 'bpl' ),
+			    'section' 			=> 'frontpage_top',
+			    'settings' 			=> 'bpl_frontpage_top_background_cover',
+			    'wp-head-callback' 	=> 'bpl_customizer_output',
+			    'type'     			=> 'radio',
+			    'choices'  			=> array(
+						'cover' => 'Yes',
+						'auto'  => 'No',
+
+					),
+			)
+		)
+	);
+	
+	
+/////////////////////////////////////////////////////////////////////
+////////////////////front page bottom section///////////////////////
+
+	// Add Front page bottom section
+    $wp_customize->add_section(
+    	'frontpage_bottom' ,
+    	array(
+    		'title'  => __('Front Page Bottom','bpl'),
+		 )
+    );
+	
+	//Frontpage bottom background color
+	$wp_customize->add_setting(
+        'bpl_frontpage_bottom_background_color',
+        array(
+            'default'           => '#FFF',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'sanitize_text'
+       )
+    );
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bpl_frontpage_bottom_background_color',
+			array(
+				'label'      		=> __( 'Background Color', 'bpl' ),
+				'section'    		=> 'frontpage_bottom',
+				'settings'   		=> 'bpl_frontpage_bottom_background_color',
+				'wp-head-callback'  => 'bpl_customizer_output',
+			)
+		)
+	);
+	
+	//Frontpage Bottom text color
+	$wp_customize->add_setting(
+        'bpl_frontpage_bottom_text_color',
+        array(
+            'default'           => '#404040',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'sanitize_text'
+       )
+    );
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bpl_frontpage_bottom_text_color',
+			array(
+				'label'      		=> __( 'Text Color', 'bpl' ),
+				'section'    		=> 'frontpage_bottom',
+				'settings'   		=> 'bpl_frontpage_bottom_text_color',
+				'wp-head-callback'  => 'bpl_customizer_output',
+			)
+		)
+	);
+	
+
+	//Front page bottom text background color
+	$wp_customize->add_setting(
+        'bpl_frontpage_bottom_text_background_color',
+        array(
+            'default'           => '#e0e0e0',
+        	'sanitize_callback' => 'sanitize_text'
+       )
+    );
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bpl_frontpage_bottom_text_background_color',
+			array(
+				'label'      		=> __( 'Text Background Color', 'bpl' ),
+				'section'    		=> 'frontpage_bottom',
+				'settings'   		=> 'bpl_frontpage_bottom_text_background_color',
+				'wp-head-callback'	=> 'bpl_customizer_output',
+			)
+		)
+	);
+
+	// Display text background
+	$wp_customize->add_setting(
+		'bpl_show_front_bottom_text_background',
+		array(
+			'default' 			=> 0,
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_show_front_bottom_text_background',
+			array(
+			    'label' 	=> __( 'Show Text Background', 'bpl' ),
+			    'section' 	=> 'frontpage_bottom',
+			    'settings' 	=> 'bpl_show_front_bottom_text_background',
+			    'type'  	=> 'checkbox',
+			)
+		)
+	);
+
+	//Front page bottom text background opacity
+	$wp_customize->add_setting(
+        'bpl_frontpage_bottom_text_background_opacity',
+        array(
+            'default'           => '.8',
+            'sanitize_callback' => 'sanitize_text'
+        )
+    );
+
+	$wp_customize->add_control(
+		'bpl_frontpage_bottom_text_background_opacity',
+		array(
+		    'type'        		=> 'range',
+		    'section'     		=> 'frontpage_bottom',
 		    'label'       		=>  __( 'Text Background Opacity', 'bpl' ),
 		    'wp-head-callback' 	=> 'bpl_customizer_output',
 		    'input_attrs' 		=> array(
@@ -766,6 +1088,153 @@ function bpl_customize_register( $wp_customize ) {
 		)
 
 	);
+	
+	//frontpage bottom background image
+	$wp_customize->add_setting(
+		'bpl_frontpage_bottom_background_image',
+		array(
+			'default' 			=> '',
+			'sanitize_callback' => 'sanitize_text',
+			'transport' 		=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'bpl_frontpage_bottom_background_image',
+           array(
+                'label'      		=> __( 'Upload an image for the Front Page Top Background', 'bpl' ),
+                'section'    		=> 'frontpage_bottom',
+      			'settings'   		=> 'bpl_frontpage_bottom_background_image',
+                'context'			=> 'frontpage_bottom_background',
+            	'wp-head-callback' 	=> 'bpl_customizer_output'
+            )
+        )
+    );
+
+   // Setting for frontpage bottom background image repeat
+   	$wp_customize->add_setting(
+		'bpl_frontpage_bottom_background_repeat',
+		array(
+			'default' 			=> 'repeat',
+			'sanitize_callback' => 'sanitize_text',
+			'transport' 		=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+            $wp_customize,
+            'bpl_frontpage_bottom_background_repeat',
+            array(
+                'label'      		=> __( 'Background Repeat', 'bpl' ),
+                'section'    		=> 'frontpage_bottom',
+                'settings'   		=> 'bpl_frontpage_bottom_background_repeat',
+                'wp-head-callback'  => 'bpl_customizer_output',
+                'type'       		=> 'radio',
+			    'choices'    		=> array(
+					'no-repeat'  => 'No Repeat',
+					'repeat'	 => 'Tile',
+					'repeat-y'   => 'Tile Horizontally',
+					'repeat-x'	 => 'Tile Vertically',
+
+				 ),
+            )
+        )
+    );
+
+
+   // Setting for frontpage top background image position X
+   	$wp_customize->add_setting(
+		'bpl_frontpage_bottom_background_position_x',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+           $wp_customize,
+           'bpl_frontpage_bottom_background_position_x',
+            array(
+                'label'    			=> __( 'Background Position X', 'bpl' ),
+                'section'  			=> 'frontpage_bottom',
+                'settings' 			=> 'bpl_frontpage_bottom_background_position_x',
+                'wp-head-callback'	=> 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  		=> array(
+				 	 'left'   	=> 'Left',
+					 'center' 	=> 'Center',
+					 'right'	=> 'Right',
+
+				),
+            )
+        )
+    );
+
+   // Setting for frontpage bottom background image position Y
+   	$wp_customize->add_setting(
+		'bpl_frontpage_bottom_background_position_y',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'bpl_frontpage_bottom_background_position_y',
+            array(
+                'label'    			=> __( 'Background Position Y', 'bpl' ),
+                'section'  			=> 'frontpage_bottom',
+                'settings' 			=> 'bpl_frontpage_bottom_background_position_y',
+                'wp-head-callback'  => 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  			=> array(
+					'top'		=> 'Top',
+					'center' 	=> 'Center',
+					'bottom'	=> 'Bottom',
+
+				),
+            )
+        )
+    );
+
+   	// Setting for frontpage bottom background image cover
+	$wp_customize->add_setting(
+		'bpl_frontpage_bottom_background_cover',
+		array(
+			'default' 			=> 'auto',
+			'sanitize_callback' => 'sanitize_text',
+			'transport'			=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bpl_frontpage_bottom_background_cover',
+			array(
+			    'label' 			=> __( 'Fit Entire Image Within Bottom Div', 'bpl' ),
+			    'description' 		=> __( '(background-size: cover)', 'bpl' ),
+			    'section' 			=> 'frontpage_bottom',
+			    'settings' 			=> 'bpl_frontpage_bottom_background_cover',
+			    'wp-head-callback' 	=> 'bpl_customizer_output',
+			    'type'     			=> 'radio',
+			    'choices'  			=> array(
+						'cover' => 'Yes',
+						'auto'  => 'No',
+
+					),
+			)
+		)
+	);
+
+
+/////////////////////////////////////////////////////////////////////
 
     // Create custom panels
 	$wp_customize->add_panel( 'frontpage_options', array(
@@ -781,8 +1250,15 @@ function bpl_customize_register( $wp_customize ) {
 	// Assign sections to panels
   	$wp_customize->get_section('frontpage_middle')->panel = 'frontpage_options';
   	$wp_customize->get_section('frontpage_background')->panel = 'frontpage_options';
+  	$wp_customize->get_section('frontpage_top')->panel = 'frontpage_options';
+  	$wp_customize->get_section('frontpage_bottom')->panel = 'frontpage_options';
 
 	//section priority
+	$wp_customize->get_section('frontpage_middle')->priority = 20;
+  	$wp_customize->get_section('frontpage_background')->priority = 40;
+  	$wp_customize->get_section('frontpage_top')->priority = 10;
+  	$wp_customize->get_section('frontpage_bottom')->priority = 30;
+	
 	$wp_customize->get_section( 'title_tagline' )->priority = 10;
 	$wp_customize->get_section( 'social-media' )->priority = 20;
 	$wp_customize->get_section( 'header_image' )->priority = 30;
@@ -877,6 +1353,57 @@ function bpl_customizer_output() {
 	.frontpage-middle-widgets a {
 		color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_text_color', '#C5CAE9'); ?>;
 	}
+	
+	<?php if( get_theme_mod( 'bpl_frontpage_background_image') == "" ): ?>
+	
+		#frontpage-bkg {
+			background-color: <?php echo get_theme_mod('bpl_frontpage_top_background_color', '#FFF'); ?>;
+		}
+	
+	<?php endif; ?>
+	
+	.frontpage-container {
+		color: <?php echo get_theme_mod('bpl_frontpage_top_text_color', '#404040'); ?>;
+		
+		<?php if(get_theme_mod('bpl_show_front_top_text_background') != 0): ?>
+		
+			background-color: <?php echo get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0'); ?>;
+			background-color: <?php echo hex2rgba(get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_top_text_background_opacity', '.8') ); ?>;
+			border-radius: 5px;
+		
+		<?php endif; ?>
+	}
+	
+	<?php if( get_theme_mod( 'bpl_frontpage_background_image') == "" ): ?>
+	
+		.frontpage-third-widgets {
+			background-color: <?php echo get_theme_mod('bpl_frontpage_bottom_background_color', '#FFF'); ?>;
+		}
+	
+	<?php endif; ?>
+	
+	.frontpage-third {
+		color: <?php echo get_theme_mod('bpl_frontpage_bottom_text_color', '#404040'); ?>
+		
+		<?php if(get_theme_mod('bpl_show_front_bottom_text_background') != 0): ?>
+		
+			background-color: <?php echo get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0'); ?>;
+			background-color: <?php echo hex2rgba(get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_bottom_text_background_opacity', '.8') ); ?>;
+			border-radius: 5px;
+		
+		<?php endif; ?>
+	}
+	
+	<?php if( get_theme_mod( 'bpl_frontpage_top_background_image') != "" ): ?>
+	
+		#frontpage-bkg {
+			background: url(<?php echo get_theme_mod( 'bpl_frontpage_top_background_image' ); ?>);
+			background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_top_background_repeat', 'repeat' ); ?>;
+			background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_x', 'center' ); ?>;
+			background-size: <?php echo get_theme_mod( 'bpl_frontpage_top_background_cover', 'auto' ); ?>;
+		}
+	
+	<?php endif; ?>
 
 	<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
 
@@ -886,14 +1413,6 @@ function bpl_customizer_output() {
 			background-position: <?php echo get_theme_mod( 'bpl_frontpage_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_background_position_x', 'center' ); ?>;
 			background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_background_attachment', 'fixed' ); ?>;
 			background-size: <?php echo get_theme_mod( 'bpl_frontpage_background_cover', 'auto' ); ?>;
-		}
-
-		.frontpage-container,
-		.frontpage-third {
-			background-color: <?php echo get_theme_mod('bpl_frontpage_text_background_color', '#e0e0e0'); ?>;
-			background-color: <?php echo hex2rgba(get_theme_mod('bpl_frontpage_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_text_background_opacity', '.8') ); ?>;
-			color: <?php echo get_theme_mod('bpl_frontpage_text_color', '#404040'); ?>;
-			border-radius: 5px;
 		}
 
     <?php endif; ?>
