@@ -528,8 +528,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_background_image',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text',
-			'transport' 		=> 'postMessage'
+			'sanitize_callback' => 'sanitize_text'
 		)
 	);
 
