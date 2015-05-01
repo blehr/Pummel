@@ -47,8 +47,16 @@ Head over to the theme customizer and check out the many options available. Chan
 
 ####Customizing the Front Page
 
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%202015-05-01%20at%2011.38.36%20AM.png)
+
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20frontpage-middle.png)
 ***
+
+####Change Colors or add a background image to the Top and or Bottom Section
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%202015-05-01%20at%2011.39.03%20AM.png)
+
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%202015-05-01%20at%2011.39.34%20AM.png)
 
 ####Add a background image just for the Front Page
 
