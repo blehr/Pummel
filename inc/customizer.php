@@ -1403,6 +1403,17 @@ function bpl_customizer_output() {
 		}
 	
 	<?php endif; ?>
+	
+	<?php if( get_theme_mod( 'bpl_frontpage_bottom_background_image') != "" ): ?>
+	
+		.frontpage-third-widgets {
+			background: url(<?php echo get_theme_mod( 'bpl_frontpage_bottom_background_image' ); ?>);
+			background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_repeat', 'repeat' ); ?>;
+			background-position: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_x', 'center' ); ?>;
+			background-size: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_cover', 'auto' ); ?>;
+		}
+	
+	<?php endif; ?>
 
 	<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
 
