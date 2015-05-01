@@ -17,7 +17,7 @@ Head over to the theme customizer and check out the many options available. Chan
 [Built off of _S](https://github.com/Automattic/_s) and [Bootstrap](getbootstrap.com).
 
 ##Customize
-![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_all.png)
+![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot%20pummel-front.png)
 ***
 
 ####Option to center Title and Tagline
