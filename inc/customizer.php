@@ -932,6 +932,36 @@ function bpl_customize_register( $wp_customize ) {
             )
         )
     );
+    
+    // Setting for frontpage top background image attachment
+   	$wp_customize->add_setting(
+		'bpl_frontpage_top_background_attachment',
+		array(
+			'default' 			=> 'scroll',
+			'sanitize_callback' => 'sanitize_text',
+			'transport' 		=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'bpl_frontpage_background_attachment',
+            array(
+                'label'    			=> __( 'Background Attachment', 'bpl' ),
+                'section'  			=> 'frontpage_top',
+                'settings' 			=> 'bpl_frontpage_top_background_attachment',
+                'wp-head-callback' 	=> 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  			=> array(
+					'scroll' => 'Scroll',
+					'fixed'  => 'Fixed',
+
+				),
+            )
+        )
+    );
+
 
    	// Setting for frontpage top background image cover
 	$wp_customize->add_setting(
@@ -1201,6 +1231,37 @@ function bpl_customize_register( $wp_customize ) {
             )
         )
     );
+    
+    // Setting for frontpage bottom background image attachment
+   	$wp_customize->add_setting(
+		'bpl_frontpage_bottom_background_attachment',
+		array(
+			'default' 			=> 'scroll',
+			'sanitize_callback' => 'sanitize_text',
+			'transport' 		=> 'postMessage'
+		)
+	);
+
+	$wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'bpl_frontpage_bottom_background_attachment',
+            array(
+                'label'    			=> __( 'Background Attachment', 'bpl' ),
+                'section'  			=> 'frontpage_bottom',
+                'settings' 			=> 'bpl_frontpage_bottom_background_attachment',
+                'wp-head-callback' 	=> 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  			=> array(
+					'scroll' => 'Scroll',
+					'fixed'  => 'Fixed',
+
+				),
+            )
+        )
+    );
+
+    
 
    	// Setting for frontpage bottom background image cover
 	$wp_customize->add_setting(
@@ -1384,6 +1445,7 @@ function bpl_customizer_output() {
 				background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_top_background_repeat', 'repeat' ); ?>;
 				background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_x', 'center' ); ?>;
 				background-size: <?php echo get_theme_mod( 'bpl_frontpage_top_background_cover', 'auto' ); ?>;
+				background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_top_background_attachment', 'scroll' ); ?>;
 			<?php endif; ?>
 		}
 
@@ -1394,6 +1456,7 @@ function bpl_customizer_output() {
 				background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_repeat', 'repeat' ); ?>;
 				background-position: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_position_x', 'center' ); ?>;
 				background-size: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_cover', 'auto' ); ?>;
+				background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_attachment', 'scroll' ); ?>;
 			<?php endif; ?>
 		}
 

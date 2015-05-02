@@ -207,6 +207,15 @@
 		});
 	});
 	
+	//frontpage top background image attachment
+	wp.customize( 'bpl_frontpage_top_background_attachment', function( value )  {
+		value.bind( function( to ) {
+			$( '#frontpage-bkg').css( {
+				'background-attachment': to 
+			});
+		});
+	});
+	
 	//frontpage TOP background image cover
 	wp.customize( 'bpl_frontpage_top_background_cover', function( value )  {
 		value.bind( function( to ) {
@@ -251,6 +260,15 @@
 		value.bind( function( to ) {
 			$( '.frontpage-third-widgets').css( {
 				'background-repeat': to 
+			});
+		});
+	});
+	
+	//frontpage bottom background image attachment
+	wp.customize( 'bpl_frontpage_bottom_background_attachment', function( value )  {
+		value.bind( function( to ) {
+			$( '.frontpage-third-widgets').css( {
+				'background-attachment': to 
 			});
 		});
 	});
