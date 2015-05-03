@@ -30,7 +30,7 @@ get_header(); ?>
 							wp_list_categories( array(
 								'orderby'    => 'count',
 								'order'      => 'DESC',
-								'show_count' => 1,
+								'show_count' => 0,
 								'title_li'   => '',
 								'number'     => 10,
 							) );

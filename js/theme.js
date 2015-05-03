@@ -9,14 +9,14 @@ jQuery( document ).ready( function( $ ) {
     resizeBackground();
     
     //animate frontpage middle images
-    $('.frontpage-middle .widget').addClass('animatedParent animateOnce').attr( "data-appear-top-offset", "-50" );
+    $('.frontpage-middle .widget').addClass('animatedParent animateOnce').attr( "data-appear-top-offset", "0" );
     
     $('.frontpage-middle .widget img').addClass('animated fadeInDown');//lightSpeedInRight
-    
-    //textarea and inputs white background on focus and if text has been entered
+
+    //textarea and input white background on focus and if text has been entered
     $('textarea, textarea.form-control, input[type="search"], input[type="text"], input[type="email"], input[type="url"]')
-        .focus(function() { $(this).css("background-color", "#fff") })
-        .blur(function() { if ($(this)[0].value == '') { $(this).css("background-color", "transparent") } });
+        .focus(function() { $(this).addClass('input-focus') })
+        .blur(function() { if ($(this)[0].value == '') { $(this).removeClass('input-focus') } });
     
     $('input[type="submit"]').addClass('btn btn-primary');
     
