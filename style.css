@@ -265,7 +265,7 @@ table {
 a:hover,
 a:focus,
 a:active {
-	color: #1A237E;
+	color: #5e5e5e;
 	text-decoration: none;
 }
 
@@ -465,6 +465,11 @@ a:active {
   line-height: 1.42857143;
   color: inherit;
   white-space: nowrap;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+	background-color: inherit;
 }
 
 .navbar-default .navbar-nav>li>a:hover,
@@ -746,6 +751,10 @@ body {
 }
 
 .frontpage-middle-widgets a {
+	font-weight: 700;
+}
+
+.frontpage-middle-widgets a:hover {
 	text-decoration: underline;
 }
 
