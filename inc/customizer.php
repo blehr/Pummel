@@ -695,6 +695,125 @@ function bpl_customize_register( $wp_customize ) {
 		)
 	);
 
+//////////////////////////////////////////////////////////
+//frontpage Featured Image /////////////////////////////////////////
+
+	// Add Front page top section
+    $wp_customize->add_section(
+    	'frontpage_top_image' ,
+    	array(
+    		'title'  => __('Front Page Featured Image','bpl'),
+    		'description'  => __('Located Below Header','bpl'),
+		 )
+    );
+
+	//frontpage top background image
+	$wp_customize->add_setting(
+		'bpl_frontpage_top_image',
+		array(
+			'default' 			=> '',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'bpl_frontpage_top_image',
+           array(
+                'label'      		=> __( 'Upload An Image', 'bpl' ),
+                'section'    		=> 'frontpage_top_image',
+      			'settings'   		=> 'bpl_frontpage_top_image',
+                'context'			=> 'frontpage_top_image',
+            	'wp-head-callback' 	=> 'bpl_customizer_output'
+            )
+        )
+    );
+
+	 // Setting for frontpage top background image position X
+   	$wp_customize->add_setting(
+		'bpl_frontpage_top_position_x',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+       new WP_Customize_Control(
+           $wp_customize,
+           'bpl_frontpage_top_position_x',
+            array(
+                'label'    			=> __( 'Background Position X', 'bpl' ),
+                'section'  			=> 'frontpage_top_image',
+                'settings' 			=> 'bpl_frontpage_top_position_x',
+                'wp-head-callback'	=> 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  		=> array(
+				 	 'left'   	=> 'Left',
+					 'center' 	=> 'Center',
+					 'right'	=> 'Right',
+
+				),
+            )
+        )
+    );
+
+   // Setting for frontpage top background image position Y
+   	$wp_customize->add_setting(
+		'bpl_frontpage_top_position_y',
+		array(
+			'default' => 'center',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'bpl_frontpage_top_position_y',
+            array(
+                'label'    			=> __( 'Background Position Y', 'bpl' ),
+                'section'  			=> 'frontpage_top_image',
+                'settings' 			=> 'bpl_frontpage_top_position_y',
+                'wp-head-callback'  => 'bpl_customizer_output',
+                'type'     			=> 'radio',
+			    'choices'  			=> array(
+					'top'		=> 'Top',
+					'center' 	=> 'Center',
+					'bottom'	=> 'Bottom',
+
+				),
+            )
+        )
+    );
+
+	 $wp_customize->add_setting(
+        'bpl_frontpage_top_image_height',
+        array(
+      		'default'       	=> '300',
+	        'sanitize_callback' => 'sanitize_text',
+	        'transport'         => 'postMessage'
+	)
+	);
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'bpl_frontpage_top_image_height',
+	        array(
+	            'label'          => __( 'Image Height', 'bpl' ),
+            	'description'    =>	__( 'May have to adjust image height to display correctly across differing screen sizes.', 'bpl' ),		
+	            'section'        => 'frontpage_top_image',
+	            'settings'       => 'bpl_frontpage_top_image_height',
+	            'type'           => 'text'
+	        )
+	    )
+	);
+
+
+
+
+
 
 //////////////////////////////////////////////////////////
 ////frontpage top section////////////////////////////////
@@ -824,8 +943,8 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_background_image',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text',
-			'transport' 		=> 'postMessage'
+			'sanitize_callback' => 'sanitize_text'
+			// 'transport' 		=> 'postMessage'
 		)
 	);
 
@@ -1123,8 +1242,8 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_bottom_background_image',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text',
-			'transport' 		=> 'postMessage'
+			'sanitize_callback' => 'sanitize_text'
+			// 'transport' 		=> 'postMessage'
 		)
 	);
 
@@ -1312,8 +1431,10 @@ function bpl_customize_register( $wp_customize ) {
   	$wp_customize->get_section('frontpage_background')->panel = 'frontpage_options';
   	$wp_customize->get_section('frontpage_top')->panel = 'frontpage_options';
   	$wp_customize->get_section('frontpage_bottom')->panel = 'frontpage_options';
+  	$wp_customize->get_section('frontpage_top_image')->panel = 'frontpage_options';
 
 	//section priority
+	$wp_customize->get_section('frontpage_top_image')->priority = 5;
 	$wp_customize->get_section('frontpage_middle')->priority = 20;
   	$wp_customize->get_section('frontpage_background')->priority = 40;
   	$wp_customize->get_section('frontpage_top')->priority = 10;
@@ -1413,6 +1534,15 @@ function bpl_customizer_output() {
 	.frontpage-middle-widgets a {
 		color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_text_color', '#C5CAE9'); ?>;
 	}
+	
+	#frontpage-img {
+		<?php if( get_theme_mod( 'bpl_frontpage_top_image') != "" ): ?>
+			background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_top_image' ); ?>);
+			background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_position_x', 'center' ); ?>;
+			height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height' ) . 'px'; ?>;
+			background-size: cover;
+		<?php endif; ?>
+	}
 
 	.frontpage-container {
 		color: <?php echo get_theme_mod('bpl_frontpage_top_text_color', '#404040'); ?>;
@@ -1438,27 +1568,27 @@ function bpl_customizer_output() {
 		<?php endif; ?>
 	}
 
-		#frontpage-bkg {
-			background-color: <?php echo get_theme_mod('bpl_frontpage_top_background_color', '#FFF'); ?>;
-			<?php if( get_theme_mod( 'bpl_frontpage_top_background_image') != "" ): ?>
-				background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_top_background_image' ); ?>);
-				background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_top_background_repeat', 'repeat' ); ?>;
-				background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_x', 'center' ); ?>;
-				background-size: <?php echo get_theme_mod( 'bpl_frontpage_top_background_cover', 'auto' ); ?>;
-				background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_top_background_attachment', 'scroll' ); ?>;
-			<?php endif; ?>
-		}
+	#frontpage-bkg {
+		background-color: <?php echo get_theme_mod('bpl_frontpage_top_background_color', '#FFF'); ?>;
+		<?php if( get_theme_mod( 'bpl_frontpage_top_background_image') != "" ): ?>
+			background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_top_background_image' ); ?>);
+			background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_top_background_repeat', 'repeat' ); ?>;
+			background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_background_position_x', 'center' ); ?>;
+			background-size: <?php echo get_theme_mod( 'bpl_frontpage_top_background_cover', 'auto' ); ?>;
+			background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_top_background_attachment', 'scroll' ); ?>;
+		<?php endif; ?>
+	}
 
-		.frontpage-third-widgets {
-			background-color: <?php echo get_theme_mod('bpl_frontpage_bottom_background_color', '#FFF'); ?>;
-			<?php if( get_theme_mod( 'bpl_frontpage_bottom_background_image') != "" ): ?>
-				background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_bottom_background_image' ); ?>);
-				background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_repeat', 'repeat' ); ?>;
-				background-position: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_position_x', 'center' ); ?>;
-				background-size: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_cover', 'auto' ); ?>;
-				background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_attachment', 'scroll' ); ?>;
-			<?php endif; ?>
-		}
+	.frontpage-third-widgets {
+		background-color: <?php echo get_theme_mod('bpl_frontpage_bottom_background_color', '#FFF'); ?>;
+		<?php if( get_theme_mod( 'bpl_frontpage_bottom_background_image') != "" ): ?>
+			background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_bottom_background_image' ); ?>);
+			background-repeat: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_repeat', 'repeat' ); ?>;
+			background-position: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_position_x', 'center' ); ?>;
+			background-size: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_cover', 'auto' ); ?>;
+			background-attachment: <?php echo get_theme_mod( 'bpl_frontpage_bottom_background_attachment', 'scroll' ); ?>;
+		<?php endif; ?>
+	}
 
 	<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
 

@@ -12,6 +12,10 @@
 
 get_header(); ?>
 
+<?php if( get_theme_mod( 'bpl_frontpage_top_image') != "" ): ?>
+	<div id="frontpage-img"></div>
+<?php endif; ?>
+
 <div id="frontpage-bkg">
 	<div class="container  frontpage-container">
 		<div class="row frontpage-row">

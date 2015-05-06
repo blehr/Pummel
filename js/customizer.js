@@ -95,19 +95,7 @@
 			});
 		});
 	});
-	
-	//frontpage background image
-	wp.customize( 'bpl_frontpage_background_image', function( value )  {
-		value.bind( function( to ) {
-			if ( !$('body.home').hasClass('front-page-background')){
-				$('body.home').addClass('front-page-background');
-			}
-			$( '.front-page-background').css( {
-				'background-image': 'url(' + to + ')'
-			});
-		});
-	});
-	
+
 	//frontpage background image repeat
 	wp.customize( 'bpl_frontpage_background_repeat', function( value )  {
 		value.bind( function( to ) {
@@ -186,18 +174,24 @@
 		});
 	});
 	
+	/////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////
+	
+	//frontpage top image
+	wp.customize( 'bpl_frontpage_top_image_height', function( value ) {
+		value.bind( function( to ) {
+			$( '#frontpage-img' ).css( {
+				'height': to + 'px'
+			} );
+		} );	
+	} );
+	
+	
+	
+	
+	
 	///////////////////////////////////////////////////
 	//////////////////////////////////////////////////
-
-	//frontpage Top background image
-	wp.customize( 'bpl_frontpage_top_background_image', function( value )  {
-		value.bind( function( to ) {
-			$( '#frontpage-bkg').css( {
-				'background-image': 'url(' + to + ')'
-			});
-		});
-	});
-	
 	//frontpage Top background image repeat
 	wp.customize( 'bpl_frontpage_top_background_repeat', function( value )  {
 		value.bind( function( to ) {
@@ -246,15 +240,6 @@
 	///////////////////////////////////////////////////
 	//////////////////////////////////////////////////
 
-	//frontpage bottom background image
-	wp.customize( 'bpl_frontpage_bottom_background_image', function( value )  {
-		value.bind( function( to ) {
-			$( '.frontpage-third-widgets').css( {
-				'background-image': 'url(' + to + ')'
-			});
-		});
-	});
-	
 	//frontpage bottom background image repeat
 	wp.customize( 'bpl_frontpage_bottom_background_repeat', function( value )  {
 		value.bind( function( to ) {
