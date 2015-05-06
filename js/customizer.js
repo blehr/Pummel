@@ -177,7 +177,7 @@
 	/////////////////////////////////////////////////////
 	/////////////////////////////////////////////////////
 	
-	//frontpage top image
+	//frontpage top featured image
 	wp.customize( 'bpl_frontpage_top_image_height', function( value ) {
 		value.bind( function( to ) {
 			$( '#frontpage-img' ).css( {
@@ -185,10 +185,6 @@
 			} );
 		} );	
 	} );
-	
-	
-	
-	
 	
 	///////////////////////////////////////////////////
 	//////////////////////////////////////////////////
@@ -239,7 +235,6 @@
 
 	///////////////////////////////////////////////////
 	//////////////////////////////////////////////////
-
 	//frontpage bottom background image repeat
 	wp.customize( 'bpl_frontpage_bottom_background_repeat', function( value )  {
 		value.bind( function( to ) {

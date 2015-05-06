@@ -788,13 +788,14 @@ function bpl_customize_register( $wp_customize ) {
         )
     );
 
-	 $wp_customize->add_setting(
+	//height
+	$wp_customize->add_setting(
         'bpl_frontpage_top_image_height',
         array(
-      		'default'       	=> '300',
+      		'default'       	=> '500',
 	        'sanitize_callback' => 'sanitize_text',
 	        'transport'         => 'postMessage'
-	)
+		)
 	);
 	$wp_customize->add_control(
 	    new WP_Customize_Control(
@@ -802,7 +803,7 @@ function bpl_customize_register( $wp_customize ) {
 	        'bpl_frontpage_top_image_height',
 	        array(
 	            'label'          => __( 'Image Height', 'bpl' ),
-            	'description'    =>	__( 'May have to adjust image height to display correctly across differing screen sizes.', 'bpl' ),		
+            	'description'    =>	__( 'May have to adjust image height to display correctly across differing screen sizes.', 'bpl' ),
 	            'section'        => 'frontpage_top_image',
 	            'settings'       => 'bpl_frontpage_top_image_height',
 	            'type'           => 'text'
@@ -810,6 +811,27 @@ function bpl_customize_register( $wp_customize ) {
 	    )
 	);
 
+	//height below 500px media query
+	$wp_customize->add_setting(
+        'bpl_frontpage_top_image_height_below_500',
+        array(
+      		'default'       	=> '300',
+	        'sanitize_callback' => 'sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+	    new WP_Customize_Control(
+	        $wp_customize,
+	        'bpl_frontpage_top_image_height_below_500',
+	        array(
+	            'label'          => __( 'Image Height For Smaller Devices', 'bpl' ),
+            	'description'    =>	__( 'Set height for when screen size is under 500px', 'bpl' ),
+	            'section'        => 'frontpage_top_image',
+	            'settings'       => 'bpl_frontpage_top_image_height_below_500',
+	            'type'           => 'text'
+	        )
+	    )
+	);
 
 
 
@@ -1051,7 +1073,7 @@ function bpl_customize_register( $wp_customize ) {
             )
         )
     );
-    
+
     // Setting for frontpage top background image attachment
    	$wp_customize->add_setting(
 		'bpl_frontpage_top_background_attachment',
@@ -1350,7 +1372,7 @@ function bpl_customize_register( $wp_customize ) {
             )
         )
     );
-    
+
     // Setting for frontpage bottom background image attachment
    	$wp_customize->add_setting(
 		'bpl_frontpage_bottom_background_attachment',
@@ -1380,7 +1402,7 @@ function bpl_customize_register( $wp_customize ) {
         )
     );
 
-    
+
 
    	// Setting for frontpage bottom background image cover
 	$wp_customize->add_setting(
@@ -1534,15 +1556,22 @@ function bpl_customizer_output() {
 	.frontpage-middle-widgets a {
 		color: <?php echo get_theme_mod('bpl_frontpage_middle_widgets_text_color', '#C5CAE9'); ?>;
 	}
-	
-	#frontpage-img {
-		<?php if( get_theme_mod( 'bpl_frontpage_top_image') != "" ): ?>
-			background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_top_image' ); ?>);
-			background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_position_x', 'center' ); ?>;
-			height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height' ) . 'px'; ?>;
-			background-size: cover;
-		<?php endif; ?>
-	}
+
+	<?php if( get_theme_mod( 'bpl_frontpage_top_image') != "" ): ?>
+		#frontpage-img {
+				background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_top_image' ); ?>);
+				background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_position_x', 'center' ); ?>;
+				height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height' ) . 'px'; ?>;
+				background-size: cover;
+		}
+
+		@media screen and (max-width: 500px) {
+			#frontpage-img {
+	   			height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height_below_500' ) . 'px'; ?>;
+			}
+		}
+
+	<?php endif; ?>
 
 	.frontpage-container {
 		color: <?php echo get_theme_mod('bpl_frontpage_top_text_color', '#404040'); ?>;
