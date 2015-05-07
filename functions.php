@@ -100,9 +100,9 @@ add_action( 'widgets_init', 'bpl_widgets_init' );
 function create_widget( $name, $id, $description ) {
 
 	register_sidebar(array(
-		'name' => __( $name ),	 
+		'name' =>  $name ,	 
 		'id' => $id, 
-		'description' => __( $description ),
+		'description' =>  $description ,
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -171,10 +171,10 @@ add_action( 'wp_enqueue_scripts', 'bpl_scripts' );
 /** 
 * editor style
 **/
-// function bpl_add_editor_styles() {
-//     add_editor_style( 'editor-style.css' );
-// }
-// add_action( 'admin_init', 'bpl_add_editor_styles' );
+function bpl_add_editor_styles() {
+    add_editor_style( array( get_template_directory_uri() . '/css/bootstrap.min.css' ,'editor-style.css' ) );
+}
+add_action( 'admin_init', 'bpl_add_editor_styles' );
 
 
 

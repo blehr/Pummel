@@ -1561,13 +1561,13 @@ function bpl_customizer_output() {
 		#frontpage-img {
 				background-image: url(<?php echo get_theme_mod( 'bpl_frontpage_top_image' ); ?>);
 				background-position: <?php echo get_theme_mod( 'bpl_frontpage_top_position_y', 'center' ); ?> <?php echo get_theme_mod( 'bpl_frontpage_top_position_x', 'center' ); ?>;
-				height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height' ) . 'px'; ?>;
+				height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height', '500' ) . 'px'; ?>;
 				background-size: cover;
 		}
 
 		@media screen and (max-width: 500px) {
 			#frontpage-img {
-	   			height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height_below_500' ) . 'px'; ?>;
+	   			height: <?php echo get_theme_mod( 'bpl_frontpage_top_image_height_below_500', '300' ) . 'px'; ?>;
 			}
 		}
 
