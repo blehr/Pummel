@@ -225,7 +225,7 @@ ol {
 	margin: 0 0 10px 0;
 }
 
-ul {
+.widget ul {
 	list-style: none;
 }
 
@@ -919,6 +919,10 @@ object {
 	margin-top: 6px;
 	margin-right: 10px;
 	margin-bottom: 24px;
+}
+
+.img-border {
+	border: 1px solid #e0e0e0;
 }
 
 
