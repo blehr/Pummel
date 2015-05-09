@@ -582,7 +582,7 @@ a:active {
 }
 
 .sidebar-padder {
-  width: 90%;
+  max-width: 200px;
   margin-left: auto;
 }
 
@@ -1005,6 +1005,7 @@ object {
 
 @media screen and (max-width: 767px) {
 	.sidebar-padder {
+		max-width: 100%;
 		width: 100%;
 	}
 	
