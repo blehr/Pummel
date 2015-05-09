@@ -104,6 +104,12 @@
 				            </a>
 			            <?php endif; ?>
 			            
+			            <?php if ( get_theme_mod('rss') ) : ?>
+				            <a class="navbar-brand" href="<?php echo get_theme_mod('rss'); ?>">
+				                <i class="fa fa-rss"></i>
+				            </a>
+			            <?php endif; ?>
+			            
 		            <?php endif; ?>
 
 		        </div>

@@ -433,6 +433,26 @@ function bpl_customize_register( $wp_customize ) {
 			)
 		)
 	);
+	
+	// Add Pinterest Setting
+	$wp_customize->add_setting(
+		'rss' ,
+		array(
+			'default' 			=> '',
+			'sanitize_callback' => 'sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'rss',
+			array(
+			    'label' 	=> __( 'RSS', 'bpl' ),
+			    'section' 	=> 'social-media',
+			    'settings' 	=> 'rss',
+			)
+		)
+	);
 
 	// Add Custom CSS Textfield
     $wp_customize->add_section(
