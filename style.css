@@ -45,8 +45,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 # Media Queries
---------------------------------------------------------------*/
-/*TEST*/
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -582,7 +581,7 @@ a:active {
 }
 
 .sidebar-padder {
-  max-width: 200px;
+  max-width: 250px;
   margin-left: auto;
 }
 
@@ -664,6 +663,7 @@ body {
 .content-area {
 	margin-bottom: 75px;
 }
+
 
 
 /*--------------------------------------------------------------
