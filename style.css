@@ -519,7 +519,7 @@ a:active {
 
 .breadcrumb {
   font-size: .9em;
-  padding: 7px 14px;
+  padding: 0;
   margin:0;
   list-style: none;
   background-color: inherit;
@@ -690,6 +690,12 @@ body {
 .entry-summary {
 	margin: 1.5em 0 0;
 }
+
+.blog .entry-content {
+	margin-top: .5em;
+	font-size: .9em;
+}
+
 
 .page-links {
 	clear: both;
