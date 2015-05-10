@@ -640,6 +640,10 @@ a:active {
 	width: 100%
 }
 
+.widget_black_studio_tinymce p:last-of-type {
+margin-bottom: 0;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -693,6 +697,10 @@ body {
 .blog .entry-content {
 	margin-top: .5em;
 	font-size: .9em;
+}
+
+.blog .entry-title {
+	margin-bottom: 0;
 }
 
 
