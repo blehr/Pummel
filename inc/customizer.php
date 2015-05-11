@@ -1453,6 +1453,34 @@ function bpl_customize_register( $wp_customize ) {
 			)
 		)
 	);
+	
+	// Add footer copyright
+    $wp_customize->add_section(
+    	'copyright' ,
+    	array(
+    		'title'  => __('Footer Copyright','bpl'),
+		 )
+    );
+    $wp_customize->add_setting(
+        'bpl_copyright',
+        array(
+      		'default'       	=> '',
+	        'sanitize_callback' => 'sanitize_text'
+	       
+      )
+	);
+	$wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'bpl_copyright',
+            array(
+                'label'          => __( 'Add Name', 'bpl' ),
+                'section'        => 'copyright',
+                'settings'       => 'bpl_copyright',
+                'type'           => 'text'
+            )
+		)
+	);
 
 
 /////////////////////////////////////////////////////////////////////
@@ -1487,6 +1515,7 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'header_image' )->priority = 30;
 	$wp_customize->get_section( 'background_image' )->priority = 40;
 	$wp_customize->get_section( 'colors' )->priority = 50;
+	$wp_customize->get_section( 'copyright' )->priority = 60;
 	$wp_customize->get_section( 'nav' )->priority = 290;
 	$wp_customize->get_section( 'static_front_page' )->priority = 300;
 

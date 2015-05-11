@@ -92,7 +92,8 @@
 			
 			
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bpl' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'bpl' ), 'WordPress' ); ?></a>
+				<p><span class="fa fa-copyright"></span> <?php echo date('Y'); ?> <?php echo get_theme_mod('bpl_copyright'); ?></p>
+				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bpl' ) ); ?>" ><?php printf( __( 'Proudly powered by %s', 'bpl' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
 				<?php printf( __( 'Theme: %1$s by %2$s', 'bpl' ), 'Pummel', '<a href="http://brandonlehr.com" rel="designer">Brandon Lehr</a>' ); ?>
 			</div><!-- .site-info -->
