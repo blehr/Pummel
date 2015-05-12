@@ -140,7 +140,7 @@ function bpl_scripts() {
 	
 	wp_enqueue_style('font_awesome_css', get_template_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
 	
-	wp_enqueue_style('googlefont_css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800|Playfair+Display:400,700,9');
+	wp_enqueue_style('googlefont_css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800|Playfair+Display:400,700,900');
 	 
 	wp_enqueue_style( 'bpl-style', get_stylesheet_uri() );
 	
