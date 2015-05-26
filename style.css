@@ -20,7 +20,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -180,6 +179,19 @@ big {
 .btn-default {
 	background-color: inherit;
 }
+
+div.entry-content>p:first-child:first-letter { 
+
+	float: left; 
+	/*color: #903; */
+	font-size: 75px; 
+	line-height: 60px; 
+	/*padding-top: 3px; */
+	padding-right: 8px; 
+	padding-left: 3px; 
+	font-family: "Open Sans";
+}
+
 
 
 /*--------------------------------------------------------------
@@ -766,6 +778,7 @@ body {
 	padding-bottom: 50px;
 }
 
+.frontpage-container a,
 .frontpage-middle-widgets a {
 	font-weight: 700;
 }
@@ -1042,6 +1055,9 @@ object {
 		text-align: center;
 	}
 	
+	.navbar-nav li {
+		text-align: center;
+	}
 	
 }
 
