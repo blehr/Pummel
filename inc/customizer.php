@@ -1516,7 +1516,7 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'background_image' )->priority = 40;
 	$wp_customize->get_section( 'colors' )->priority = 50;
 	$wp_customize->get_section( 'copyright' )->priority = 60;
-	$wp_customize->get_section( 'nav' )->priority = 290;
+	// $wp_customize->get_section( 'nav' )->priority = 290;
 	$wp_customize->get_section( 'static_front_page' )->priority = 300;
 
 	//control priority
