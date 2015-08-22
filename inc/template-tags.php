@@ -303,7 +303,7 @@ function bpl_comment( $comment, $args, $depth ) {
 							</a>
 						
 						
-							<h5 class="media-heading"><?php printf( __( '%s <span class="says">says:</span>', '_tk' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h5>
+							<h5 class="media-heading"><?php printf( __( '%s <span class="says">says:</span>', 'bpl' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h5>
 							<div class="comment-meta">
 								<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 									<time datetime="<?php comment_time( 'c' ); ?>">

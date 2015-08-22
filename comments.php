@@ -86,7 +86,7 @@ if ( post_password_required() ) {
 			  'comment_field' =>  '<p><textarea placeholder="Start typing..." id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
 
 			  'comment_notes_after' => '<p class="form-allowed-tags">' .
-				__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', '_bpl' ) .
+				__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', 'bpl' ) .
 				'</p><div class="alert alert-info">' . allowed_tags() . '</div>'
 
 			  // So, that was the needed stuff to have bootstrap basic styles for the form elements and buttons
