@@ -53,7 +53,7 @@
 		    <div class="container">
 		        <div class="navbar-header">
 		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-		                <span class="sr-only">Toggle navigation</span>
+		                <span class="sr-only"><?php echo __("Toggle navigation", "pummel") ?></span>
 		                <span class="icon-bar"></span>
 		                <span class="icon-bar"></span>
 		                <span class="icon-bar"></span>
@@ -63,49 +63,49 @@
 		            <?php if (get_theme_mod('bpl_display_social_header') == 1 ) : ?>
 		            
 			            <?php if ( get_theme_mod('google_plus') ) : ?>
-				            <a class="navbar-brand" href="<?php echo get_theme_mod('google_plus');  ?>">
+				            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('google_plus'));  ?>">
 				                <i class="fa fa-google-plus"></i>
 				            </a>
 			            <?php endif; ?>
 			            
 			            <?php if ( get_theme_mod('facebook') ) : ?>
-			            <a class="navbar-brand" href="<?php echo get_theme_mod('facebook');  ?>">
+			            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('facebook'));  ?>">
 			                <i class="fa fa-facebook"></i>
 			            </a>
 			            <?php endif; ?>
 			            
 			            <?php if ( get_theme_mod('twitter') ) : ?>
-				            <a class="navbar-brand" href="<?php echo get_theme_mod('twitter'); ?>">
+				            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('twitter')); ?>">
 				                <i class="fa fa-twitter"></i>
 				            </a>
 			            <?php endif; ?>
 			            
 			            <?php if ( get_theme_mod('github') ) : ?>
-				            <a class="navbar-brand" href="<?php echo get_theme_mod('github'); ?>">
+				            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('github')); ?>">
 				                <i class="fa fa-github"></i>
 				            </a>
 			            <?php endif; ?>
 			            
 			            <?php if ( get_theme_mod('linkedin') ) : ?>
-				            <a class="navbar-brand" href="<?php echo get_theme_mod('linkedin'); ?>">
+				            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('linkedin')); ?>">
 				                <i class="fa fa-linkedin"></i>
 				            </a>
 			            <?php endif; ?>
 			            
 			            <?php if ( get_theme_mod('instagram') ) : ?>
-				            <a class="navbar-brand" href="<?php echo get_theme_mod('instagram'); ?>">
+				            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('instagram')); ?>">
 				                <i class="fa fa-instagram"></i>
 				            </a>
 			            <?php endif; ?>
 			            
 			            <?php if ( get_theme_mod('pinterest') ) : ?>
-				            <a class="navbar-brand" href="<?php echo get_theme_mod('pinterest'); ?>">
+				            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('pinterest')); ?>">
 				                <i class="fa fa-pinterest-p"></i>
 				            </a>
 			            <?php endif; ?>
 			            
 			            <?php if ( get_theme_mod('rss') ) : ?>
-				            <a class="navbar-brand" href="<?php echo get_theme_mod('rss'); ?>">
+				            <a class="navbar-brand" href="<?php echo esc_url(get_theme_mod('rss')); ?>">
 				                <i class="fa fa-rss"></i>
 				            </a>
 			            <?php endif; ?>
@@ -156,7 +156,7 @@
 		<div class="container content-container">
 			<div class="row">
 				<div class="col-xs-12">
-					<?php if(function_exists('mine_breadcrumbs')) mine_breadcrumbs(); ?>
+					<?php if(function_exists('bpl_breadcrumbs')) bpl_breadcrumbs(); ?>
 				</div>
 			</div>
 			<div class="row">

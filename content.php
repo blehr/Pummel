@@ -26,14 +26,14 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_excerpt( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'bpl' ),
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'pummel' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'bpl' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'pummel' ),
 				'after'  => '</div>',
 			) );
 		?>

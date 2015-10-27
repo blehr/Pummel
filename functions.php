@@ -26,9 +26,9 @@ function bpl_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on brandon, use a find and replace
-	 * to change 'bpl' to the name of your theme in all the template files
+	 * to change 'pummel' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'bpl', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'pummel', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ function bpl_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'bpl' ),
+		'primary' => __( 'Primary Menu', 'pummel' ),
 	) );
 
 	/*
@@ -65,9 +65,9 @@ function bpl_setup() {
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );
+	// add_theme_support( 'post-formats', array(
+	// 	'aside', 'image', 'video', 'quote', 'link',
+	// ) );
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'bpl_custom_background_args', array(
@@ -85,9 +85,9 @@ add_action( 'after_setup_theme', 'bpl_setup' );
  */
 function bpl_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'bpl' ),
+		'name'          => __( 'Sidebar', 'pummel' ),
 		'id'            => 'sidebar-1',
-		'description'   => 'Display Widgets in the Sidebar',
+		'description'   => __('Display Widgets in the Sidebar', 'pummel'),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -113,20 +113,20 @@ function create_widget( $name, $id, $description ) {
 
 
 
-create_widget( 'Front Middle Top Left', 'front-top-middle-left', 'Displays on the left side of the frontpage top middle row' );
-create_widget( 'Front Middle Top Center', 'front-top-middle-center', 'Displays on the center of the frontpage top middle row' );
-create_widget( 'Front Middle Top Right', 'front-top-middle-right', 'Displays on the right side of the frontpage top middle row' );
+create_widget( __('Front Middle Top Left', 'pummel'), __('front-top-middle-left', 'pummel'), __('Displays on the left side of the frontpage top middle row', 'pummel') );
+create_widget( __('Front Middle Top Center', 'pummel'), __('front-top-middle-center', 'pummel'), __('Displays on the center of the frontpage top middle row', 'pummel') );
+create_widget( __('Front Middle Top Right', 'pummel'), __('front-top-middle-right', 'pummel'), __('Displays on the right side of the frontpage top middle row', 'pummel') );
 
-create_widget( 'Front Middle Bottom Left', 'front-bottom-middle-left', 'Displays on the left side bottom of the frontpage bottom middle row' );
-create_widget( 'Front Middle Bottom Center', 'front-bottom-middle-center', 'Displays on the center bottom of the frontpage bottom middle row' );
-create_widget( 'Front Middle Bottom Right', 'front-bottom-middle-right', 'Displays on the right side bottom of the frontpage bottom middle row' );
+create_widget( __('Front Middle Bottom Left', 'pummel'), __('front-bottom-middle-left', 'pummel'), __('Displays on the left side bottom of the frontpage bottom middle row', 'pummel') );
+create_widget( __('Front Middle Bottom Center', 'pummel'), __('front-bottom-middle-center', 'pummel'), __('Displays on the center bottom of the frontpage bottom middle row', 'pummel') );
+create_widget( __('Front Middle Bottom Right', 'pummel'), __('front-bottom-middle-right', 'pummel'), __('Displays on the right side bottom of the frontpage bottom middle row', 'pummel') );
 
-create_widget( 'Front Third Left', 'front-third-left', 'Displays on the left side of the frontpage bottom row' );
-create_widget( 'Front Third Right', 'front-third-right', 'Displays on the right side of the frontpage bottom row' );
+create_widget( __('Front Third Left', 'pummel'), __('front-third-left', 'pummel'), __('Displays on the left side of the frontpage bottom row', 'pummel') );
+create_widget( __('Front Third Right', 'pummel'), __('front-third-right', 'pummel'), __('Displays on the right side of the frontpage bottom row', 'pummel') );
 
-create_widget( 'Footer Left', 'footer-left', 'Displays on the left of the Footer' );
-create_widget( 'Footer Center', 'footer-center', 'Displays in the center of the Footer' );
-create_widget( 'Footer Right', 'footer-right', 'Displays on the right of the Footer' );
+create_widget( __('Footer Left', 'pummel'), __('footer-left', 'pummel'), __('Displays on the left of the Footer', 'pummel') );
+create_widget( __('Footer Center', 'pummel'), __('footer-center', 'pummel'), __('Displays in the center of the Footer', 'pummel') );
+create_widget( __('Footer Right', 'pummel'), __('footer-right', 'pummel'), __('Displays on the right of the Footer', 'pummel') );
 
 
 /**
@@ -134,11 +134,11 @@ create_widget( 'Footer Right', 'footer-right', 'Displays on the right of the Foo
  */
 function bpl_scripts() {
 	
-	wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css' );
+	wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.css' );
 	
 	wp_enqueue_style('animate_css', get_template_directory_uri() . '/css/animations.css' );
 	
-	wp_enqueue_style('font_awesome_css', get_template_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style('font_awesome_css', get_template_directory_uri() . '/font-awesome/css/font-awesome.css' );
 	
 	wp_enqueue_style('googlefont_css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800|Playfair+Display:400,700,900');
 	 
@@ -147,14 +147,10 @@ function bpl_scripts() {
 
 	global $wp_scripts;
     
-    wp_register_script( 'html5_shiv', 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js', '', '', false);
-    
-    wp_register_script( 'respond_js', 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js', '', '', false);
-    
     $wp_scripts->add_data( 'html5_shiv', 'conditional', 'lt IE 9');
     $wp_scripts->add_data( 'respond_js', 'conditional', 'lt IE 9');
     
-    wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true);
+    wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '', true);
     
     wp_enqueue_script( 'animate_js', get_template_directory_uri() . '/js/css3-animate-it.js', array('jquery'), '', true);
     
@@ -172,7 +168,7 @@ add_action( 'wp_enqueue_scripts', 'bpl_scripts' );
 * editor style
 **/
 function bpl_add_editor_styles() {
-    add_editor_style( array( get_template_directory_uri() . '/css/bootstrap.min.css' ,'editor-style.css' ) );
+    add_editor_style( array( get_template_directory_uri() . '/css/bootstrap.css' ,'editor-style.css' ) );
 }
 add_action( 'admin_init', 'bpl_add_editor_styles' );
 
@@ -187,7 +183,7 @@ add_action( 'admin_init', 'bpl_add_editor_styles' );
  *
  * 
  */
-function mine_breadcrumbs() {
+function bpl_breadcrumbs() {
 	if(!is_front_page()) {
 		echo '<nav class="breadcrumb">';
 		echo '<a href="'.home_url('/').'">Home</a><span class="divider"> / </span>';
@@ -215,7 +211,7 @@ function mine_breadcrumbs() {
 						 * what author we're dealing with (if that is the case).
 						*/
 						the_post();
-						printf( __( 'Author: %s', 'bpl' ), '<span class="vcard">' . get_the_author() . '</span>' );
+						printf( __( 'Author: %s', 'pummel' ), '<span class="vcard">' . get_the_author() . '</span>' );
 						/* Since we called the_post() above, we need to
 						 * rewind the loop back to the beginning that way
 						 * we can run the loop properly, in full.
@@ -224,35 +220,35 @@ function mine_breadcrumbs() {
 					}
 					
 					if ( is_day() ) {
-						printf( __( 'Day: %s', 'bpl' ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Day: %s', 'pummel' ), '<span>' . get_the_date() . '</span>' );
 					}
 
 					if ( is_month() ) {
-						printf( __( 'Month: %s', 'bpl' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+						printf( __( 'Month: %s', 'pummel' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 					}
 
 					if ( is_year() ) {
-						printf( __( 'Year: %s', 'bpl' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+						printf( __( 'Year: %s', 'pummel' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 					}
 
 					if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-							_e( 'Asides', 'bpl' );
+							_e( 'Asides', 'pummel' );
 					}
 					
 					if ( is_tax( 'post_format', 'post-format-image' ) ) {
-						_e( 'Images', 'bpl');
+						_e( 'Images', 'pummel');
 					}
 
 					if ( is_tax( 'post_format', 'post-format-video' ) ) {
-						_e( 'Videos', 'bpl' );
+						_e( 'Videos', 'pummel' );
 					}
 
 					if ( is_tax( 'post_format', 'post-format-quote' ) ) {
-						_e( 'Quotes', 'bpl' );
+						_e( 'Quotes', 'pummel' );
 					}
 
 					if ( is_tax( 'post_format', 'post-format-link' ) ) {
-						_e( 'Links', 'bpl' );
+						_e( 'Links', 'pummel' );
 					}
 
 					
@@ -295,7 +291,3 @@ require get_template_directory() . '/inc/extras.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-// require get_template_directory() . '/inc/jetpack.php';

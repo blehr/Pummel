@@ -139,7 +139,7 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  * @param string $before Optional. Content to prepend to the title. Default empty.
  * @param string $after  Optional. Content to append to the title. Default empty.
  */
-function the_archive_title( $before = '', $after = '' ) {
+function bpl_the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
 		$title = sprintf( __( 'Category: %s', 'bpl' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
@@ -206,7 +206,7 @@ if ( ! function_exists( 'the_archive_description' ) ) :
  * @param string $before Optional. Content to prepend to the description. Default empty.
  * @param string $after  Optional. Content to append to the description. Default empty.
  */
-function the_archive_description( $before = '', $after = '' ) {
+function bpl_the_archive_description( $before = '', $after = '' ) {
 	$description = apply_filters( 'get_the_archive_description', term_description() );
 
 	if ( ! empty( $description ) ) {
@@ -350,7 +350,7 @@ endif; // ends check for bpl_comment()
 Convert hexdec color string to rgb(a) string 
 *******************************************/
  
-function hex2rgba($color, $opacity = false) {
+function bpl_hex2rgba($color, $opacity = false) {
  
 	$default = 'rgb(0,0,0)';
  

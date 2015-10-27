@@ -21,7 +21,7 @@ function bpl_customize_register( $wp_customize ) {
 		array(
 			'default' 			=> 0,
 			'transport' 		=> 'postMessage',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 	$wp_customize->add_control(
@@ -29,7 +29,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_title_center',
 			array(
-			    'label' 	=> __( 'Center Title and Tagline', 'bpl' ),
+			    'label' 	=> __( 'Center Title and Tagline', 'pummel' ),
 			    'section' 	=> 'title_tagline',
 			    'settings'	=> 'bpl_title_center',
 			    'type'  	=> 'checkbox',
@@ -43,7 +43,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
           'default'          	=> '#3F51B5',
           'transport'         	=> 'postMessage',
-          'sanitize_callback'	=> 'sanitize_text'
+          'sanitize_callback'	=> 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -51,7 +51,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_header_color',
 			array(
-				'label'      		=> __( 'Header Color', 'bpl' ),
+				'label'      		=> __( 'Header Color', 'pummel' ),
 				'section'    		=> 'colors',
 				'settings'   		=> 'bpl_header_color',
 				'wp-head-callback' 	=> 'bpl_customizer_output',
@@ -65,7 +65,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'       	=> '#e0e0e0',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
         )
     );
 	$wp_customize->add_control(
@@ -73,7 +73,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_header_menu_color',
 			array(
-				'label'      		=> __( 'Menu and Social Icon Color', 'bpl' ),
+				'label'      		=> __( 'Menu and Social Icon Color', 'pummel' ),
 				'section'   		=> 'colors',
 				'settings'   		=> 'bpl_header_menu_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -87,7 +87,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
           'default'           => '#3F51B5',
           'transport'         => 'postMessage',
-          'sanitize_callback' => 'sanitize_text'
+          'sanitize_callback' => 'sanitize_hex_color'
         )
     );
 	$wp_customize->add_control(
@@ -95,7 +95,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_link_color',
 			array(
-				'label'      		=> __( 'Link Color', 'bpl' ),
+				'label'      		=> __( 'Link Color', 'pummel' ),
 				'section'    		=> 'colors',
 				'settings'   		=> 'bpl_link_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -109,7 +109,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'          	=> '#7986CB',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
         )
     );
 	$wp_customize->add_control(
@@ -117,8 +117,8 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_link_visited_color',
 			array(
-				'label'      		=> __( 'Visited Link Color', 'bpl' ),
-				'description'      	=> __( '(may not show on preview)', 'bpl' ),
+				'label'      		=> __( 'Visited Link Color', 'pummel' ),
+				'description'      	=> __( '(may not show on preview)', 'pummel' ),
 				'section'    		=> 'colors',
 				'settings'  	 	=> 'bpl_link_visited_color',
 				'wp-head-callback' 	=> 'bpl_customizer_output',
@@ -133,7 +133,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#3F51B5',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -141,7 +141,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_middle_widgets_background_color',
 			array(
-				'label'      		=> __( 'Background Color', 'bpl' ),
+				'label'      		=> __( 'Background Color', 'pummel' ),
 				'section'    		=> 'frontpage_middle',
 				'settings'   		=> 'bpl_frontpage_middle_widgets_background_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -155,7 +155,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#C5CAE9',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
         )
     );
 	$wp_customize->add_control(
@@ -163,7 +163,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_middle_widgets_text_color',
 			array(
-				'label'     		=>  __( 'Text and Link Color', 'bpl' ),
+				'label'     		=>  __( 'Text and Link Color', 'pummel' ),
 				'section'		    => 'frontpage_middle',
 				'settings'     	    => 'bpl_frontpage_middle_widgets_text_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -177,7 +177,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#3F51B5',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
         )
     );
 	$wp_customize->add_control(
@@ -185,7 +185,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_comment_accent_color',
 			array(
-				'label'     		 => __( 'Comment Accent Color', 'bpl' ),
+				'label'     		 => __( 'Comment Accent Color', 'pummel' ),
 				'section'   		 => 'colors',
 				'settings'  		 => 'bpl_comment_accent_color',
 				'wp-head-callback'   => 'bpl_customizer_output',
@@ -199,7 +199,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#3F51B5',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
         )
     );
 	$wp_customize->add_control(
@@ -207,7 +207,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_footer_widget_accent_color',
 			array(
-				'label'     		 => __( 'Footer Widget Accent Color', 'bpl' ),
+				'label'     		 => __( 'Footer Widget Accent Color', 'pummel' ),
 				'section'   		 => 'colors',
 				'settings'  		 => 'bpl_footer_widget_accent_color',
 				'wp-head-callback'   => 'bpl_customizer_output',
@@ -221,7 +221,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#404040',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
         )
     );
 	$wp_customize->add_control(
@@ -229,7 +229,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_body_text_color',
 			array(
-				'label' 			 => __( 'Body Text Color', 'bpl' ),
+				'label' 			 => __( 'Body Text Color', 'pummel' ),
 				'section'   		 => 'colors',
 				'settings'  		 => 'bpl_body_text_color',
 				'wp-head-callback'   => 'bpl_customizer_output',
@@ -241,8 +241,8 @@ function bpl_customize_register( $wp_customize ) {
 
 	// Add Social Media Section
 	$wp_customize->add_section( 'social-media' , array(
-	    'title'		  => __( 'Social Media', 'bpl' ),
-	    'description' => __( 'Enter the URL to your account for each service, for the icon to appear in the header.', 'bpl' )
+	    'title'		  => __( 'Social Media', 'pummel' ),
+	    'description' => __( 'Enter the URL to your account for each service, for the icon to appear in the header.', 'pummel' )
 		)
 	);
 
@@ -252,7 +252,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_display_social_header',
 		array(
 			'default' 			=> 0,
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -261,7 +261,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_display_social_header',
 			array(
-			    'label' 	=> __( 'Display Social Links in Header', 'bpl' ),
+			    'label' 	=> __( 'Display Social Links in Header', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'bpl_display_social_header',
 			    'type'  	=> 'checkbox',
@@ -274,7 +274,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_display_social_footer',
 		array(
 			'default' 			=> 0,
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -283,7 +283,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_display_social_footer',
 			array(
-			    'label'			=> __( 'Display Social Links in Footer', 'bpl' ),
+			    'label'			=> __( 'Display Social Links in Footer', 'pummel' ),
 			    'section' 		=> 'social-media',
 			    'settings' 		=> 'bpl_display_social_footer',
 			    'type'  		=> 'checkbox',
@@ -297,7 +297,7 @@ function bpl_customize_register( $wp_customize ) {
 		'twitter' ,
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 
@@ -305,7 +305,7 @@ function bpl_customize_register( $wp_customize ) {
 		new WP_Customize_Control(
 			$wp_customize, 'twitter',
 			array(
-			    'label' 	=> __( 'Twitter', 'bpl' ),
+			    'label' 	=> __( 'Twitter', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'twitter',
 			)
@@ -317,7 +317,7 @@ function bpl_customize_register( $wp_customize ) {
 		'google_plus',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 
@@ -326,7 +326,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'google_plus',
 			array(
-			    'label' 	=> __( 'Google Plus', 'bpl' ),
+			    'label' 	=> __( 'Google Plus', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'google_plus',
 			)
@@ -338,7 +338,7 @@ function bpl_customize_register( $wp_customize ) {
 		'facebook' ,
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 
@@ -347,7 +347,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'facebook',
 			array(
-			    'label' 	=> __( 'Facebook', 'bpl' ),
+			    'label' 	=> __( 'Facebook', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'facebook',
 			)
@@ -359,7 +359,7 @@ function bpl_customize_register( $wp_customize ) {
 		'github' ,
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 	$wp_customize->add_control(
@@ -367,7 +367,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'github',
 			array(
-		    	'label'		=> __( 'Github', 'bpl' ),
+		    	'label'		=> __( 'Github', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'github',
 			)
@@ -379,7 +379,7 @@ function bpl_customize_register( $wp_customize ) {
 		'linkedin' ,
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 	$wp_customize->add_control(
@@ -387,7 +387,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'linkedin',
 			array(
-			    'label' 	=> __( 'Linkedin', 'bpl' ),
+			    'label' 	=> __( 'Linkedin', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings'	=> 'linkedin',
 			)
@@ -399,7 +399,7 @@ function bpl_customize_register( $wp_customize ) {
 		'instagram' ,
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 	$wp_customize->add_control(
@@ -407,7 +407,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'instagram',
 			array(
-			    'label' 	=> __( 'Instagram', 'bpl' ),
+			    'label' 	=> __( 'Instagram', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'instagram',
 			)
@@ -419,7 +419,7 @@ function bpl_customize_register( $wp_customize ) {
 		'pinterest' ,
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 	$wp_customize->add_control(
@@ -427,19 +427,19 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'pinterest',
 			array(
-			    'label' 	=> __( 'Pinterest', 'bpl' ),
+			    'label' 	=> __( 'Pinterest', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'pinterest',
 			)
 		)
 	);
 	
-	// Add Pinterest Setting
+	// Add rss Setting
 	$wp_customize->add_setting(
 		'rss' ,
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'esc_url_raw'
 		)
 	);
 	$wp_customize->add_control(
@@ -447,7 +447,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'rss',
 			array(
-			    'label' 	=> __( 'RSS', 'bpl' ),
+			    'label' 	=> __( 'RSS', 'pummel' ),
 			    'section' 	=> 'social-media',
 			    'settings' 	=> 'rss',
 			)
@@ -458,13 +458,13 @@ function bpl_customize_register( $wp_customize ) {
     $wp_customize->add_section(
 	  	'custom_css_field' ,
 	  	array(
-		    'title' => __('Custom CSS','bpl'),
+		    'title' => __('Custom CSS','pummel'),
 	    )
     );
     $wp_customize->add_setting(
         'bpl_custom_css',
         array(
-            'sanitize_callback' => 'sanitize_textarea'
+            'sanitize_callback' => 'bpl_sanitize_textarea'
         )
     );
     $wp_customize->add_control(
@@ -472,7 +472,7 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'custom_css',
             array(
-                'label'         	=> __( 'Add Custom CSS Here', 'bpl' ),
+                'label'         	=> __( 'Add Custom CSS Here', 'pummel' ),
                 'section'        	=> 'custom_css_field',
                 'settings'      	=> 'bpl_custom_css',
                 'type'           	=> 'textarea',
@@ -485,14 +485,14 @@ function bpl_customize_register( $wp_customize ) {
     $wp_customize->add_section(
     	'frontpage_middle' ,
     	array(
-    		'title'  => __('Front Page Middle','bpl'),
+    		'title'  => __('Front Page Middle','pummel'),
 		 )
     );
     $wp_customize->add_setting(
         'bpl_frontpage_middle_header',
         array(
       		'default'       	=> 'There Be Widgets Below',
-	        'sanitize_callback' => 'sanitize_text',
+	        'sanitize_callback' => 'bpl_sanitize_text',
 	        'transport'         => 'postMessage'
       )
   );
@@ -501,7 +501,7 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_middle_header',
             array(
-                'label'          => __( 'Add Header Text Here', 'bpl' ),
+                'label'          => __( 'Add Header Text Here', 'pummel' ),
                 'section'        => 'frontpage_middle',
                 'settings'       => 'bpl_frontpage_middle_header',
                 'type'           => 'text'
@@ -514,7 +514,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_display_image_below_menu',
 		array(
 			'default' 			=> 0,
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -523,7 +523,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_display_image_below_menu',
 			array(
-			    'label' 	=> __( 'Display Header Image Below Menu', 'bpl' ),
+			    'label' 	=> __( 'Display Header Image Below Menu', 'pummel' ),
 			    'section' 	=> 'header_image',
 			    'settings' 	=> 'bpl_display_image_below_menu',
 			    'type'  	=> 'checkbox',
@@ -538,7 +538,7 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'frontpage_background' ,
 		array(
-			'title'  => __('Front Page Background Image','bpl'),
+			'title'  => __('Front Page Background Image','pummel'),
 		)
 	);
 
@@ -548,7 +548,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_background_image',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -557,7 +557,7 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_background_image',
            array(
-                'label'      		=> __( 'Upload an image for the Front Page Background', 'bpl' ),
+                'label'      		=> __( 'Upload an image for the Front Page Background', 'pummel' ),
                 'section'    		=> 'frontpage_background',
       			'settings'   		=> 'bpl_frontpage_background_image',
                 'context'			=> 'frontpage_background',
@@ -571,7 +571,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_background_repeat',
 		array(
 			'default' 			=> 'repeat',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport' 		=> 'postMessage'
 		)
 	);
@@ -581,16 +581,16 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_background_repeat',
             array(
-                'label'      		=> __( 'Background Repeat', 'bpl' ),
+                'label'      		=> __( 'Background Repeat', 'pummel' ),
                 'section'    		=> 'frontpage_background',
                 'settings'   		=> 'bpl_frontpage_background_repeat',
                 'wp-head-callback'  => 'bpl_customizer_output',
                 'type'       		=> 'radio',
 			    'choices'    		=> array(
-					'no-repeat'  => 'No Repeat',
-					'repeat'	 => 'Tile',
-					'repeat-y'   => 'Tile Horizontally',
-					'repeat-x'	 => 'Tile Vertically',
+					'no-repeat'  => __('No Repeat', 'pummel'),
+					'repeat'	 => __('Tile', 'pummel'),
+					'repeat-y'   => __('Tile Horizontally', 'pummel'),
+					'repeat-x'	 => __('Tile Vertically', 'pummel'),
 
 				 ),
             )
@@ -603,7 +603,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_background_position_x',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -612,15 +612,15 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_background_position_x',
             array(
-                'label'    			=> __( 'Background Position X', 'bpl' ),
+                'label'    			=> __( 'Background Position X', 'pummel' ),
                 'section'  			=> 'frontpage_background',
                 'settings' 			=> 'bpl_frontpage_background_position_x',
                 'wp-head-callback'	=> 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  		=> array(
-				 	 'left'   	=> 'Left',
-					 'center' 	=> 'Center',
-					 'right'	=> 'Right',
+				 	 'left'   	=> __('Left', 'pummel'),
+					 'center' 	=> __('Center', 'pummel'),
+					 'right'	=> __('Right', 'pummel'),
 
 				),
             )
@@ -632,7 +632,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_background_position_y',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -641,15 +641,15 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_background_position_y',
             array(
-                'label'    			=> __( 'Background Position Y', 'bpl' ),
+                'label'    			=> __( 'Background Position Y', 'pummel' ),
                 'section'  			=> 'frontpage_background',
                 'settings' 			=> 'bpl_frontpage_background_position_y',
                 'wp-head-callback'  => 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  			=> array(
-					'top'		=> 'Top',
-					'center' 	=> 'Center',
-					'bottom'	=> 'Bottom',
+					'top'		=> __('Top', 'pummel'),
+					'center' 	=> __('Center', 'pummel'),
+					'bottom'	=> __('Bottom', 'pummel'),
 
 				),
             )
@@ -661,7 +661,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_background_attachment',
 		array(
 			'default' 			=> 'fixed',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport' 		=> 'postMessage'
 		)
 	);
@@ -671,14 +671,14 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_background_attachment',
             array(
-                'label'    			=> __( 'Background Attachment', 'bpl' ),
+                'label'    			=> __( 'Background Attachment', 'pummel' ),
                 'section'  			=> 'frontpage_background',
                 'settings' 			=> 'bpl_frontpage_background_attachment',
                 'wp-head-callback' 	=> 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  			=> array(
-					'scroll' => 'Scroll',
-					'fixed'  => 'Fixed',
+					'scroll' => __('Scroll', 'pummel'),
+					'fixed'  => __('Fixed', 'pummel'),
 
 				),
             )
@@ -690,7 +690,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_background_cover',
 		array(
 			'default' 			=> 'auto',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport'			=> 'postMessage'
 		)
 	);
@@ -700,15 +700,15 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_background_cover',
 			array(
-			    'label' 			=> __( 'Fit Entire Image Within Page', 'bpl' ),
-			    'description' 		=> __( '(background-size: cover)', 'bpl' ),
+			    'label' 			=> __( 'Fit Entire Image Within Page', 'pummel' ),
+			    'description' 		=> __( '(background-size: cover)', 'pummel' ),
 			    'section' 			=> 'frontpage_background',
 			    'settings' 			=> 'bpl_frontpage_background_cover',
 			    'wp-head-callback' 	=> 'bpl_customizer_output',
 			    'type'     			=> 'radio',
 			    'choices'  			=> array(
-						'cover' => 'Yes',
-						'auto'  => 'No',
+						'cover' => __('Yes', 'pummel'),
+						'auto'  => __('No', 'pummel'),
 
 					),
 			)
@@ -722,8 +722,8 @@ function bpl_customize_register( $wp_customize ) {
     $wp_customize->add_section(
     	'frontpage_top_image' ,
     	array(
-    		'title'  => __('Front Page Featured Image','bpl'),
-    		'description'  => __('Located Below Header','bpl'),
+    		'title'  => __('Front Page Featured Image','pummel'),
+    		'description'  => __('Located Below Header','pummel'),
 		 )
     );
 
@@ -732,7 +732,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_image',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -741,7 +741,7 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_top_image',
            array(
-                'label'      		=> __( 'Upload An Image', 'bpl' ),
+                'label'      		=> __( 'Upload An Image', 'pummel' ),
                 'section'    		=> 'frontpage_top_image',
       			'settings'   		=> 'bpl_frontpage_top_image',
                 'context'			=> 'frontpage_top_image',
@@ -755,7 +755,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_position_x',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -764,15 +764,15 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_top_position_x',
             array(
-                'label'    			=> __( 'Background Position X', 'bpl' ),
+                'label'    			=> __( 'Background Position X', 'pummel' ),
                 'section'  			=> 'frontpage_top_image',
                 'settings' 			=> 'bpl_frontpage_top_position_x',
                 'wp-head-callback'	=> 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  		=> array(
-				 	 'left'   	=> 'Left',
-					 'center' 	=> 'Center',
-					 'right'	=> 'Right',
+				 	 'left'   	=> __('Left', 'pummel'),
+					 'center' 	=> __('Center', 'pummel'),
+					 'right'	=> __('Right', 'pummel'),
 
 				),
             )
@@ -784,7 +784,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_position_y',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -793,15 +793,15 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_top_position_y',
             array(
-                'label'    			=> __( 'Background Position Y', 'bpl' ),
+                'label'    			=> __( 'Background Position Y', 'pummel' ),
                 'section'  			=> 'frontpage_top_image',
                 'settings' 			=> 'bpl_frontpage_top_position_y',
                 'wp-head-callback'  => 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  			=> array(
-					'top'		=> 'Top',
-					'center' 	=> 'Center',
-					'bottom'	=> 'Bottom',
+					'top'		=> __('Top', 'pummel'),
+					'center' 	=> __('Center', 'pummel'),
+					'bottom'	=> __('Bottom', 'pummel'),
 
 				),
             )
@@ -813,7 +813,7 @@ function bpl_customize_register( $wp_customize ) {
         'bpl_frontpage_top_image_height',
         array(
       		'default'       	=> '500',
-	        'sanitize_callback' => 'sanitize_text',
+	        'sanitize_callback' => 'bpl_sanitize_text',
 	        'transport'         => 'postMessage'
 		)
 	);
@@ -822,8 +822,8 @@ function bpl_customize_register( $wp_customize ) {
 	        $wp_customize,
 	        'bpl_frontpage_top_image_height',
 	        array(
-	            'label'          => __( 'Image Height', 'bpl' ),
-            	'description'    =>	__( 'May have to adjust image height to display correctly across differing screen sizes.', 'bpl' ),
+	            'label'          => __( 'Image Height', 'pummel' ),
+            	'description'    =>	__( 'May have to adjust image height to display correctly across differing screen sizes.', 'pummel' ),
 	            'section'        => 'frontpage_top_image',
 	            'settings'       => 'bpl_frontpage_top_image_height',
 	            'type'           => 'text'
@@ -836,7 +836,7 @@ function bpl_customize_register( $wp_customize ) {
         'bpl_frontpage_top_image_height_below_500',
         array(
       		'default'       	=> '300',
-	        'sanitize_callback' => 'sanitize_text'
+	        'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 	$wp_customize->add_control(
@@ -844,8 +844,8 @@ function bpl_customize_register( $wp_customize ) {
 	        $wp_customize,
 	        'bpl_frontpage_top_image_height_below_500',
 	        array(
-	            'label'          => __( 'Image Height For Smaller Devices', 'bpl' ),
-            	'description'    =>	__( 'Set height for when screen size is under 500px', 'bpl' ),
+	            'label'          => __( 'Image Height For Smaller Devices', 'pummel' ),
+            	'description'    =>	__( 'Set height for when screen size is under 500px', 'pummel' ),
 	            'section'        => 'frontpage_top_image',
 	            'settings'       => 'bpl_frontpage_top_image_height_below_500',
 	            'type'           => 'text'
@@ -864,7 +864,7 @@ function bpl_customize_register( $wp_customize ) {
     $wp_customize->add_section(
     	'frontpage_top' ,
     	array(
-    		'title'  => __('Front Page Top','bpl'),
+    		'title'  => __('Front Page Top','pummel'),
 		 )
     );
 
@@ -874,7 +874,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#FFF',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -882,7 +882,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_top_background_color',
 			array(
-				'label'      		=> __( 'Background Color', 'bpl' ),
+				'label'      		=> __( 'Background Color', 'pummel' ),
 				'section'    		=> 'frontpage_top',
 				'settings'   		=> 'bpl_frontpage_top_background_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -896,7 +896,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#404040',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -904,7 +904,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_top_text_color',
 			array(
-				'label'      		=> __( 'Text Color', 'bpl' ),
+				'label'      		=> __( 'Text Color', 'pummel' ),
 				'section'    		=> 'frontpage_top',
 				'settings'   		=> 'bpl_frontpage_top_text_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -917,7 +917,7 @@ function bpl_customize_register( $wp_customize ) {
         'bpl_frontpage_top_text_background_color',
         array(
             'default'           => '#e0e0e0',
-        	'sanitize_callback' => 'sanitize_text'
+        	'sanitize_callback' => 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -925,7 +925,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_top_text_background_color',
 			array(
-				'label'      		=> __( 'Text Background Color', 'bpl' ),
+				'label'      		=> __( 'Text Background Color', 'pummel' ),
 				'section'    		=> 'frontpage_top',
 				'settings'   		=> 'bpl_frontpage_top_text_background_color',
 				'wp-head-callback'	=> 'bpl_customizer_output',
@@ -938,7 +938,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_show_front_top_text_background',
 		array(
 			'default' 			=> 0,
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -947,7 +947,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_show_front_top_text_background',
 			array(
-			    'label' 	=> __( 'Show Text Background', 'bpl' ),
+			    'label' 	=> __( 'Show Text Background', 'pummel' ),
 			    'section' 	=> 'frontpage_top',
 			    'settings' 	=> 'bpl_show_front_top_text_background',
 			    'type'  	=> 'checkbox',
@@ -960,7 +960,7 @@ function bpl_customize_register( $wp_customize ) {
         'bpl_frontpage_top_text_background_opacity',
         array(
             'default'           => '.8',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'bpl_sanitize_text'
         )
     );
 
@@ -969,7 +969,7 @@ function bpl_customize_register( $wp_customize ) {
 		array(
 		    'type'        		=> 'range',
 		    'section'     		=> 'frontpage_top',
-		    'label'       		=>  __( 'Text Background Opacity', 'bpl' ),
+		    'label'       		=>  __( 'Text Background Opacity', 'pummel' ),
 		    'wp-head-callback' 	=> 'bpl_customizer_output',
 		    'input_attrs' 		=> array(
 		        'min'   => .0,
@@ -985,7 +985,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_background_image',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 			// 'transport' 		=> 'postMessage'
 		)
 	);
@@ -995,7 +995,7 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_top_background_image',
            array(
-                'label'      		=> __( 'Upload an image for the Front Page Top Background', 'bpl' ),
+                'label'      		=> __( 'Upload an image for the Front Page Top Background', 'pummel' ),
                 'section'    		=> 'frontpage_top',
       			'settings'   		=> 'bpl_frontpage_top_background_image',
                 'context'			=> 'frontpage_top_background',
@@ -1009,7 +1009,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_background_repeat',
 		array(
 			'default' 			=> 'repeat',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport' 		=> 'postMessage'
 		)
 	);
@@ -1019,16 +1019,16 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_top_background_repeat',
             array(
-                'label'      		=> __( 'Background Repeat', 'bpl' ),
+                'label'      		=> __( 'Background Repeat', 'pummel' ),
                 'section'    		=> 'frontpage_top',
                 'settings'   		=> 'bpl_frontpage_top_background_repeat',
                 'wp-head-callback'  => 'bpl_customizer_output',
                 'type'       		=> 'radio',
 			    'choices'    		=> array(
-					'no-repeat'  => 'No Repeat',
-					'repeat'	 => 'Tile',
-					'repeat-y'   => 'Tile Horizontally',
-					'repeat-x'	 => 'Tile Vertically',
+					'no-repeat'  => __('No Repeat', 'pummel'),
+					'repeat'	 => __('Tile', 'pummel'),
+					'repeat-y'   => __('Tile Horizontally', 'pummel'),
+					'repeat-x'	 => __('Tile Vertically', 'pummel'),
 
 				 ),
             )
@@ -1041,7 +1041,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_background_position_x',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -1050,15 +1050,15 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_top_background_position_x',
             array(
-                'label'    			=> __( 'Background Position X', 'bpl' ),
+                'label'    			=> __( 'Background Position X', 'pummel' ),
                 'section'  			=> 'frontpage_top',
                 'settings' 			=> 'bpl_frontpage_top_background_position_x',
                 'wp-head-callback'	=> 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  		=> array(
-				 	 'left'   	=> 'Left',
-					 'center' 	=> 'Center',
-					 'right'	=> 'Right',
+				 	 'left'   	=> __('Left', 'pummel'),
+					 'center' 	=> __('Center', 'pummel'),
+					 'right'	=> __('Right', 'pummel'),
 
 				),
             )
@@ -1070,7 +1070,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_background_position_y',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -1079,15 +1079,15 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_top_background_position_y',
             array(
-                'label'    			=> __( 'Background Position Y', 'bpl' ),
+                'label'    			=> __( 'Background Position Y', 'pummel' ),
                 'section'  			=> 'frontpage_top',
                 'settings' 			=> 'bpl_frontpage_top_background_position_y',
                 'wp-head-callback'  => 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  			=> array(
-					'top'		=> 'Top',
-					'center' 	=> 'Center',
-					'bottom'	=> 'Bottom',
+					'top'		=> __('Top', 'pummel'),
+					'center' 	=> __('Center', 'pummel'),
+					'bottom'	=> __('Bottom', 'pummel'),
 
 				),
             )
@@ -1099,7 +1099,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_background_attachment',
 		array(
 			'default' 			=> 'scroll',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport' 		=> 'postMessage'
 		)
 	);
@@ -1109,14 +1109,14 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_background_attachment',
             array(
-                'label'    			=> __( 'Background Attachment', 'bpl' ),
+                'label'    			=> __( 'Background Attachment', 'pummel' ),
                 'section'  			=> 'frontpage_top',
                 'settings' 			=> 'bpl_frontpage_top_background_attachment',
                 'wp-head-callback' 	=> 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  			=> array(
-					'scroll' => 'Scroll',
-					'fixed'  => 'Fixed',
+					'scroll' => __('Scroll', 'pummel'),
+					'fixed'  => __('Fixed', 'pummel'),
 
 				),
             )
@@ -1129,7 +1129,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_top_background_cover',
 		array(
 			'default' 			=> 'auto',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport'			=> 'postMessage'
 		)
 	);
@@ -1139,15 +1139,15 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_top_background_cover',
 			array(
-			    'label' 			=> __( 'Fit Entire Image Within Top Div', 'bpl' ),
-			    'description' 		=> __( '(background-size: cover)', 'bpl' ),
+			    'label' 			=> __( 'Fit Entire Image Within Top Div', 'pummel' ),
+			    'description' 		=> __( '(background-size: cover)', 'pummel' ),
 			    'section' 			=> 'frontpage_top',
 			    'settings' 			=> 'bpl_frontpage_top_background_cover',
 			    'wp-head-callback' 	=> 'bpl_customizer_output',
 			    'type'     			=> 'radio',
 			    'choices'  			=> array(
-						'cover' => 'Yes',
-						'auto'  => 'No',
+						'cover' => __('Yes', 'pummel'),
+						'auto'  => __('No', 'pummel'),
 
 					),
 			)
@@ -1162,7 +1162,7 @@ function bpl_customize_register( $wp_customize ) {
     $wp_customize->add_section(
     	'frontpage_bottom' ,
     	array(
-    		'title'  => __('Front Page Bottom','bpl'),
+    		'title'  => __('Front Page Bottom','pummel'),
 		 )
     );
 
@@ -1172,7 +1172,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#FFF',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -1180,7 +1180,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_bottom_background_color',
 			array(
-				'label'      		=> __( 'Background Color', 'bpl' ),
+				'label'      		=> __( 'Background Color', 'pummel' ),
 				'section'    		=> 'frontpage_bottom',
 				'settings'   		=> 'bpl_frontpage_bottom_background_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -1194,7 +1194,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
             'default'           => '#404040',
             'transport'         => 'postMessage',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -1202,7 +1202,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_bottom_text_color',
 			array(
-				'label'      		=> __( 'Text Color', 'bpl' ),
+				'label'      		=> __( 'Text Color', 'pummel' ),
 				'section'    		=> 'frontpage_bottom',
 				'settings'   		=> 'bpl_frontpage_bottom_text_color',
 				'wp-head-callback'  => 'bpl_customizer_output',
@@ -1216,7 +1216,7 @@ function bpl_customize_register( $wp_customize ) {
         'bpl_frontpage_bottom_text_background_color',
         array(
             'default'           => '#e0e0e0',
-        	'sanitize_callback' => 'sanitize_text'
+        	'sanitize_callback' => 'sanitize_hex_color'
        )
     );
 	$wp_customize->add_control(
@@ -1224,7 +1224,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_bottom_text_background_color',
 			array(
-				'label'      		=> __( 'Text Background Color', 'bpl' ),
+				'label'      		=> __( 'Text Background Color', 'pummel' ),
 				'section'    		=> 'frontpage_bottom',
 				'settings'   		=> 'bpl_frontpage_bottom_text_background_color',
 				'wp-head-callback'	=> 'bpl_customizer_output',
@@ -1237,7 +1237,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_show_front_bottom_text_background',
 		array(
 			'default' 			=> 0,
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -1246,7 +1246,7 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_show_front_bottom_text_background',
 			array(
-			    'label' 	=> __( 'Show Text Background', 'bpl' ),
+			    'label' 	=> __( 'Show Text Background', 'pummel' ),
 			    'section' 	=> 'frontpage_bottom',
 			    'settings' 	=> 'bpl_show_front_bottom_text_background',
 			    'type'  	=> 'checkbox',
@@ -1259,7 +1259,7 @@ function bpl_customize_register( $wp_customize ) {
         'bpl_frontpage_bottom_text_background_opacity',
         array(
             'default'           => '.8',
-            'sanitize_callback' => 'sanitize_text'
+            'sanitize_callback' => 'bpl_sanitize_text'
         )
     );
 
@@ -1268,7 +1268,7 @@ function bpl_customize_register( $wp_customize ) {
 		array(
 		    'type'        		=> 'range',
 		    'section'     		=> 'frontpage_bottom',
-		    'label'       		=>  __( 'Text Background Opacity', 'bpl' ),
+		    'label'       		=>  __( 'Text Background Opacity', 'pummel' ),
 		    'wp-head-callback' 	=> 'bpl_customizer_output',
 		    'input_attrs' 		=> array(
 		        'min'   => 0,
@@ -1284,7 +1284,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_bottom_background_image',
 		array(
 			'default' 			=> '',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 			// 'transport' 		=> 'postMessage'
 		)
 	);
@@ -1294,7 +1294,7 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_bottom_background_image',
            array(
-                'label'      		=> __( 'Upload an image for the Front Page Top Background', 'bpl' ),
+                'label'      		=> __( 'Upload an image for the Front Page Top Background', 'pummel' ),
                 'section'    		=> 'frontpage_bottom',
       			'settings'   		=> 'bpl_frontpage_bottom_background_image',
                 'context'			=> 'frontpage_bottom_background',
@@ -1308,7 +1308,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_bottom_background_repeat',
 		array(
 			'default' 			=> 'repeat',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport' 		=> 'postMessage'
 		)
 	);
@@ -1318,16 +1318,16 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_bottom_background_repeat',
             array(
-                'label'      		=> __( 'Background Repeat', 'bpl' ),
+                'label'      		=> __( 'Background Repeat', 'pummel' ),
                 'section'    		=> 'frontpage_bottom',
                 'settings'   		=> 'bpl_frontpage_bottom_background_repeat',
                 'wp-head-callback'  => 'bpl_customizer_output',
                 'type'       		=> 'radio',
 			    'choices'    		=> array(
-					'no-repeat'  => 'No Repeat',
-					'repeat'	 => 'Tile',
-					'repeat-y'   => 'Tile Horizontally',
-					'repeat-x'	 => 'Tile Vertically',
+					'no-repeat'  => __('No Repeat', 'pummel'),
+					'repeat'	 => __('Tile', 'pummel'),
+					'repeat-y'   => __('Tile Horizontally', 'pummel'),
+					'repeat-x'	 => __('Tile Vertically', 'pummel'),
 
 				 ),
             )
@@ -1340,7 +1340,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_bottom_background_position_x',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -1349,15 +1349,15 @@ function bpl_customize_register( $wp_customize ) {
            $wp_customize,
            'bpl_frontpage_bottom_background_position_x',
             array(
-                'label'    			=> __( 'Background Position X', 'bpl' ),
+                'label'    			=> __( 'Background Position X', 'pummel' ),
                 'section'  			=> 'frontpage_bottom',
                 'settings' 			=> 'bpl_frontpage_bottom_background_position_x',
                 'wp-head-callback'	=> 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  		=> array(
-				 	 'left'   	=> 'Left',
-					 'center' 	=> 'Center',
-					 'right'	=> 'Right',
+				 	 'left'   	=> __('Left', 'pummel'),
+					 'center' 	=> __('Center', 'pummel'),
+					 'right'	=> __('Right', 'pummel'),
 
 				),
             )
@@ -1369,7 +1369,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_bottom_background_position_y',
 		array(
 			'default' => 'center',
-			'sanitize_callback' => 'sanitize_text'
+			'sanitize_callback' => 'bpl_sanitize_text'
 		)
 	);
 
@@ -1378,15 +1378,15 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_bottom_background_position_y',
             array(
-                'label'    			=> __( 'Background Position Y', 'bpl' ),
+                'label'    			=> __( 'Background Position Y', 'pummel' ),
                 'section'  			=> 'frontpage_bottom',
                 'settings' 			=> 'bpl_frontpage_bottom_background_position_y',
                 'wp-head-callback'  => 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  			=> array(
-					'top'		=> 'Top',
-					'center' 	=> 'Center',
-					'bottom'	=> 'Bottom',
+					'top'		=> __('Top', 'pummel'),
+					'center' 	=> __('Center', 'pummel'),
+					'bottom'	=> __('Bottom', 'pummel'),
 
 				),
             )
@@ -1398,7 +1398,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_bottom_background_attachment',
 		array(
 			'default' 			=> 'scroll',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport' 		=> 'postMessage'
 		)
 	);
@@ -1408,14 +1408,14 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_frontpage_bottom_background_attachment',
             array(
-                'label'    			=> __( 'Background Attachment', 'bpl' ),
+                'label'    			=> __( 'Background Attachment', 'pummel' ),
                 'section'  			=> 'frontpage_bottom',
                 'settings' 			=> 'bpl_frontpage_bottom_background_attachment',
                 'wp-head-callback' 	=> 'bpl_customizer_output',
                 'type'     			=> 'radio',
 			    'choices'  			=> array(
-					'scroll' => 'Scroll',
-					'fixed'  => 'Fixed',
+					'scroll' => __('Scroll', 'pummel'),
+					'fixed'  => __('Fixed', 'pummel'),
 
 				),
             )
@@ -1429,7 +1429,7 @@ function bpl_customize_register( $wp_customize ) {
 		'bpl_frontpage_bottom_background_cover',
 		array(
 			'default' 			=> 'auto',
-			'sanitize_callback' => 'sanitize_text',
+			'sanitize_callback' => 'bpl_sanitize_text',
 			'transport'			=> 'postMessage'
 		)
 	);
@@ -1439,15 +1439,15 @@ function bpl_customize_register( $wp_customize ) {
 			$wp_customize,
 			'bpl_frontpage_bottom_background_cover',
 			array(
-			    'label' 			=> __( 'Fit Entire Image Within Bottom Div', 'bpl' ),
-			    'description' 		=> __( '(background-size: cover)', 'bpl' ),
+			    'label' 			=> __( 'Fit Entire Image Within Bottom Div', 'pummel' ),
+			    'description' 		=> __( '(background-size: cover)', 'pummel' ),
 			    'section' 			=> 'frontpage_bottom',
 			    'settings' 			=> 'bpl_frontpage_bottom_background_cover',
 			    'wp-head-callback' 	=> 'bpl_customizer_output',
 			    'type'     			=> 'radio',
 			    'choices'  			=> array(
-						'cover' => 'Yes',
-						'auto'  => 'No',
+						'cover' => __('Yes', 'pummel'),
+						'auto'  => __('No', 'pummel'),
 
 					),
 			)
@@ -1458,14 +1458,14 @@ function bpl_customize_register( $wp_customize ) {
     $wp_customize->add_section(
     	'copyright' ,
     	array(
-    		'title'  => __('Footer Copyright','bpl'),
+    		'title'  => __('Footer Copyright','pummel'),
 		 )
     );
     $wp_customize->add_setting(
         'bpl_copyright',
         array(
       		'default'       	=> '',
-	        'sanitize_callback' => 'sanitize_text'
+	        'sanitize_callback' => 'bpl_sanitize_text'
 	       
       )
 	);
@@ -1474,7 +1474,7 @@ function bpl_customize_register( $wp_customize ) {
             $wp_customize,
             'bpl_copyright',
             array(
-                'label'          => __( 'Add Name', 'bpl' ),
+                'label'          => __( 'Add Name', 'pummel' ),
                 'section'        => 'copyright',
                 'settings'       => 'bpl_copyright',
                 'type'           => 'text'
@@ -1489,8 +1489,8 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->add_panel( 'frontpage_options', array(
 		'priority' 			=> 60,
 		'theme_supports' 	=> '',
-		'title' 			=> __( 'Front Page Options', 'bpl' ),
-		'description' 		=> __( 'Style Options for Static Front Page', 'bpl' ),
+		'title' 			=> __( 'Front Page Options', 'pummel' ),
+		'description' 		=> __( 'Style Options for Static Front Page', 'pummel' ),
 		)
 	);
 
@@ -1544,13 +1544,13 @@ function bpl_customize_preview_js() {
 add_action( 'customize_preview_init', 'bpl_customize_preview_js' );
 
 // Sanitize text
-function sanitize_text( $text ) {
+function bpl_sanitize_text( $text ) {
 
     return sanitize_text_field( $text );
 }
 
 // Sanitize textarea
-function sanitize_textarea( $text ) {
+function bpl_sanitize_textarea( $text ) {
 
     return esc_textarea( $text );
 }
@@ -1628,7 +1628,7 @@ function bpl_customizer_output() {
 		<?php if(get_theme_mod('bpl_show_front_top_text_background') != 0): ?>
 
 			background-color: <?php echo get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0'); ?>;
-			background-color: <?php echo hex2rgba(get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_top_text_background_opacity', '.8') ); ?>;
+			background-color: <?php echo bpl_hex2rgba(get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_top_text_background_opacity', '.8') ); ?>;
 			border-radius: 5px;
 
 		<?php endif; ?>
@@ -1640,7 +1640,7 @@ function bpl_customizer_output() {
 		<?php if(get_theme_mod('bpl_show_front_bottom_text_background') != 0): ?>
 
 			background-color: <?php echo get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0'); ?>;
-			background-color: <?php echo hex2rgba(get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_bottom_text_background_opacity', '.8') ); ?>;
+			background-color: <?php echo bpl_hex2rgba(get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_bottom_text_background_opacity', '.8') ); ?>;
 			border-radius: 5px;
 
 		<?php endif; ?>
@@ -1681,7 +1681,7 @@ function bpl_customizer_output() {
     <?php endif; ?>
 
 	<?php if( get_theme_mod('bpl_custom_css') != '' ) {
-        echo get_theme_mod('bpl_custom_css');
+        echo wp_strip_all_tags( get_theme_mod(‘bpl_custom_css’) );
   	} ?>
 
     </style>

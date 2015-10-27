@@ -4,21 +4,42 @@ Theme URI: https://github.com/blehr/Pummel
 Author: Brandon Lehr
 Author URI: http://brandonlehr.com
 Description: Pummel is a responsive, clean, and customizable theme, featuring an easy to fill, widgetized Front-Page, perfect for Personal Blogs and Bios. Many styling options to be found in the WordPress Customizer.
-Version: 1.0.12
+Version: 1.1.0
+
+Text Domain: pummel
+Tags: two-columns, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments
+
+Pummel WordPress Theme, Copyright (C) 2015, Brandon Lehr
+Pummel is distributed under the terms of the GNU GPL
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: bpl
-Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, rtl-language-support, sticky-post, threaded-comments
 
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
+
+
+Bundled Resources
+
 Pummel is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. downloaded on 3/30/15
+
+CSS framework consists of Bootstrap http://getbootstrap.com/
+Code licensed under MIT, documentation under CC BY 3.0.
+
+Icons supplied by Font Awesome https://fortawesome.github.io/Font-Awesome/
+Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License · 
+Documentation licensed under CC BY 3.0
+
+Animations utlizing Animate.css https://daneden.github.io/animate.css/ 
+Animate.css is licensed under the MIT license. (http://opensource.org/licenses/MIT)
+
+Google Fonts Open Sans, Playfair display https://www.google.com/fonts
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -72,11 +93,11 @@ input[type="search"],
 input[type="email"],
 input[type="url"] {
 	background-color: transparent;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 
 textarea,
@@ -85,11 +106,9 @@ textarea.form-control {
 }
 
 .input-focus {
-  background-image: none !important;
-  background-color: #FFF !important;
+	background-image: none !important;
+	background-color: #FFF !important;
 }
-
-
 
 h1,
 h2,
@@ -161,9 +180,9 @@ big {
 .widget-title,
 .frontpage-middle-header,
 .entry-title {
-  letter-spacing: inherit;
-  font-weight: normal;
-  font-family: 'Playfair Display', sans-serif;
+	letter-spacing: inherit;
+	font-weight: normal;
+	font-family: 'Playfair Display', sans-serif;
 }
 
 .site-title,
@@ -173,15 +192,12 @@ big {
 }
 
 .search-submit {
-  display: none;
+	display: none;
 }
 
 .btn-default {
 	background-color: inherit;
 }
-
-
-
 
 
 /*--------------------------------------------------------------
@@ -194,12 +210,14 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
 }
 
 blockquote:before,
@@ -220,8 +238,6 @@ hr {
 	height: 1px;
 	margin-bottom: 3em;
 }
-
-
 
 ol {
 	margin: 0 0 10px 0;
@@ -250,8 +266,10 @@ dd {
 }
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
 }
 
 table {
@@ -271,7 +289,6 @@ a:active {
 	text-decoration: none;
 }
 
-
 a:hover,
 a:active {
 	outline: 0;
@@ -281,10 +298,10 @@ a:active {
 	background-color: #3F51B5;
 }
 
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -308,10 +325,14 @@ a:active {
 	width: 50%;
 }
 
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+
+
 /* Text meant only for screen readers. */
+
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -339,12 +360,15 @@ a:active {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
+
 
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+
 .alignleft {
 	display: inline;
 	float: left;
@@ -364,9 +388,11 @@ a:active {
 	margin-right: auto;
 }
 
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -396,6 +422,7 @@ a:active {
 /*--------------------------------------------------------------
 # header
 --------------------------------------------------------------*/
+
 .site-title {
 	margin-top: 0;
 }
@@ -412,7 +439,7 @@ a:active {
 }
 
 .navbar-default .navbar-brand {
-  color: inherit;
+	color: inherit;
 }
 
 .navbar-brand {
@@ -437,15 +464,15 @@ a:active {
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-  color: inherit;
-  background-color: inherit; 
+	color: inherit;
+	background-color: inherit;
 }
 
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus {
-  background-color: inherit;
-  color: inherit;
+	background-color: inherit;
+	color: inherit;
 }
 
 .dropdown-menu {
@@ -454,19 +481,19 @@ a:active {
 
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
-  text-decoration: none;
-  color: #262626;
-  background-color: inherit;
+	text-decoration: none;
+	color: #262626;
+	background-color: inherit;
 }
 
 .dropdown-menu>li>a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.42857143;
-  color: inherit;
-  white-space: nowrap;
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: normal;
+	line-height: 1.42857143;
+	color: inherit;
+	white-space: nowrap;
 }
 
 .nav > li > a:hover,
@@ -476,36 +503,36 @@ a:active {
 
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-  color: inherit;
-  background-color: transparent;
+	color: inherit;
+	background-color: transparent;
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: inherit;
+	color: inherit;
 }
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border: none;
+	border: none;
 }
 
 .navbar-default .navbar-toggle {
 	border: none;
-  	border-color: inherit;
-  	color: inherit;
+	border-color: inherit;
+	color: inherit;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-   background-color: inherit; 
+	background-color: inherit;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-   background-color: inherit; 
+	background-color: inherit;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-  color: inherit;
+	color: inherit;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
@@ -521,30 +548,27 @@ a:active {
 ********************/
 
 .breadcrumb {
-  font-size: .9em;
-  padding: 0;
-  margin:0;
-  list-style: none;
-  background-color: inherit;
+	font-size: .9em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	background-color: inherit;
 }
 
 .breadcrumb li {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
+	display: inline-block;
+	*display: inline;
+	/* IE7 inline-block hack */
 }
-  
 
 .breadcrumb .divider {
-  padding: 0 5px;
-  color: #999999;
-  }
+	padding: 0 5px;
+	color: #999999;
+}
 
 .breadcrumb .active a {
-  color: #333333;
-  }
-
-
+	color: #333333;
+}
 
 
 /*--------------------------------------------------------------
@@ -576,31 +600,34 @@ a:active {
 }
 
 
-
-
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+
 .sidebar {
 	font-size: .9em;
 	margin-top: 20px;
 }
 
 .sidebar-padder {
-  max-width: 250px;
-  margin-left: auto;
+	max-width: 250px;
+	margin-left: auto;
 }
 
 .widget {
 	margin: 0 0 1.5em;
 }
 
+
 /* Make sure select elements fit in widgets. */
+
 .widget select {
 	max-width: 100%;
 }
 
+
 /* Search widget. */
+
 .widget_search .search-submit {
 	display: none;
 }
@@ -610,11 +637,11 @@ a:active {
 }
 
 .site-footer .widget {
-  border-radius: 0 0 15px;
-  background-color: #151515;
-  padding: 15px;
-  font-size: .9em;
-  color: #c5cae9;
+	border-radius: 0 0 15px;
+	background-color: #151515;
+	padding: 15px;
+	font-size: .9em;
+	color: #c5cae9;
 }
 
 .nav>li>a {
@@ -627,12 +654,12 @@ a:active {
 }
 
 .sidebar .widget {
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: block;
-    padding: 6px 12px;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: block;
+	padding: 6px 12px;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 
 .sidebar .widget_search {
@@ -640,7 +667,9 @@ a:active {
 	box-shadow: none;
 }
 
+
 /*contact form 7 responsive*/
+
 .wpcf7-text,
 .wpcf7-email,
 .wpcf7-textarea {
@@ -648,8 +677,9 @@ a:active {
 }
 
 .widget_black_studio_tinymce p:last-of-type {
-margin-bottom: 0;
+	margin-bottom: 0;
 }
+
 
 /*--------------------------------------------------------------
 # Content
@@ -673,10 +703,10 @@ body {
 }
 
 
-
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+
 .sticky {
 	display: block;
 }
@@ -710,16 +740,14 @@ body {
 	margin-bottom: 0;
 }
 
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
 
-
 .entry-title a,
 .entry-title a:visited {
-  color: #404040;
+	color: #404040;
 }
 
 .entry-footer .glyphicon {
@@ -744,12 +772,13 @@ body {
 	font-size: .9em;
 	opacity: .9;
 }
+
 .pager li>a {
 	font-size: .9em;
 	background-color: transparent;
 }
 
-.post-navigation .nav-next, 
+.post-navigation .nav-next,
 .post-navigation .nav-previous {
 	width: inherit;
 }
@@ -789,7 +818,7 @@ body {
 }
 
 .frontpage-third .row {
-	padding:35px 0;
+	padding: 35px 0;
 }
 
 .content-container {
@@ -804,16 +833,19 @@ body {
 	margin: auto;
 }
 
-.frontpage-middle-widgets { /* middle background */
+.frontpage-middle-widgets {
+	/* middle background */
 	width: 100%;
 	padding: 50px 0 0;
 }
 
-.frontpage-third-widgets { /* third background */
+.frontpage-third-widgets {
+	/* third background */
 	padding: 50px 0;
 }
 
-#frontpage-bkg { /*page content background*/
+#frontpage-bkg {
+	/*page content background*/
 	width: 100%;
 	padding-top: 25px;
 	padding-bottom: 50px;
@@ -836,19 +868,20 @@ body {
 }
 
 
-
-
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
+
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
 
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -891,7 +924,7 @@ body {
 }
 
 .comment-body {
-  margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .form-allowed-tags,
@@ -899,23 +932,35 @@ body {
 	font-size: .9em;
 }
 
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
+
+
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+
+.infinite-scroll .posts-navigation,
+
+/* Older / Newer Posts Navigation (always hidden) */
+
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
 	display: none;
 }
 
+
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+
 .infinity-end.neverending .site-footer {
 	display: block;
 }
 
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -925,13 +970,14 @@ body {
 	padding: 0;
 }
 
+
 /* Make sure embeds and iframes fit their containers. */
+
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
-
 
 .featured-img-container {
 	margin-top: 10px;
@@ -957,6 +1003,7 @@ object {
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
+
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -975,9 +1022,11 @@ object {
 	margin: 0.8075em 0;
 }
 
+
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
+
 .gallery {
 	margin-bottom: 1.5em;
 }
@@ -1030,50 +1079,36 @@ object {
 ## Media Queries
 --------------------------------------------------------------*/
 
-
 @media screen and (max-width: 767px) {
 	.sidebar-padder {
 		max-width: 100%;
 		width: 100%;
 	}
-	
 	.pager li>a {
 		font-size: .8em;
 	}
-	
 	.site-branding {
 		text-align: center;
 	}
-	
 	.navbar-nav li {
 		text-align: center;
 	}
-	
 }
 
-
 @media screen and (max-width: 500px) {
-	.entry-title,
-	.site-title {
+	.entry-title, .site-title {
 		font-size: 2em;
 	}
-	
 	.site-description {
 		font-size: 1.35em;
 	}
-	
-	
 }
 
-
 @media screen and (max-width: 400px) {
-	.entry-title,
-	.site-title {
+	.entry-title, .site-title {
 		font-size: 1.8em;
 	}
-	
 	.site-description {
 		font-size: 1.1em;
 	}
-	
 }

@@ -16,6 +16,11 @@ Head over to the theme customizer and check out the many options available. Chan
 
 [Built off of _S](https://github.com/Automattic/_s) and [Bootstrap](getbootstrap.com).
 
+##Note concerning the Front-Page
+![frontpage-screenshot](https://dl.dropboxusercontent.com/u/21809793/set-static-front-page.png)
+
+The front-page should be set as a static page, NOT for showing posts. 
+
 ##Customize
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_all.png)
 ***

@@ -25,18 +25,18 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
-				printf( _nx( 'One <span class="fa fa-comment-o"></span> on &ldquo;%2$s&rdquo;', '%1$s <span class="fa fa-comments-o"></span> on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bpl' ),
+				printf( _nx( 'One <span class="fa fa-comment-o"></span> on &ldquo;%2$s&rdquo;', '%1$s <span class="fa fa-comments-o"></span> on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'pummel' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h3>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'bpl' ); ?></h2>
+			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'pummel' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'bpl' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'bpl' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'pummel' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'pummel' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
@@ -56,11 +56,11 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'bpl' ); ?></h2>
+			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'pummel' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'bpl' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'bpl' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'pummel' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'pummel' ) ); ?></div>
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
@@ -72,21 +72,21 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'bpl' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'pummel' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form( $args = array(
 			  'id_form'           => 'commentform',  // that's the wordpress default value! delete it or edit it ;)
 			  'id_submit'         => 'commentsubmit',
-			  'title_reply'       => __( 'Something to Say?', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
-			  'title_reply_to'    => __( 'Leave a Reply to %s', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
-			  'cancel_reply_link' => __( 'Cancel Reply', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
-			  'label_submit'      => __( 'Post Comment', 'bpl' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'title_reply'       => __( 'Something to Say?', 'pummel' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'title_reply_to'    => __( 'Leave a Reply to %s', 'pummel' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'cancel_reply_link' => __( 'Cancel Reply', 'pummel' ),  // that's the wordpress default value! delete it or edit it ;)
+			  'label_submit'      => __( 'Post Comment', 'pummel' ),  // that's the wordpress default value! delete it or edit it ;)
 
 			  'comment_field' =>  '<p><textarea placeholder="Start typing..." id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
 
 			  'comment_notes_after' => '<p class="form-allowed-tags">' .
-				__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', 'bpl' ) .
+				__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', 'pummel' ) .
 				'</p><div class="alert alert-info">' . allowed_tags() . '</div>'
 
 			  // So, that was the needed stuff to have bootstrap basic styles for the form elements and buttons
