@@ -932,6 +932,11 @@ body {
 	font-size: .9em;
 }
 
+ul.children,
+ol.children {
+	list-style-type: none;
+}
+
 
 /*--------------------------------------------------------------
 # Infinite scroll
