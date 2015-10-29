@@ -19,7 +19,7 @@ Head over to the theme customizer and check out the many options available. Chan
 ##Note concerning the Front-Page
 ![frontpage-screenshot](https://dl.dropboxusercontent.com/u/21809793/set-static-front-page.png)
 
-The customizable Front Page will only be available if the Front Page is set to stati
+The customizable Front Page will only be available if the Front Page is set to static
 
 ##Customize
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_all.png)
