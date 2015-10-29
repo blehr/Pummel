@@ -4,10 +4,11 @@ Theme URI: https://github.com/blehr/Pummel
 Author: Brandon Lehr
 Author URI: http://brandonlehr.com
 Description: Pummel is a responsive, clean, and customizable theme, featuring an easy to fill, widgetized Front-Page, perfect for Personal Blogs and Bios. Many styling options to be found in the WordPress Customizer.
-Version: 1.1.0
+Version: 1.1.1
+
 
 Text Domain: pummel
-Tags: two-columns, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments
+Tags: two-columns, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, sticky-post, threaded-comments
 
 Pummel WordPress Theme, Copyright (C) 2015, Brandon Lehr
 Pummel is distributed under the terms of the GNU GPL
@@ -865,6 +866,10 @@ body {
 .entry-content h4,
 .entry-content h5 {
 	font-weight: 700;
+}
+
+.entry-footer .glyphicon-edit {
+	margin-left: 5px;
 }
 
 

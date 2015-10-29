@@ -34,7 +34,7 @@
 		</script>
     <?php endif; ?>
 	
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'bpl' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'pummel' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		
@@ -152,7 +152,7 @@
 	
 
 	<div id="content" class="site-content">
-		<?php if (! is_front_page() ) : ?>
+		<?php  if ( 'posts' == get_option( 'show_on_front' ) || ! is_front_page() ) : ?>
 		<div class="container content-container">
 			<div class="row">
 				<div class="col-xs-12">

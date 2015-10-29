@@ -8,7 +8,7 @@
  */
 ?>
 
-	<?php if (! is_front_page() ) : ?>
+	<?php if ( 'posts' == get_option( 'show_on_front' ) || ! is_front_page() ) : ?>
 			</div><!--row-->
 		</div><!--.container from header-->
 	<?php endif; ?>

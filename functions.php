@@ -61,13 +61,7 @@ function bpl_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	// add_theme_support( 'post-formats', array(
-	// 	'aside', 'image', 'video', 'quote', 'link',
-	// ) );
+	
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'bpl_custom_background_args', array(
@@ -113,20 +107,20 @@ function create_widget( $name, $id, $description ) {
 
 
 
-create_widget( __('Front Middle Top Left', 'pummel'), __('front-top-middle-left', 'pummel'), __('Displays on the left side of the frontpage top middle row', 'pummel') );
-create_widget( __('Front Middle Top Center', 'pummel'), __('front-top-middle-center', 'pummel'), __('Displays on the center of the frontpage top middle row', 'pummel') );
-create_widget( __('Front Middle Top Right', 'pummel'), __('front-top-middle-right', 'pummel'), __('Displays on the right side of the frontpage top middle row', 'pummel') );
+create_widget( __('Front Middle Top Left', 'pummel'), 'front-top-middle-left', __('Displays on the left side of the frontpage top middle row', 'pummel') );
+create_widget( __('Front Middle Top Center', 'pummel'), 'front-top-middle-center', __('Displays on the center of the frontpage top middle row', 'pummel') );
+create_widget( __('Front Middle Top Right', 'pummel'), 'front-top-middle-right', __('Displays on the right side of the frontpage top middle row', 'pummel') );
 
-create_widget( __('Front Middle Bottom Left', 'pummel'), __('front-bottom-middle-left', 'pummel'), __('Displays on the left side bottom of the frontpage bottom middle row', 'pummel') );
-create_widget( __('Front Middle Bottom Center', 'pummel'), __('front-bottom-middle-center', 'pummel'), __('Displays on the center bottom of the frontpage bottom middle row', 'pummel') );
-create_widget( __('Front Middle Bottom Right', 'pummel'), __('front-bottom-middle-right', 'pummel'), __('Displays on the right side bottom of the frontpage bottom middle row', 'pummel') );
+create_widget( __('Front Middle Bottom Left', 'pummel'), 'front-bottom-middle-left', __('Displays on the left side bottom of the frontpage bottom middle row', 'pummel') );
+create_widget( __('Front Middle Bottom Center', 'pummel'), 'front-bottom-middle-center', __('Displays on the center bottom of the frontpage bottom middle row', 'pummel') );
+create_widget( __('Front Middle Bottom Right', 'pummel'), 'front-bottom-middle-right', __('Displays on the right side bottom of the frontpage bottom middle row', 'pummel') );
 
-create_widget( __('Front Third Left', 'pummel'), __('front-third-left', 'pummel'), __('Displays on the left side of the frontpage bottom row', 'pummel') );
-create_widget( __('Front Third Right', 'pummel'), __('front-third-right', 'pummel'), __('Displays on the right side of the frontpage bottom row', 'pummel') );
+create_widget( __('Front Third Left', 'pummel'), 'front-third-left', __('Displays on the left side of the frontpage bottom row', 'pummel') );
+create_widget( __('Front Third Right', 'pummel'), 'front-third-right',__('Displays on the right side of the frontpage bottom row', 'pummel') );
 
-create_widget( __('Footer Left', 'pummel'), __('footer-left', 'pummel'), __('Displays on the left of the Footer', 'pummel') );
-create_widget( __('Footer Center', 'pummel'), __('footer-center', 'pummel'), __('Displays in the center of the Footer', 'pummel') );
-create_widget( __('Footer Right', 'pummel'), __('footer-right', 'pummel'), __('Displays on the right of the Footer', 'pummel') );
+create_widget( __('Footer Left', 'pummel'), 'footer-left',  __('Displays on the left of the Footer', 'pummel') );
+create_widget( __('Footer Center', 'pummel'), 'footer-center', __('Displays in the center of the Footer', 'pummel') );
+create_widget( __('Footer Right', 'pummel'), 'footer-right', __('Displays on the right of the Footer', 'pummel') );
 
 
 /**
@@ -134,27 +128,31 @@ create_widget( __('Footer Right', 'pummel'), __('footer-right', 'pummel'), __('D
  */
 function bpl_scripts() {
 	
-	wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.css' );
+	wp_enqueue_style('bpl_bootstrap_css', get_template_directory_uri() . '/css/bootstrap.css' );
 	
-	wp_enqueue_style('animate_css', get_template_directory_uri() . '/css/animations.css' );
+	wp_enqueue_style('bpl_animate_css', get_template_directory_uri() . '/css/animations.css' );
 	
-	wp_enqueue_style('font_awesome_css', get_template_directory_uri() . '/font-awesome/css/font-awesome.css' );
+	wp_enqueue_style('bpl_font_awesome_css', get_template_directory_uri() . '/font-awesome/css/font-awesome.css' );
 	
-	wp_enqueue_style('googlefont_css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800|Playfair+Display:400,700,900');
+	wp_enqueue_style('bpl_googlefont_css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800|Playfair+Display:400,700,900');
 	 
-	wp_enqueue_style( 'bpl-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'bpl_style', get_stylesheet_uri() );
 	
 
 	global $wp_scripts;
+	
+	wp_register_script( 'bpl_html5_shiv', get_template_directory_uri() . '/js/html5shiv.js', '', '', false);
     
-    $wp_scripts->add_data( 'html5_shiv', 'conditional', 'lt IE 9');
-    $wp_scripts->add_data( 'respond_js', 'conditional', 'lt IE 9');
+    wp_register_script( 'bpl_respond_js', get_template_directory_uri() . '/js/respond.src.js', '', '', false);
     
-    wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '', true);
+    $wp_scripts->add_data( 'bpl_html5_shiv', 'conditional', 'lt IE 9');
+    $wp_scripts->add_data( 'bpl_respond_js', 'conditional', 'lt IE 9');
     
-    wp_enqueue_script( 'animate_js', get_template_directory_uri() . '/js/css3-animate-it.js', array('jquery'), '', true);
+    wp_enqueue_script( 'bpl_bootstrap_js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '', true);
     
-    wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/js/theme.js', array('jquery', 'bootstrap_js'), '', true);
+    wp_enqueue_script( 'bpl_animate_js', get_template_directory_uri() . '/js/css3-animate-it.js', array('jquery'), '', true);
+    
+    wp_enqueue_script( 'bpl_theme-js', get_template_directory_uri() . '/js/theme.js', array('jquery', 'bpl_bootstrap_js'), '', true);
 
 	wp_enqueue_script( 'bpl-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -186,9 +184,15 @@ add_action( 'admin_init', 'bpl_add_editor_styles' );
 function bpl_breadcrumbs() {
 	if(!is_front_page()) {
 		echo '<nav class="breadcrumb">';
-		echo '<a href="'.home_url('/').'">Home</a><span class="divider"> / </span>';
+		echo '<a href="'.home_url('/').'">Home</a>';
 		if (is_home() || is_single() || is_archive()){
-			echo '<a href="'.home_url('/blog').'">Blog</a>';
+			
+			if ( 'posts' != get_option( 'show_on_front' ) ) {
+			
+			echo '<span class="divider"> / </span><a href="'.home_url('/blog').'">'.__('Blog', 'pummel').'</a>';
+			
+			}
+			
 			if (is_single()) {
 				echo ' <span class="divider">/</span> ';
 				the_title();

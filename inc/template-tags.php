@@ -20,15 +20,15 @@ function bpl_the_posts_navigation() {
 	}
 	?>
 	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'bpl' ); ?></h2>
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'pummel' ); ?></h2>
 		<ul class="pager">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<li class="nav-previous previous"><?php next_posts_link( __( 'Older posts', 'bpl' ) ); ?></li>
+			<li class="nav-previous previous"><?php next_posts_link( __( 'Older posts', 'pummel' ) ); ?></li>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<li class="nav-next next"><?php previous_posts_link( __( 'Newer posts', 'bpl' ) ); ?></li>
+			<li class="nav-next next"><?php previous_posts_link( __( 'Newer posts', 'pummel' ) ); ?></li>
 			<?php endif; ?>
 
 		</ul><!-- .nav-links -->
@@ -54,7 +54,7 @@ function bpl_the_post_navigation() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'bpl' ); ?></h2>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'pummel' ); ?></h2>
 		<ul class="pager">
 			<?php
 				previous_post_link( '<li class="nav-previous previous">%link</li>', '<span class="glyphicon glyphicon-arrow-left"></span> %title' );
@@ -84,12 +84,12 @@ function bpl_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '%s ', 'post date', 'bpl' ),
+		_x( '%s ', 'post date', 'pummel' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'bpl' ),
+		_x( 'by %s', 'post author', 'pummel' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -106,25 +106,25 @@ function bpl_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'bpl' ) );
+		$categories_list = get_the_category_list( __( ', ', 'pummel' ) );
 		if ( $categories_list && bpl_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( '<span class="glyphicon glyphicon-folder-open"></span>  %1$s ', 'bpl' ) . ' </span>', $categories_list );
+			printf( '<span class="cat-links">' . __( '<span class="glyphicon glyphicon-folder-open"></span>  %1$s ', 'pummel' ) . ' </span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'bpl' ) );
+		$tags_list = get_the_tag_list( '', __( ', ', 'pummel' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( '<span class="glyphicon glyphicon-tags"></span>  %1$s ', 'bpl' ) . ' </span>', $tags_list );
+			printf( '<span class="tags-links">' . __( '<span class="glyphicon glyphicon-tags"></span>  %1$s ', 'pummel' ) . ' </span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( '', 'bpl' ), __( '<span class="fa fa-comment"></span> 1 ', 'bpl' ), __( '<span class="fa fa-comments"></span> % ', 'bpl' ) );
+		comments_popup_link( __( '', 'pummel' ), __( '<span class="fa fa-comment"></span> 1 ', 'pummel' ), __( '<span class="fa fa-comments"></span> % ', 'pummel' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span>Edit', 'bpl' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span>Edit', 'pummel' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -141,45 +141,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function bpl_the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'bpl' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', 'pummel' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'bpl' ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', 'pummel' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'bpl' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', 'pummel' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'bpl' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bpl' ) ) );
+		$title = sprintf( __( 'Year: %s', 'pummel' ), get_the_date( _x( 'Y', 'yearly archives date format', 'pummel' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'bpl' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bpl' ) ) );
+		$title = sprintf( __( 'Month: %s', 'pummel' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'pummel' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'bpl' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'bpl' ) ) );
+		$title = sprintf( __( 'Day: %s', 'pummel' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'pummel' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title', 'bpl' );
+			$title = _x( 'Asides', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title', 'bpl' );
+			$title = _x( 'Galleries', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title', 'bpl' );
+			$title = _x( 'Images', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title', 'bpl' );
+			$title = _x( 'Videos', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title', 'bpl' );
+			$title = _x( 'Quotes', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title', 'bpl' );
+			$title = _x( 'Links', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title', 'bpl' );
+			$title = _x( 'Statuses', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title', 'bpl' );
+			$title = _x( 'Audio', 'post format archive title', 'pummel' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title', 'bpl' );
+			$title = _x( 'Chats', 'post format archive title', 'pummel' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'bpl' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', 'pummel' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'bpl' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( __( '%1$s: %2$s', 'pummel' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', 'bpl' );
+		$title = __( 'Archives', 'pummel' );
 	}
 
 	/**
@@ -282,7 +282,7 @@ function bpl_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
 		<div class="comment-body">
-			<?php _e( 'Pingback:', 'bpl' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'bpl' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'pummel' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'pummel' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -303,20 +303,20 @@ function bpl_comment( $comment, $args, $depth ) {
 							</a>
 						
 						
-							<h5 class="media-heading"><?php printf( __( '%s <span class="says">says:</span>', 'bpl' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h5>
+							<h5 class="media-heading"><?php printf( __( '%s <span class="says">says:</span>', 'pummel' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h5>
 							<div class="comment-meta">
 								<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 									<time datetime="<?php comment_time( 'c' ); ?>">
-										<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'bpl' ), get_comment_date(), get_comment_time() ); ?>
+										<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'pummel' ), get_comment_date(), get_comment_time() ); ?>
 									</time>
 								</a>
-								<?php edit_comment_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span> Edit', 'bpl' ), '<span class="edit-link">', '</span>' ); ?>
+								<?php edit_comment_link( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span>'. __( 'Edit', 'pummel' ), '<span class="edit-link">', '</span>' ); ?>
 							</div>
 						
 					</div>
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'bpl' ); ?></p>
+						<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'pummel' ); ?></p>
 					<?php endif; ?>
 
 					<div class="comment-content "><!--panel-body-->

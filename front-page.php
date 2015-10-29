@@ -1,5 +1,17 @@
 <?php
 /**
+ * If Front page is not set to static, display home page template
+ *
+ */
+?>
+
+<?php if ( 'posts' == get_option( 'show_on_front' ) ) : ?>
+<?php include( get_home_template() ); ?>
+<?Php else: ?> 
+
+
+<?php
+/**
  * The template for displaying Static Front Page.
  *
  * This is the template that displays all pages by default.
@@ -11,6 +23,7 @@
  */
 
 get_header(); ?>
+
 
 <?php if( get_theme_mod( 'bpl_frontpage_top_image') != "" ): ?>
 	<div id="frontpage-img"></div>
@@ -24,6 +37,8 @@ get_header(); ?>
 					
 		
 					<?php while ( have_posts() ) : the_post(); ?>
+					
+					
 		
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<header class="entry-header">
@@ -41,7 +56,7 @@ get_header(); ?>
 							</div><!-- .entry-content -->
 		
 							<footer class="entry-footer">
-								<?php edit_post_link( __( '<span style="margin-left: 5px;" class="glyphicon glyphicon-edit"></span>Edit', 'pummel' ), '<span class="edit-link">', '</span>' ); ?>
+								<?php edit_post_link(  '<span  class="glyphicon glyphicon-edit"></span>' . __( 'Edit', 'pummel' ), '<span class="edit-link">', '</span>' ); ?>
 							</footer><!-- .entry-footer -->
 						</article><!-- #post-## -->
 					
@@ -59,7 +74,7 @@ get_header(); ?>
 			<div  class="frontpage-middle-widgets" >
 				<div class="container frontpage-middle">
 					
-					<h2 class="text-center frontpage-middle-header"><?php echo get_theme_mod('bpl_frontpage_middle_header', 'There Be Widgets Below!'); ?></h2>
+					<h2 class="text-center frontpage-middle-header"><?php echo sanitize_text_field(get_theme_mod('bpl_frontpage_middle_header', 'There Be Widgets Below!')); ?></h2>
 				    <div class="row">
 				        <div class="col-sm-4">
 					     
@@ -120,3 +135,4 @@ get_header(); ?>
 			</div>	
 
 <?php get_footer(); ?>
+<?php endif; ?> 

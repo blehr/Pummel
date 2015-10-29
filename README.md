@@ -19,7 +19,7 @@ Head over to the theme customizer and check out the many options available. Chan
 ##Note concerning the Front-Page
 ![frontpage-screenshot](https://dl.dropboxusercontent.com/u/21809793/set-static-front-page.png)
 
-The front-page should be set as a static page, NOT for showing posts. 
+The customizable Front Page will only be available if the Front Page is set to stati
 
 ##Customize
 ![Screenshot](https://dl.dropboxusercontent.com/u/21809793/Screenshot_all.png)
