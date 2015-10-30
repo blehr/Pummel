@@ -1669,6 +1669,13 @@ function bpl_customizer_output() {
 	}
 
 	<?php if( get_theme_mod( 'bpl_frontpage_background_image') != "" ): ?>
+		#frontpage-bkg {
+			background-color: transparent;
+		}
+
+		.frontpage-third-widgets {
+	     	background-color: transparent;
+		 }
 
 		.front-page-background {
 			background: url(<?php echo esc_url(get_theme_mod( 'bpl_frontpage_background_image' )); ?>);

@@ -259,6 +259,7 @@ function bpl_breadcrumbs() {
 
 		
 		} elseif (is_page()) {
+			echo ' <span class="divider">/</span> ';
 			echo the_title();
 		}
 		echo '</nav>';
