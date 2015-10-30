@@ -70,11 +70,10 @@ get_header(); ?>
 	</div>
 </div>
 
-
 			<div  class="frontpage-middle-widgets" >
 				<div class="container frontpage-middle">
 					
-					<h2 class="text-center frontpage-middle-header"><?php echo sanitize_text_field(get_theme_mod('bpl_frontpage_middle_header', 'There Be Widgets Below!')); ?></h2>
+					<h2 class="text-center frontpage-middle-header"><?php echo sanitize_text_field(get_theme_mod('bpl_frontpage_middle_header', __('There Be Widgets Below!', 'pummel'))); ?></h2>
 				    <div class="row">
 				        <div class="col-sm-4">
 					     

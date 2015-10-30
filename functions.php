@@ -184,7 +184,7 @@ add_action( 'admin_init', 'bpl_add_editor_styles' );
 function bpl_breadcrumbs() {
 	if(!is_front_page()) {
 		echo '<nav class="breadcrumb">';
-		echo '<a href="'.home_url('/').'">Home</a>';
+		echo '<a href="'.home_url('/').'">'.__('Home', 'pummel').'</a>';
 		if (is_home() || is_single() || is_archive()){
 			
 			if ( 'posts' != get_option( 'show_on_front' ) ) {
