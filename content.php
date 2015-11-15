@@ -23,13 +23,36 @@
 			</a>
 		<?php endif; ?>
 		
-		<?php
-			/* translators: %s: Name of current post */
-			the_excerpt( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'pummel' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+		<?php if( get_theme_mod( 'bpl_post_length') === "excerpt" ): ?>
+		
+			<?php
+				/* translators: %s: Name of current post */
+				the_excerpt( sprintf(
+					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'pummel' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
+			?>
+		
+		<?php endif; ?>
+		
+		<?php if( get_theme_mod( 'bpl_post_length') === "full" ) {
+		
+			if ( is_category() || is_archive() ) {
+				
+					the_excerpt( sprintf(
+						__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'pummel' ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
+				
+			} else {
+			
+				the_content( sprintf(
+					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'pummel' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
+			}
+		
+		} ?>
 
 		<?php
 			wp_link_pages( array(

@@ -1483,6 +1483,45 @@ function bpl_customize_register( $wp_customize ) {
 	);
 
 
+	
+	// Add full post or excerpt
+    $wp_customize->add_section(
+	  	'post_display_length' ,
+	  	array(
+		    'title' => __('Full or Excerpt Posts','pummel'),
+	    )
+    );
+    $wp_customize->add_setting(
+        'bpl_post_length',
+        array(
+            'default'       	=> 'excerpt',
+	        'sanitize_callback' => 'bpl_sanitize_text'
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'bpl_post_length',
+            array(
+                'label'         	=> __( 'Choose to display full post or excerpt on posts page', 'pummel' ),
+                'section'        	=> 'post_display_length',
+                'settings'      	=> 'bpl_post_length',
+                'type'           	=> 'radio',
+                'choices'  			=> array(
+						'full' => __('Full Post', 'pummel'),
+						'excerpt'  => __('Excerpt', 'pummel'),
+
+					)
+            )
+        )
+   );
+
+
+
+
+
+
+
 /////////////////////////////////////////////////////////////////////
 
     // Create custom panels
@@ -1493,6 +1532,7 @@ function bpl_customize_register( $wp_customize ) {
 		'description' 		=> __( 'Style Options for Static Front Page', 'pummel' ),
 		)
 	);
+	
 
 	$wp_customize->get_section( 'background_image' )->title = 'Site Background Image';
 
@@ -1516,8 +1556,8 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'background_image' )->priority = 40;
 	$wp_customize->get_section( 'colors' )->priority = 50;
 	$wp_customize->get_section( 'copyright' )->priority = 60;
-	// $wp_customize->get_section( 'nav' )->priority = 290;
 	$wp_customize->get_section( 'static_front_page' )->priority = 300;
+	$wp_customize->get_section( 'post_display_length' )->priority = 290;
 
 	//control priority
 	$wp_customize->get_control( 'bpl_header_color' )->priority = 10;
@@ -1531,6 +1571,8 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'bpl_frontpage_middle_widgets_text_color' )->priority = 90;
 	$wp_customize->get_control( 'bpl_comment_accent_color' )->priority = 100;
 	$wp_customize->get_control( 'bpl_footer_widget_accent_color' )->priority = 110;
+	$wp_customize->get_control( 'bpl_footer_widget_accent_color' )->priority = 120;
+
 
 }
 add_action( 'customize_register', 'bpl_customize_register' );
