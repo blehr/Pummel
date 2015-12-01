@@ -351,7 +351,7 @@ Convert hexdec color string to rgb(a) string
 *******************************************/
  
 function bpl_hex2rgba($color, $opacity = false) {
- 
+
 	$default = 'rgb(0,0,0)';
  
 	//Return default if no color provided

@@ -986,7 +986,6 @@ function bpl_customize_register( $wp_customize ) {
 		array(
 			'default' 			=> '',
 			'sanitize_callback' => 'bpl_sanitize_text'
-			// 'transport' 		=> 'postMessage'
 		)
 	);
 
@@ -1285,7 +1284,6 @@ function bpl_customize_register( $wp_customize ) {
 		array(
 			'default' 			=> '',
 			'sanitize_callback' => 'bpl_sanitize_text'
-			// 'transport' 		=> 'postMessage'
 		)
 	);
 
@@ -1670,7 +1668,7 @@ function bpl_customizer_output() {
 		<?php if(get_theme_mod('bpl_show_front_top_text_background') != 0): ?>
 
 			background-color: <?php echo esc_html(get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0')); ?>;
-			background-color: <?php echo bpl_hex2rgba(esc_html(get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_top_text_background_opacity', '.8') )); ?>;
+			background-color: <?php echo bpl_hex2rgba(esc_html(get_theme_mod('bpl_frontpage_top_text_background_color', '#e0e0e0')), esc_html(get_theme_mod('bpl_frontpage_top_text_background_opacity', '.8') )); ?>;
 			border-radius: 5px;
 
 		<?php endif; ?>
@@ -1682,7 +1680,7 @@ function bpl_customizer_output() {
 		<?php if(get_theme_mod('bpl_show_front_bottom_text_background') != 0): ?>
 
 			background-color: <?php echo esc_html(get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0')); ?>;
-			background-color: <?php echo bpl_hex2rgba(esc_html(get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0'), get_theme_mod('bpl_frontpage_bottom_text_background_opacity', '.8') )); ?>;
+			background-color: <?php echo bpl_hex2rgba(esc_html(get_theme_mod('bpl_frontpage_bottom_text_background_color', '#e0e0e0')), esc_html(get_theme_mod('bpl_frontpage_bottom_text_background_opacity', '.8') )); ?>;
 			border-radius: 5px;
 
 		<?php endif; ?>
