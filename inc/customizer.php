@@ -433,7 +433,7 @@ function bpl_customize_register( $wp_customize ) {
 			)
 		)
 	);
-	
+
 	// Add rss Setting
 	$wp_customize->add_setting(
 		'rss' ,
@@ -1451,7 +1451,7 @@ function bpl_customize_register( $wp_customize ) {
 			)
 		)
 	);
-	
+
 	// Add footer copyright
     $wp_customize->add_section(
     	'copyright' ,
@@ -1464,7 +1464,7 @@ function bpl_customize_register( $wp_customize ) {
         array(
       		'default'       	=> '',
 	        'sanitize_callback' => 'bpl_sanitize_text'
-	       
+
       )
 	);
 	$wp_customize->add_control(
@@ -1481,38 +1481,39 @@ function bpl_customize_register( $wp_customize ) {
 	);
 
 
-	
-	// Add full post or excerpt
-    $wp_customize->add_section(
-	  	'post_display_length' ,
-	  	array(
-		    'title' => __('Full or Excerpt Posts','pummel'),
-	    )
-    );
-    $wp_customize->add_setting(
-        'bpl_post_length',
-        array(
-            'default'       	=> 'excerpt',
-	        'sanitize_callback' => 'bpl_sanitize_text'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'bpl_post_length',
-            array(
-                'label'         	=> __( 'Choose to display full post or excerpt on posts page', 'pummel' ),
-                'section'        	=> 'post_display_length',
-                'settings'      	=> 'bpl_post_length',
-                'type'           	=> 'radio',
-                'choices'  			=> array(
-						'full' => __('Full Post', 'pummel'),
-						'excerpt'  => __('Excerpt', 'pummel'),
 
-					)
-            )
-        )
-   );
+	// Blog page options
+	$wp_customize->add_section(
+		'blog_page' ,
+		array(
+			'title' => __('Blog Page Options','pummel'),
+		)
+	);
+
+	//default blog page post image
+	$wp_customize->add_setting(
+		'bpl_blog_post_background_image',
+		array(
+			'default' 					=> '',
+			'sanitize_callback' => 'bpl_sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+			 new WP_Customize_Image_Control(
+					 $wp_customize,
+					 'bpl_blog_post_background_image',
+					 array(
+								'label'      		=> __( 'Upload an image for the Blog Page default post image, ( used if a post doesn\'t have a featured image )', 'pummel' ),
+								'section'    		=> 'blog_page',
+								'settings'   		=> 'bpl_blog_post_background_image',
+								'context'				=> 'blog_page',
+								'wp-head-callback' 	=> 'bpl_customizer_output'
+						)
+				)
+		);
+
+
 
 
 
@@ -1530,23 +1531,23 @@ function bpl_customize_register( $wp_customize ) {
 		'description' 		=> __( 'Style Options for Static Front Page', 'pummel' ),
 		)
 	);
-	
+
 
 	$wp_customize->get_section( 'background_image' )->title = 'Site Background Image';
 
 	// Assign sections to panels
-  	$wp_customize->get_section('frontpage_middle')->panel = 'frontpage_options';
-  	$wp_customize->get_section('frontpage_background')->panel = 'frontpage_options';
-  	$wp_customize->get_section('frontpage_top')->panel = 'frontpage_options';
-  	$wp_customize->get_section('frontpage_bottom')->panel = 'frontpage_options';
-  	$wp_customize->get_section('frontpage_top_image')->panel = 'frontpage_options';
+	$wp_customize->get_section('frontpage_middle')->panel = 'frontpage_options';
+	$wp_customize->get_section('frontpage_background')->panel = 'frontpage_options';
+	$wp_customize->get_section('frontpage_top')->panel = 'frontpage_options';
+	$wp_customize->get_section('frontpage_bottom')->panel = 'frontpage_options';
+	$wp_customize->get_section('frontpage_top_image')->panel = 'frontpage_options';
 
 	//section priority
 	$wp_customize->get_section('frontpage_top_image')->priority = 5;
 	$wp_customize->get_section('frontpage_middle')->priority = 20;
-  	$wp_customize->get_section('frontpage_background')->priority = 40;
-  	$wp_customize->get_section('frontpage_top')->priority = 10;
-  	$wp_customize->get_section('frontpage_bottom')->priority = 30;
+	$wp_customize->get_section('frontpage_background')->priority = 40;
+	$wp_customize->get_section('frontpage_top')->priority = 10;
+	$wp_customize->get_section('frontpage_bottom')->priority = 30;
 
 	$wp_customize->get_section( 'title_tagline' )->priority = 10;
 	$wp_customize->get_section( 'social-media' )->priority = 20;
@@ -1555,7 +1556,7 @@ function bpl_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'colors' )->priority = 50;
 	$wp_customize->get_section( 'copyright' )->priority = 60;
 	$wp_customize->get_section( 'static_front_page' )->priority = 300;
-	$wp_customize->get_section( 'post_display_length' )->priority = 290;
+	$wp_customize->get_section( 'blog_page' )->priority = 290;
 
 	//control priority
 	$wp_customize->get_control( 'bpl_header_color' )->priority = 10;
@@ -1727,11 +1728,23 @@ function bpl_customizer_output() {
 
     <?php endif; ?>
 
-	<?php if( get_theme_mod('bpl_custom_css') != '' ) {
-        echo wp_strip_all_tags( get_theme_mod('bpl_custom_css') );
-  	} ?>
+		<?php if( get_theme_mod( 'bpl_blog_post_background_image') != "" ): ?>
 
-    </style>
+			.blog .blog-index-article,
+			.archive .blog-index-article {
+				background: url(<?php echo esc_url(get_theme_mod( 'bpl_blog_post_background_image' )); ?>);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+
+		<?php endif; ?>
+
+		<?php if( get_theme_mod('bpl_custom_css') != '' ) {
+	        echo wp_strip_all_tags( get_theme_mod('bpl_custom_css') );
+	  	} ?>
+
+	    </style>
 
     <?php
 }

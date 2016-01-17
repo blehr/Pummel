@@ -1,45 +1,65 @@
-jQuery( document ).ready( function( $ ) {
-    
-    //to keep background image from jumping with cover
-    var bg = $("body");
-    $(window).resize("resizeBackground");
-    function resizeBackground() {
-        bg.height($(window).height() + 60);
+jQuery(document).ready(function($) {
+
+  //to keep background image from jumping with cover
+  var bg = $("body");
+  $(window).resize("resizeBackground");
+
+  function resizeBackground() {
+    bg.height($(window).height() + 60);
+  }
+  resizeBackground();
+
+  (function articleBackground() {
+    var articles = $(' article.has-post-thumbnail .blog-index-article');
+    if (articles.length > 0) {
+      $.each(articles, function(index, article) {
+        var backgroundUrl = $(article).data('thumbnail-src');
+        $(article).css({
+          background: "url(" + backgroundUrl + ") center center no-repeat",
+          backgroundSize: "cover"
+        });
+      });
     }
-    resizeBackground();
-    
-    //animate frontpage middle images
-    $('.frontpage-middle .widget').addClass('animatedParent animateOnce').attr( "data-appear-top-offset", "0" );
-    
-    $('.frontpage-middle .widget img').addClass('animated fadeInDown');//lightSpeedInRight
+  })();
 
-    //textarea and input white background on focus and if text has been entered
-    $('textarea, textarea.form-control, input[type="search"], input[type="text"], input[type="email"], input[type="url"]')
-        .focus(function() { $(this).addClass('input-focus') })
-        .blur(function() { if ($(this)[0].value == '') { $(this).removeClass('input-focus') } });
-    
-    $('input[type="submit"]').addClass('btn btn-primary');
-    
-    $( 'input.search-field' ).addClass( 'form-control' );
+  //animate frontpage middle images
+  $('.frontpage-middle .widget').addClass('animatedParent animateOnce').attr("data-appear-top-offset", "0");
 
-    // here for each comment reply link of wordpress
-    $( '.comment-reply-link' ).addClass( 'btn btn-primary' );
+  $('.frontpage-middle .widget img').addClass('animated fadeInDown'); //lightSpeedInRight
 
-    // here for the submit button of the comment reply form
-    $( '#commentsubmit' ).addClass( 'btn btn-primary' );
+  //textarea and input white background on focus and if text has been entered
+  $('textarea, textarea.form-control, input[type="search"], input[type="text"], input[type="email"], input[type="url"]')
+    .focus(function() {
+      $(this).addClass('input-focus');
+    })
+    .blur(function() {
+      if ($(this)[0].value === '') {
+        $(this).removeClass('input-focus');
+      }
+    });
 
-    // The WordPress Default Widgets
-    // Now we'll add some classes for the wordpress default widgets - let's go
+  $('input[type="submit"]').addClass('btn btn-primary');
 
-    // the search widget
-    $( 'input.search-submit' ).addClass( 'btn btn-default' );
+  $('input.search-field').addClass('form-control');
 
-    $( '.widget_rss ul' ).addClass( 'media-list' );
+  // here for each comment reply link of wordpress
+  $('.comment-reply-link').addClass('btn btn-primary');
 
-    $( '.widget_meta ul, .widget_recent_entries ul, .widget_archive ul, .widget_categories ul, .widget_nav_menu ul, .widget_pages ul' ).addClass( 'nav' );
+  // here for the submit button of the comment reply form
+  $('#commentsubmit').addClass('btn btn-primary');
 
-    $( '.widget_recent_comments ul#recentcomments' ).css( 'list-style', 'none').css( 'padding-left', '0' );
-    $( '.widget_recent_comments ul#recentcomments li' ).css( 'padding', '5px 15px');
+  // The WordPress Default Widgets
+  // add some classes for the wordpress default widgets
 
-    $( 'table#wp-calendar' ).addClass( 'table table-striped');
-} );
+  // the search widget
+  $('input.search-submit').addClass('btn btn-default');
+
+  $('.widget_rss ul').addClass('media-list');
+
+  $('.widget_meta ul, .widget_recent_entries ul, .widget_archive ul, .widget_categories ul, .widget_nav_menu ul, .widget_pages ul').addClass('nav');
+
+  $('.widget_recent_comments ul#recentcomments').css('list-style', 'none').css('padding-left', '0');
+  $('.widget_recent_comments ul#recentcomments li').css('padding', '5px 15px');
+
+  $('table#wp-calendar').addClass('table table-striped');
+});
