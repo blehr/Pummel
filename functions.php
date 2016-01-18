@@ -61,7 +61,7 @@ function bpl_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
-	
+
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'bpl_custom_background_args', array(
@@ -94,8 +94,8 @@ add_action( 'widgets_init', 'bpl_widgets_init' );
 function create_widget( $name, $id, $description ) {
 
 	register_sidebar(array(
-		'name' =>  $name ,	 
-		'id' => $id, 
+		'name' =>  $name ,
+		'id' => $id,
 		'description' =>  $description ,
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -127,31 +127,31 @@ create_widget( __('Footer Right', 'pummel'), 'footer-right', __('Displays on the
  * Enqueue scripts and styles.
  */
 function bpl_scripts() {
-	
+
 	wp_enqueue_style('bpl_bootstrap_css', get_template_directory_uri() . '/css/bootstrap.css' );
-	
+
 	wp_enqueue_style('bpl_animate_css', get_template_directory_uri() . '/css/animations.css' );
-	
+
 	wp_enqueue_style('bpl_font_awesome_css', get_template_directory_uri() . '/font-awesome/css/font-awesome.css' );
-	
-	wp_enqueue_style('bpl_googlefont_css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800|Playfair+Display:400,700,900');
-	 
+
+	wp_enqueue_style('bpl_googlefont_css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800|Playfair+Display:400,700,900|Roboto+Slab:700');
+
 	wp_enqueue_style( 'bpl_style', get_stylesheet_uri() );
-	
+
 
 	global $wp_scripts;
-	
+
 	wp_register_script( 'bpl_html5_shiv', get_template_directory_uri() . '/js/html5shiv.js', '', '', false);
-    
+
     wp_register_script( 'bpl_respond_js', get_template_directory_uri() . '/js/respond.src.js', '', '', false);
-    
+
     $wp_scripts->add_data( 'bpl_html5_shiv', 'conditional', 'lt IE 9');
     $wp_scripts->add_data( 'bpl_respond_js', 'conditional', 'lt IE 9');
-    
+
     wp_enqueue_script( 'bpl_bootstrap_js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '', true);
-    
+
     wp_enqueue_script( 'bpl_animate_js', get_template_directory_uri() . '/js/css3-animate-it.js', array('jquery'), '', true);
-    
+
     wp_enqueue_script( 'bpl_theme-js', get_template_directory_uri() . '/js/theme.js', array('jquery', 'bpl_bootstrap_js'), '', true);
 
 	wp_enqueue_script( 'bpl-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -162,7 +162,7 @@ function bpl_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bpl_scripts' );
 
-/** 
+/**
 * editor style
 **/
 function bpl_add_editor_styles() {
@@ -173,43 +173,43 @@ add_action( 'admin_init', 'bpl_add_editor_styles' );
 
 
 /**
- * Add breadcrumbs functionality to your WordPress theme 
+ * Add breadcrumbs functionality to your WordPress theme
  *
  * Once you have included the function in your functions.php file
  * you can then place the following anywhere in your theme templates
  * if(function_exists('mine_breadcrumbs')) mine_breadcrumbs();
  *
- * 
+ *
  */
 function bpl_breadcrumbs() {
 	if(!is_front_page()) {
 		echo '<nav class="breadcrumb">';
 		echo '<a href="'.home_url('/').'">'.__('Home', 'pummel').'</a>';
 		if (is_home() || is_single() || is_archive()){
-			
+
 			if ( 'posts' != get_option( 'show_on_front' ) ) {
-			
+
 			echo '<span class="divider"> / </span><a href="'.home_url('/blog').'">'.__('Blog', 'pummel').'</a>';
-			
+
 			}
-			
+
 			if (is_single()) {
 				echo ' <span class="divider">/</span> ';
 				the_title();
 			}
-			
+
 			if (is_archive()) {
 				echo ' <span class="divider">/</span> ';
 					if ( is_category() ) {
 						single_cat_title();
 
 					}
-					
-					if ( is_tag() ) 
+
+					if ( is_tag() )
 						single_tag_title();
 
 					}
-					
+
 					if ( is_author() ) {
 						/* Queue the first post, that way we know
 						 * what author we're dealing with (if that is the case).
@@ -222,7 +222,7 @@ function bpl_breadcrumbs() {
 						 */
 						rewind_posts();
 					}
-					
+
 					if ( is_day() ) {
 						printf( __( 'Day: %s', 'pummel' ), '<span>' . get_the_date() . '</span>' );
 					}
@@ -238,7 +238,7 @@ function bpl_breadcrumbs() {
 					if ( is_tax( 'post_format', 'post-format-aside' ) ) {
 							_e( 'Asides', 'pummel' );
 					}
-					
+
 					if ( is_tax( 'post_format', 'post-format-image' ) ) {
 						_e( 'Images', 'pummel');
 					}
@@ -255,9 +255,9 @@ function bpl_breadcrumbs() {
 						_e( 'Links', 'pummel' );
 					}
 
-					
 
-		
+
+
 		} elseif (is_page()) {
 			echo ' <span class="divider">/</span> ';
 			echo the_title();
@@ -295,4 +295,3 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
